@@ -128,31 +128,35 @@ internet~\cite{hid-sp18-420-amazon-S3-cloud-migration}.
 
 Amazon S3 provides multiple mechanisms to provide data security and to control
 or monitor data access to user.
-\subparagraph{User identities – }
+
+\subparagraph{User identities-}
 
 Each user registered to Amazon’s web service gets an identity. These identities
 are linked to credit cards to prevent one person to create multiple fake user
 accounts. S3 also has a concept of anonymous requests when no information is
 associated about user within the request.
-\subparagraph{Access control –}
 
-Access controls are given by access control lists (ACL). Each ACL can specify
-the access for up to 100 identities.
-Below access controls are supported by AWS S3 – 
-\begin{itemize}
-\item FULLCONTROL– The owner preserves full control over the object with all
+\subparagraph{Access control -}
+
+Access controls are given by access control lists (ACL). Each ACL can
+specify the access for up to 100 identities.  Below\footnote{you have
+  not read our chapter on latex} access controls are supported by AWS
+S3
+
+\begin{description}
+\item [FULLCONTROL] The owner preserves full control over the object with all
 permissions.
-\item READ– It is given to buckets or users to read the object. 
-\item WRITE– It is given to buckets so that user can create objects in the
+\item [READ] It is given to buckets or users to read the object. 
+\item [WRITE] It is given to buckets so that user can create objects in the
 bucket;
-\item READACL– It is given to buckets or objects by which a user can read the
+\item [READACL] It is given to buckets or objects by which a user can read the
 ACL and get the identity of the owner.
-\item WRITEACL– It is given to user to change the Access control list. It is
+\item [WRITEACL] It is given to user to change the Access control list. It is
 similar to full
 user control since the user can assign any right.
-\end{itemize}
+\end{description}
 
-\subparagraph{Encryption – }
+\subparagraph{Encryption-}
 
 Data can be securely uploaded or downloaded in S3 using SSL encrypted
 endpoints.If user chooses to server side encryption, Amazon s3 will
@@ -160,7 +164,7 @@ automatically encrypt
 the data on every write and decrypt the data on every
 read~\cite{hid-sp18-420-amazon-S3-data-encryption}.
 
-\subparagraph{Versioning – }
+\subparagraph{Versioning-}
 
 Amazon S3 provides versioning capability to preserve and restore all the
 versions of objects in a bucket. This allows the recovery for any application
@@ -171,11 +175,11 @@ versioning.
 
 \paragraph{Storage Classes:}
 
-Amazon S3 provides below storage classes depending upon the requirement and use.Amazon S3 Standard – Used for general-purpose storage of frequently accessed
+Amazon S3 provides below storage classes depending upon the requirement and use.Amazon S3 Standard-Used for general-purpose storage of frequently accessed
 data.
-Amazon S3 Standard-Infrequent Access (Standard-IA) – Used for long-lived, but
+Amazon S3 Standard-Infrequent Access (Standard-IA)-Used for long-lived, but
 less frequently accessed data.
-Amazon Glacier – Used for low-cost archival data
+Amazon Glacier-Used for low-cost archival data
 
 
 \paragraph{Query in Place:} 
@@ -189,15 +193,12 @@ data within an object in storage at rest, and Amazon Athena and Amazon Redshift
 Spectrum enable you to run sophisticated analytics directly on data stored in
 S3.
 
-
-
-
 \section{Usage Patterns}
 There can be multiple ways and multiple use cases in which user can use Amazon
 S3 as a storage solutions. Below are some of the common usage patterns of
 AmazonS3.
 \begin{enumerate}
-\item Static web content and media – Amazon S3 is widely used for storing
+\item Static web content and media-Amazon S3 is widely used for storing
 staticweb content and media for different applications. Each object in the S3
 has a
 unique HTTP URL to access that object. Hence, this content can be delivered
@@ -208,22 +209,22 @@ addressing extreme spikes in demand. For fast growing websites such as hosting
 data intensive content like video or photo sharing websites, Amazon S3 is the
 solution as it does not require any additional storage provisioning.
  
-\item Host Static Website – Amazon S3 can be used to host static website as it
+\item Host Static Website-Amazon S3 can be used to host static website as it
 provides low cost and highly available solution. User can store static HTML
 files, images, videos and scripts such as java script easily.
 
-\item Computation and Analytics – Amazon S3 is used as a data store for big
+\item Computation and Analytics-Amazon S3 is used as a data store for big
 dataanalytics. It is suitable for data that requires large scale analysis like
 financial transaction analysis and multimedia transcoding. Since Amazon S3 is
 scalable horizontally, user can access data from multiple computing nodes
 simultaneously without any constrain of single connection. AWS offers different
 services that helps user to manage big data.
 
-\item Backup and Archive – Amazon S3 offers secure and scalable solution to
+\item Backup and Archive-Amazon S3 offers secure and scalable solution to
 backup critical data. User can use Amazon glacier to move data from S3 for
 backup purpose. Amazon S3 cross origin replication is also available which can
 automatically copy objects to S3 buckets in different regions asynchronously.
-Lifecycle rules can be defined to migrate less frequent data to S3 standard –
+Lifecycle rules can be defined to migrate less frequent data to S3 standard -
 infrequent access and archive to Amazon Glacier. Amazon also provides
 versioning capability for S3 data. User can create different versions of data
 and hence can keep the backup with older version and new data will get updated
