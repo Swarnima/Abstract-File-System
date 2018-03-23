@@ -20,22 +20,21 @@
 
 \begin{abstract}
 
-Recent increased usage of internet is casing a huge volume of data creation
-which creates a growing demand for large-capacity storage solutions. The
+Recent increased usage of internet is causing a huge volume of data creation
+which creates a growing demand for large capacity storage solutions. The
 advancements in the cloud technologies has yielded new ways of storing,
-accessing and managing data. Cloud storage services enable the storage of data
-in an inexpensive, secure, fast, reliable and highly scalable manner over the
-internet. Amazon S3 is an object storage built to store and retrieve any amount
+accessing and managing data. Amazon S3 is an object storage built to store and retrieve any amount
 of data from anywhere such as web sites and mobile apps and corporate
 applications. Amazon S3 is the cloud storage that provides storage solution
-withquery-in-place functionality which allows user to run powerful analytics
+with query in place functionality which allows user to run powerful analytics
 directly on your data at rest in S3.
 
-This paper describes about the basic concepts of Amazon S3 along with its
-features, benefits, different usage patterns and the pricing provided by
-Amazon.This way, the paper covers the basic information about Amazon S3 and get
-the
-understanding of how it can be used depending upon requirements.
+This paper describes about the basic concepts of a web service provided by
+Amazon named Simple Storage Service(S3)
+along with its features and benefits. This paper also describes about some
+common use cases and the pricing provided by
+Amazon. In this way, the paper covers the basic information about Amazon S3.
+
 \end{abstract}
 
 \keywords{hid-sp18-420, AWS, Amazon S3, i526, Simple Storage System}
@@ -45,7 +44,7 @@ understanding of how it can be used depending upon requirements.
 \section{About Amazon S3}
 
 Amazon S3 is a simple storage service provided by Amazon web services (AWS)
-which mainly focuses on a highly-scalable, reliable, and low-latency data
+which mainly focuses on a highly scalable, reliable, and low latency data
 storage infrastructure at low costs~\cite{hid-sp18-420-amazon-S3-FAQ}. Simple
 storage Service is a web service provided by Amazon that can be used to store
 and retrieve data of any kind and any amount at anytime from anywhere on the
@@ -66,8 +65,7 @@ stored data. It is easy to define lifecycle rules to automatically migrate less
 frequently accessed data. User can store any number of objects. Total volume is
 unlimited but one object size can range from 0 bytes to 5 terabytes. With
 AmazonS3, user needs to pay only for what the usage is. But price vary as per
-the
-chosen region of S3.
+the chosen region of S3.
 
 
 
@@ -77,25 +75,26 @@ Amazon S3 stores data within resources called buckets and data is stored as an
 object. Each bucket has its own unique name and this name is unique globally.
 This global namespace allows users to have the unique bucket globally which
 helps to organize their data and identify the user to be charged for storage
-anddata transfers. It also plays an important role in access control and finally
-itserves as the unit of aggregation for audit reports.
+and data transfers. It also plays an important role in access control and
+finally it serves as the unit of aggregation for audit reports.
 
 
 One bucket can have unlimited number of objects but number of buckets are
 limited to 100 per account. Each object consists of two parts as an opaque blob
 and metadata which is nothing but a user specified key value pair and
-predefinedmetadata such as LastModified date time.
+predefined metadata such as LastModified date time.
+
 
 Users can access or create objects based on the access control restrictions
 applied to that bucket. Amazon S3 search functionality is limited to the bucket
 and is based on the object name only with either full name or any prefix.
-Amazondoes not provide content based search functionality for S3.
+Amazon does not provide content based search functionality for S3.
 
 
 
 \section{Key Features}
 
-\paragraph{Simplicity and Flexibility:} 
+\paragraph{Simplicity and Flexibility: } 
 
 Amazon s3 is simple to access using web based AWS management console, mobile
 app, full REST APIs and AWS SDKs for integration with Mobile SDK, Java, PHP,
@@ -105,14 +104,14 @@ approach for optimization and management of data efficiently.
 
 
 
-\paragraph{Data Durability and Reliability:} 
+\paragraph{Data Durability and Reliability: } 
 
 ``Amazon S3 provides durable infrastructure to store important data and is
 designed for durability of 99.999999999\% of objects. Your data is redundantly
 stored across multiple facilities and multiple devices in each
 facility''~\cite{hid-sp18-420-amazon-S3}.
 
-\paragraph{Simple Data Transfer:} 
+\paragraph{Simple Data Transfer: } 
 
 Data transfer can be made simple using Amazon S3. Amazon provides set of tools
 and different options for migration of data and makes it simple and to move
@@ -121,34 +120,33 @@ acceleration~\cite{hid-sp18-420-amazon-S3-dataTransfer-FAQ}, it is fast, easy
 and secure to
 transfer files over long distance. AWS Snowball, AWS Snowball Edge and AWS
 Snowmobile are used for large scale data transfers where transferring is made
-atone-fifth of the cost of high speed
+at one fifth of the cost of high speed
 internet~\cite{hid-sp18-420-amazon-S3-cloud-migration}.
 
-\paragraph{Security and Access Management:} 
+\paragraph{Security and Access Management: } 
 
 Amazon S3 provides multiple mechanisms to provide data security and to control
 or monitor data access to user.
 
-\subparagraph{User identities-}
+\begin{enumerate}
+
+\item User identities
 
 Each user registered to Amazon’s web service gets an identity. These identities
 are linked to credit cards to prevent one person to create multiple fake user
 accounts. S3 also has a concept of anonymous requests when no information is
 associated about user within the request.
 
-\subparagraph{Access control -}
+\item Access control
 
-Access controls are given by access control lists (ACL). Each ACL can
-specify the access for up to 100 identities.  Below\footnote{you have
-  not read our chapter on latex} access controls are supported by AWS
-S3
-
+Access controls are given by access control lists (ACL). Each ACL can specify
+the access for up to 100 identities. S3 supports different access controls. 
 \begin{description}
 \item [FULLCONTROL] The owner preserves full control over the object with all
 permissions.
 \item [READ] It is given to buckets or users to read the object. 
 \item [WRITE] It is given to buckets so that user can create objects in the
-bucket;
+bucket.
 \item [READACL] It is given to buckets or objects by which a user can read the
 ACL and get the identity of the owner.
 \item [WRITEACL] It is given to user to change the Access control list. It is
@@ -156,15 +154,15 @@ similar to full
 user control since the user can assign any right.
 \end{description}
 
-\subparagraph{Encryption-}
+\item Encryption
 
 Data can be securely uploaded or downloaded in S3 using SSL encrypted
-endpoints.If user chooses to server side encryption, Amazon s3 will
+endpoints. If user chooses to server side encryption, Amazon s3 will
 automatically encrypt
 the data on every write and decrypt the data on every
 read~\cite{hid-sp18-420-amazon-S3-data-encryption}.
 
-\subparagraph{Versioning-}
+\item Versioning
 
 Amazon S3 provides versioning capability to preserve and restore all the
 versions of objects in a bucket. This allows the recovery for any application
@@ -173,16 +171,22 @@ reference. User can configure life cycle
 riles~\cite{hid-sp18-420-amazon-S3-lidecycle-rule} to automatically manage the
 versioning.
 
-\paragraph{Storage Classes:}
+\end{enumerate}
 
-Amazon S3 provides below storage classes depending upon the requirement and use.Amazon S3 Standard-Used for general-purpose storage of frequently accessed
-data.
-Amazon S3 Standard-Infrequent Access (Standard-IA)-Used for long-lived, but
-less frequently accessed data.
-Amazon Glacier-Used for low-cost archival data
+\paragraph{Storage Classes: }
+
+Amazon S3 provides different storage classes depending upon the requirement and
+use.
+\begin{description}
+\item [Amazon S3 Standard] it is used for the storage data that is frequently accessed.
+\item [Amazon S3 Standard Infrequent Access] It is used for storing data which is not
+used more frequently but need to be stored for long time.
+\item [Amazon Glacier] It is used for archiving data at low cost. 
+
+\end{description}
 
 
-\paragraph{Query in Place:} 
+\paragraph{Query in Place: } 
 
 This is one of the important feature of Amazon which provides suit of tools for
 analysing and processing huge amount of data in the cloud faster along with
@@ -193,14 +197,15 @@ data within an object in storage at rest, and Amazon Athena and Amazon Redshift
 Spectrum enable you to run sophisticated analytics directly on data stored in
 S3.
 
-\section{Usage Patterns}
+\section{Use cases}
 There can be multiple ways and multiple use cases in which user can use Amazon
 S3 as a storage solutions. Below are some of the common usage patterns of
 AmazonS3.
 \begin{enumerate}
-\item Static web content and media-Amazon S3 is widely used for storing
-staticweb content and media for different applications. Each object in the S3
-has a
+\item Static web content and media:
+
+Amazon S3 is widely used for storing static web content and media for different
+applications. Each object in the S3 has a
 unique HTTP URL to access that object. Hence, this content can be delivered
 directly. Amazon S3 can be
 used as an origin store for content delivery networks like Amazon CloudFront.
@@ -209,26 +214,33 @@ addressing extreme spikes in demand. For fast growing websites such as hosting
 data intensive content like video or photo sharing websites, Amazon S3 is the
 solution as it does not require any additional storage provisioning.
  
-\item Host Static Website-Amazon S3 can be used to host static website as it
+\item Host Static Website:
+
+Amazon S3 can be used to host static website as it
 provides low cost and highly available solution. User can store static HTML
 files, images, videos and scripts such as java script easily.
 
-\item Computation and Analytics-Amazon S3 is used as a data store for big
-dataanalytics. It is suitable for data that requires large scale analysis like
+\item Computation and Analytics:
+
+Amazon S3 is used as a data store for big data analytics. It is suitable for
+data that requires large scale analysis like
 financial transaction analysis and multimedia transcoding. Since Amazon S3 is
 scalable horizontally, user can access data from multiple computing nodes
 simultaneously without any constrain of single connection. AWS offers different
 services that helps user to manage big data.
 
-\item Backup and Archive-Amazon S3 offers secure and scalable solution to
+\item Backup and Archive:
+
+Amazon S3 offers secure and scalable solution to
 backup critical data. User can use Amazon glacier to move data from S3 for
 backup purpose. Amazon S3 cross origin replication is also available which can
 automatically copy objects to S3 buckets in different regions asynchronously.
-Lifecycle rules can be defined to migrate less frequent data to S3 standard -
+Lifecycle rules can be defined to migrate less frequent data to S3 standard 
 infrequent access and archive to Amazon Glacier. Amazon also provides
 versioning capability for S3 data. User can create different versions of data
 and hence can keep the backup with older version and new data will get updated
 version.
+
 \end{enumerate}
 
 \section{Pricing}
@@ -241,6 +253,7 @@ of requests per month.
 20000 get requests, 2000 put requests and 15 GB data transfer for
 free''~\cite{hid-sp18-420-amazon-S3-pricing}. Amazon S3 provides pricing that
 differs based on region.
+
 
 \begin{acks}
 
