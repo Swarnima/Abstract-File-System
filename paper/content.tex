@@ -14,21 +14,26 @@
   \country{USA}}
 \email{shsowani@iu.edu}
 
-
+\newcommand{\GE}{\footnote{Grammar}}
+\newcommand{\GVL}[1]{\footnote{#1}}
 % The default list of authors is too long for headers}
 \renewcommand{\shortauthors}{G. v. Laszewski}
 
 \begin{abstract}
 
-Recent increased usage of internet is causing a huge volume of data creation
-which creates a growing demand for large capacity storage solutions. The
-advancements in the cloud technologies has yielded new ways of storing,
-accessing and managing data. Amazon provides Simple Storage Service (S3) 
+  \emph{GVL: THis filler sentence seems irrelevant for the paper.
+    Recent increased usage of internet is causing a huge volume of
+    data creation which creates a growing demand for large capacity
+    storage solutions. The advancements in the cloud technologies has
+    yielded new ways of storing, accessing and managing data.}
+
+Amazon provides\GE Simple Storage Service (S3) 
 which is an object storage built to store and retrieve any amount
 of data from anywhere such as web sites and mobile apps and corporate
 applications. Amazon S3 is the cloud storage that provides storage solution
-with query in place functionality which allows user to run powerful analytics
-directly on your data at rest in S3.
+with query in place functionality which allows user to run powerful\GVL{really} analytics
+directly on your data at rest\GVL{I hope you explain in the paper what
+at rest means} in S3.
 
 \end{abstract}
 
@@ -36,224 +41,249 @@ directly on your data at rest in S3.
 
 \maketitle
 
-\section{About Amazon S3}
+\section{Introduction}
 
-Amazon S3 is a simple storage service provided by Amazon web services (AWS)
-which mainly focuses on a highly scalable, reliable, and low latency data
-storage infrastructure at low costs~\cite{hid-sp18-420-amazon-S3-FAQ}. Simple
-storage Service is a web service provided by Amazon that can be used to store
-and retrieve data of any kind and any amount at anytime from anywhere on the
-web. It can also be used for static website hosting for different web
-applications. Important feature of S3 is that it is available at any point of
-time and can be used to store virtually any kind of data in any
+Amazon S3 is\GVL{the word is is wrong here. The term S3 stands for
+  ..., than highlight the three s'es with bf} a simple storage service
+provided by Amazon web services (AWS) which mainly\GVL{delete} focuses
+on a highly scalable, reliable, and low latency data storage
+infrastructure at low costs~\cite{hid-sp18-420-amazon-S3-FAQ}. Simple
+storage Service is a web service provided by Amazon that can be used
+to store and retrieve data of any kind and any amount at anytime from
+anywhere on the web.\GVL{somewhat duplicated to first sentence?} It
+can also be used for static website hosting for different web
+applications. Important feature\GE of S3 is that it is available at
+any point of time and can be used to store virtually\GVL{virtually is
+  bad term} any kind of data in any
 format~\cite{hid-sp18-420-amazon-S3-FAQ}.
 
-One of the important features of using S3 is that it offers a highly durable,
-scalable, and secure destination for backing up and archiving critical
-data~\cite{hid-sp18-420-amazon-S3}. As per AWS documentation, ``Amazon S3 is
-designed to deliver 99.999999999\% durability, and it is used to store data for
-millions of applications used by market leaders in every
-industry''~\cite{hid-sp18-420-amazon-S3}.
+One of the important features of using S3 is that it offers a highly
+durable, scalable, and secure destination for backing up and archiving
+critical data~\cite{hid-sp18-420-amazon-S3}. As per AWS documentation,
+``Amazon S3 is designed to deliver 99.999999999\% durability, and it
+is used to store data for millions of applications used by market
+leaders in every industry''~\cite{hid-sp18-420-amazon-S3}.
 
-Amazon S3 provides versioning capability to provide even further protection for
-stored data. It is easy to define lifecycle rules to automatically migrate less
-frequently accessed data. User can store any number of objects. Total volume is
-unlimited but one object size can range from 0 bytes to 5 terabytes. With
-AmazonS3, user needs to pay only for what the usage is. But price vary as per
-the chosen region of S3.
+Amazon S3 provides versioning capability to provide\GE\GVL{duplicated
+  word} even further protection for stored data. It is
+easy\GVL{unsubstianted claim, and we hope you clarify in paper} to
+define lifecycle rules to automatically migrate less frequently
+accessed data. User\GE can store any number of objects. Total
+volume\GE is unlimited\GVL{wrong} but one object size can range from 0
+bytes to 5 terabytes. With AmazonS3, user\GE needs to pay only for
+what the usage is. But\GVL{why but, but in comparison to what} price
+vary as per the chosen region of S3.
 
 
 
 \section{Concepts and Architecture}
 
-Amazon S3 stores data within resources called buckets and data is stored as an
-object. Each bucket has its own unique name and this name is unique globally.
-This global namespace allows users to have the unique bucket globally which
-helps to organize their data and identify the user to be charged for storage
-and data transfers. It also plays an important role in access control and
-finally it serves as the unit of aggregation for audit reports.
+Amazon S3 stores data within resources called buckets and data is
+stored as an object\GVL{what is an object}. Each bucket has its own
+unique name and this name is unique globally\GVL{why not just globally
+  unique. What does globally mean? Globally for me or globally for all
+  users?}.  This global namespace allows users to have the unique
+bucket globally which helps to organize their data and identify the
+user to be charged for storage and data transfers.\GVL{unclear} It
+also plays an important role in access control and finally\GVL{why
+  finally?} it serves as the unit of aggregation for audit reports.
 
 
-One bucket can have unlimited number of objects but number of buckets are
-limited to 100 per account. Each object consists of two parts as an opaque blob
-and metadata which is nothing but a user specified key value pair and
-predefined metadata such as LastModified date time.
+One bucket can have unlimited number of objects\GVL{so it has more
+  capacity that the number of atoms in the universe? I find that hard
+  to believe.} but number of buckets are limited to 100 per
+account. Each object consists of two parts as an opaque blob and
+metadata which is nothing\GVL{term} but a user specified key value
+pair and predefined metadata such as LastModified date time.
 
 
-Users can access or create objects based on the access control restrictions
-applied to that bucket. Amazon S3 search functionality is limited to the bucket
-and is based on the object name only with either full name or any prefix.
-Amazon does not provide content based search functionality for S3.
+Users can access or create objects based on the access control
+restrictions applied to that bucket. Amazon S3 \GVL{ has a ... this is
+  limited to ...} search functionality is limited to the bucket
+\GVL{sentence is now becoming unclear} and is based on the object name
+only with either full name or any prefix.  Amazon does not provide
+content based search functionality for S3.
 
 
 
 \section{Key Features}
 
-\paragraph{Simplicity and Flexibility: } 
+\GVL{We list some ey features of S3 next.}
 
-Amazon s3 is simple to access using web based AWS management console, mobile
-app, full REST APIs and AWS SDKs for integration with Mobile SDK, Java, PHP,
-Python, \.NET,
-Node.js, Ruby. S3 features allows users to take data driven
-approach for optimization and management of data efficiently.
+\subsection{Simplicity and Flexibility} 
+
+Amazon s3 is simple to access using web based AWS management console,
+mobile app, full REST APIs and AWS SDKs for integration with Mobile
+SDK, Java, PHP, Python, \.NET, Node.js, Ruby. S3 features allows users
+to take data driven approach for optimization and management of data
+efficiently.
 
 
-
-\paragraph{Data Durability and Reliability: } 
+\subsection{Data Durability and Reliability} 
 
 ``Amazon S3 provides durable infrastructure to store important data and is
 designed for durability of 99.999999999\% of objects. Your data is redundantly
 stored across multiple facilities and multiple devices in each
 facility''~\cite{hid-sp18-420-amazon-S3}.
 
-\paragraph{Simple Data Transfer: } 
+\subsection{Simple Data Transfer} 
 
-Data transfer can be made simple using Amazon S3. Amazon provides set of tools
-and different options for migration of data and makes it simple and to move
-large volume files from Amazon S3. Using S3 transfer
-acceleration~\cite{hid-sp18-420-amazon-S3-dataTransfer-FAQ}, it is fast, easy
-and secure to
-transfer files over long distance. AWS Snowball, AWS Snowball Edge and AWS
-Snowmobile are used for large scale data transfers where transferring is made
-at one fifth of the cost of high speed
+Data transfer can be made simple using Amazon S3.\GVL{placement shoudl
+  be at and and a justification for simple is needed} Amazon provides
+set of tools and different options for migration of data and makes it
+simple and to move large volume files from Amazon S3.\GVL{runaway
+  sentence, yet with the same info as previous sentence} Using S3
+transfer acceleration~\cite{hid-sp18-420-amazon-S3-dataTransfer-FAQ},
+it is fast, easy and secure to transfer files over long distance. AWS
+Snowball \cite{?}, AWS Snowball Edge \cite{?} and AWS Snowmobile
+\cite{?} are used for large scale data transfers where transferring is
+made at one fifth of the cost of high speed
 internet~\cite{hid-sp18-420-amazon-S3-cloud-migration}.
 
-\paragraph{Security and Access Management: } 
+\subsection{Security and Access Management} 
 
 Amazon S3 provides multiple mechanisms to provide data security and to control
 or monitor data access to user.
 
-\begin{enumerate}
 
-\item User identities
-
-Each user registered to Amazon’s web service gets an identity. These identities
-are linked to credit cards to prevent one person to create multiple fake user
-accounts. S3 also has a concept of anonymous requests when no information is
-associated about user within the request.
-
-\item Access control
-
-Access controls are given by access control lists (ACL). Each ACL can specify
-the access for up to 100 identities. S3 supports different access controls. 
 \begin{description}
-\item [FULLCONTROL] The owner preserves full control over the object with all
-permissions.
-\item [READ] It is given to buckets or users to read the object. 
-\item [WRITE] It is given to buckets so that user can create objects in the
-bucket.
-\item [READACL] It is given to buckets or objects by which a user can read the
-ACL and get the identity of the owner.
-\item [WRITEACL] It is given to user to change the Access control list. It is
-similar to full
-user control since the user can assign any right.
+
+\item [User identities.] Each user registered to Amazon’s web service
+  gets an identity. These identities are linked to credit cards to
+  prevent one person to create multiple fake user accounts. S3 also
+  has a concept of anonymous requests when no information is
+  associated about user within the request.
+
+\item [Access control.]Access controls are given by access control
+  lists (ACL). Each ACL can specify the access for up to 100
+  identities. S3 supports different access controls.
+
+\begin{description}
+\item [FULLCONTROL] The owner preserves full control over the object
+  with all permissions.
+\item [READ] It is given to buckets or users to read the object.
+\item [WRITE] It is given to buckets so that user can create objects
+  in the bucket.
+\item [READACL] It is given to buckets or objects by which a user can
+  read the ACL and get the identity of the owner.
+\item [WRITEACL] It is given to user to change the Access control
+  list. It is similar to full user control since the user can assign
+  any right.
 \end{description}
 
-\item Encryption
+\item [Encryption.]  Data can be securely uploaded or downloaded in S3
+  using SSL encrypted endpoints. If user chooses to server side
+  encryption, Amazon s3 will automatically encrypt the data on every
+  write and decrypt the data on every
+  read~\cite{hid-sp18-420-amazon-S3-data-encryption}.
 
-Data can be securely uploaded or downloaded in S3 using SSL encrypted
-endpoints. If user chooses to server side encryption, Amazon s3 will
-automatically encrypt
-the data on every write and decrypt the data on every
-read~\cite{hid-sp18-420-amazon-S3-data-encryption}.
+\item [Versioning.] Amazon S3 provides versioning capability to
+  preserve and restore all the versions of objects in a bucket. This
+  allows the recovery for any application failure or wrong action of
+  user or it is available whenever required for reference. User can
+  configure life cycle
+  riles~\cite{hid-sp18-420-amazon-S3-lidecycle-rule} to automatically
+  manage the versioning.
 
-\item Versioning
+\end{description}
 
-Amazon S3 provides versioning capability to preserve and restore all the
-versions of objects in a bucket. This allows the recovery for any application
-failure or wrong action of user or it is available whenever required for
-reference. User can configure life cycle
-riles~\cite{hid-sp18-420-amazon-S3-lidecycle-rule} to automatically manage the
-versioning.
-
-\end{enumerate}
-
-\paragraph{Storage Classes: }
+\subsection{Storage Classes}
 
 Amazon S3 provides different storage classes depending upon the requirement and
 use.
+
 \begin{description}
-\item [Amazon S3 Standard] it is used for the storage data that is frequently accessed.
-\item [Amazon S3 Standard Infrequent Access] It is used for storing data which is not
-used more frequently but need to be stored for long time.
+
+\item [Amazon S3 Standard] it is used for the storage data that is
+  frequently accessed.
+\item [Amazon S3 Standard Infrequent Access] It is used for storing
+  data which is not used more frequently but need to be stored for
+  long time.
 \item [Amazon Glacier] It is used for archiving data at low cost. 
 
 \end{description}
 
 
-\paragraph{Query in Place: } 
+\subsection{Query in Place} 
 
-This is one of the important feature of Amazon which provides suit of tools for
-analysing and processing huge amount of data in the cloud faster along with
-different ways to integrating existing workflows with Amazon S3. Using Amazon
-S3Select users can scan and filter data without retrieving storage which
-accelerates the performance and reduces the cost of analytics. It can process
-data within an object in storage at rest, and Amazon Athena and Amazon Redshift
-Spectrum enable you to run sophisticated analytics directly on data stored in
-S3.
+This is one of the important feature\GE of Amazon which provides suit
+of tools for analyzing and processing huge amount of data in the cloud
+faster along with different ways to integrating existing workflows
+with Amazon S3.\GVL{sentence} Using Amazon S3Select\GVL{now there is
+  something new how doe this relate to other terms you introduce. I
+  think you may need a glossary in a figure to deal with all the terms
+  the reader is by now confused} users can scan and filter data
+without retrieving storage which accelerates the performance and
+reduces the cost of analytics. It can process data within an object in
+storage at rest\GVL{what does this term mean}, and Amazon Athena
+\cite{} and Amazon Redshift Spectrum \cite{?} enable
+you to run sophisticated analytics directly on data stored in S3.
 
 \section{Use cases}
-There can be multiple ways and multiple use cases in which user can use Amazon
+There can be multiple ways and multiple use cases\GVL{what is the
+  difference between ways and use cases} in which user\GE can use Amazon
 S3 as a storage solutions. 
 
-\begin{enumerate}
-\item Static web content and media:
-
-Amazon S3 is widely used for storing static web content and media for different
-applications. Each object in the S3 has a
-unique HTTP URL to access that object. Hence, this content can be delivered
-directly. Amazon S3 can be
-used as an origin store for content delivery networks like Amazon CloudFront.
-Amazon S3 is suited for hosting web content that requires bandwidth for
-addressing extreme spikes in demand. For fast growing websites such as hosting
-data intensive content like video or photo sharing websites, Amazon S3 is the
-solution as it does not require any additional storage provisioning.
+\begin{description}
+\item [Static web content and media.] Amazon S3 is widely used for
+  storing static web content and media for different
+  applications. Each object in the S3 has a unique HTTP URL to access
+  that object. Hence, this content can be delivered directly. Amazon
+  S3 can be used as an origin store for content delivery networks like
+  Amazon CloudFront \cite{?}.  Amazon S3 is suited for hosting web
+  content that requires bandwidth for addressing extreme spikes in
+  demand. For fast growing websites such as hosting data intensive
+  content like video or photo sharing websites, Amazon S3 is the
+  solution as it does not require any additional storage provisioning.
  
-\item Host Static Website:
+\item [Host Static Website.]  Amazon S3 can be used to host static
+  website as it provides low cost and highly available
+  solution. User\GE can store static HTML files, images, videos\GVL{is
+    that not static web content?} and scripts such as java script
+  easily.
 
-Amazon S3 can be used to host static website as it
-provides low cost and highly available solution. User can store static HTML
-files, images, videos and scripts such as java script easily.
+\item [Computation and Analytics.]  Amazon S3 is used as a data store
+  for big data analytics. It is suitable for data that requires large
+  scale analysis like financial transaction analysis and multimedia
+  transcoding.\GVL{where are citations for the usecases} Since Amazon
+  S3 is scalable horizontally, user can access data from multiple
+  computing nodes simultaneously without any constrain of single
+  connection. AWS offers different services that helps user\GE to manage
+  big data.
 
-\item Computation and Analytics:
+\item [Backup and Archive.]  Amazon S3 offers secure and scalable
+  solution\GE to backup critical data. User can use Amazon glacier
+  \cite{?} to move data from S3 for backup purpose. Amazon S3 cross
+  origin replication is also available which can automatically copy\GE
+  objects to S3 buckets in different regions
+  asynchronously.\GVL{unclear as region is not explained}
+  Lifecycle rules can be defined to migrate less frequent data to S3
+  standard\GVL{what is that} infrequent access and archive to Amazon Glacier. Amazon
+  also provides versioning capability for S3 data. User can create
+  different versions of data and hence can keep the\GE backup with older
+  version and new data will get updated version.
 
-Amazon S3 is used as a data store for big data analytics. It is suitable for
-data that requires large scale analysis like
-financial transaction analysis and multimedia transcoding. Since Amazon S3 is
-scalable horizontally, user can access data from multiple computing nodes
-simultaneously without any constrain of single connection. AWS offers different
-services that helps user to manage big data.
-
-\item Backup and Archive:
-
-Amazon S3 offers secure and scalable solution to
-backup critical data. User can use Amazon glacier to move data from S3 for
-backup purpose. Amazon S3 cross origin replication is also available which can
-automatically copy objects to S3 buckets in different regions asynchronously.
-Lifecycle rules can be defined to migrate less frequent data to S3 standard 
-infrequent access and archive to Amazon Glacier. Amazon also provides
-versioning capability for S3 data. User can create different versions of data
-and hence can keep the backup with older version and new data will get updated
-version.
-
-\end{enumerate}
+\end{description}
 
 \section{Pricing}
 
-For Amazon S3 storage, user needs to pay only for the storage used. There is no
-cost required for setup and no minimum fee applicable. Amazon S3 pricing is
-based on the storage in the form of per gb per month, data transfer and number
-of requests per month.
-``For new user, AWS free tier provides discount which includes 5GB storage,
-20000 get requests, 2000 put requests and 15 GB data transfer for
-free''~\cite{hid-sp18-420-amazon-S3-pricing}. Amazon S3 provides pricing that
-differs based on region.
+For Amazon S3 storage, user\GE needs to pay only for the storage
+used. There is no cost required for setup and no minimum fee
+applicable. Amazon S3 pricing is based on the storage in the form of
+per gb per month, data transfer and number of requests per month.
+``For new user\GVL{but what is it for a real user. new user could trap
+you. what is cost for moving data out.}, AWS free tier
+provides discount which includes 5GB storage, 20000 get requests, 2000
+put requests and 15 GB data transfer for
+free''~\cite{hid-sp18-420-amazon-S3-pricing}. Amazon S3 provides
+pricing that differs based on region.
 
 
 \begin{acks}
 
   The author would like to thank Dr.~Gregor~von~Laszewski for his
-  support and suggestions to write this paper.
+  support and suggestions to write this paper.\GVL{I did now more than
+  that}
 
 \end{acks}
 
