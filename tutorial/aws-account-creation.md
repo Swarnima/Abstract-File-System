@@ -14,6 +14,7 @@ Open https://www.aws.com/, and click on Create New Account
 
 Fill in all the details such as email address, password, Confirm Password and AWS account name. AWS account name can be changed later if required. 
 Click on Continue. 
+![AWS Account details](hid-sp18-420/tutorial/images/aws steo 2.jpg)
 
 
 #### Step 3: Contact information
