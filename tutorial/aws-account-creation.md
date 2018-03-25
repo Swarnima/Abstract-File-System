@@ -14,7 +14,7 @@ Open https://www.aws.com/, and click on Create New Account
 
 Fill in all the details such as email address, password, Confirm Password and AWS account name. AWS account name can be changed later if required. 
 Click on Continue. 
-![AWS Account details](https://github.com/cloudmesh-community/hid-sp18-420/blob/master/tutorial/images/aws%20steo%202.jpg?raw=true)
+![AWS Account details](https://github.com/cloudmesh-community/hid-sp18-420/blob/master/tutorial/images/aws%20step%202.jpg?raw=true)
 
 
 #### Step 3: Contact information
@@ -23,12 +23,15 @@ Step 3 requires to fill the contact information.
 Select account type as Professional or Personal. (Account creation steps are same for both).
 Provide all details such as Full Name, Company name (Only for Professional account), Phone number, Country, Address, State, City, and Postal code. 
 Before clicking on Create Account and Continue, go through the terms and conditions and confirm about the AWS Customer Agreement. 
+![AWS Contact Information](https://github.com/cloudmesh-community/hid-sp18-420/blob/master/tutorial/images/aws_account_step3.PNG?raw=true)
 
 #### Step 4: Payment Information
 
 On the next page, AWS asks for credit card or debit card details. Payment information is required by AWS to verify the account. 
 Fill in all valid details and click on Secure Submit. 
 It will cut a small amount which is payed back once card is validated. 
+![AWS Payment Information](https://github.com/cloudmesh-community/hid-sp18-420/blob/master/tutorial/images/aws_account_payment.PNG?raw=true)
+
 
 #### Step 5: Phone verification
 
