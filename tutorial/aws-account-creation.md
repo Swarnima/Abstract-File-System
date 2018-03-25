@@ -1,0 +1,54 @@
+# AWS Account Application 
+
+hid-sp18-420
+
+Amazon Web Service (AWS) is the cloud computing platform provided by Amazon.  To access any AWS service, one needs to create an account with AWS. The account created can be a free account or the regular account. AWS free tier provides 12 months of introductory period to use AWS services for free with some limitations. 
+
+## Steps to create new account:
+
+#### Step 1 : Go to website
+
+Open https://www.aws.com/, and click on Create New Account
+
+#### Step 2: AWS Account details
+
+Fill in all the details such as email address, password, Confirm Password and AWS account name. AWS account name can be changed later if required. 
+Click on Continue. 
+
+
+#### Step 3: Contact information
+
+Step 3 requires to fill the contact information.  
+Select account type as Professional or Personal. (Account creation steps are same for both).
+Provide all details such as Full Name, Company name (Only for Professional account), Phone number, Country, Address, State, City, and Postal code. 
+Before clicking on Create Account and Continue, go through the terms and conditions and confirm about the AWS Customer Agreement. 
+
+#### Step 4: Payment Information
+
+On the next page, AWS asks for credit card or debit card details. Payment information is required by AWS to verify the account. 
+Fill in all valid details and click on Secure Submit. 
+It will cut a small amount which is payed back once card is validated. 
+
+#### Step 5: Phone verification
+
+Next step is to verify phone number. AWS will make a call on the given number and give a 4 digit code to verify your phone number. 
+
+#### Step 6: Select a support plan 
+
+AWS offers 3 plans while creating an account
+1.	Basic Plan: This is a free plan which provides 24*7 availability of resources, Best practices checks to improve secuirity and performance, and access to health status and notifications
+2.	Developer plan: This plan costs from $29 per month which is used for development and testing.
+3.	Business plan: This plan costs from $100 per month which is used in case of production workloads and business critical dependencies. 
+
+#### Account created successfully
+Once a support plan is selected account creation is complete. AWS offers some videos to get an understanding of AWS services. 
+
+
+## AWS Free Tier vs Regular costing
+
+AWS offers 12 months of period to access AWS services for free with limited access. If these limitations are crossed, AWS will charge for those services and respective amonut will be deducted from the card which was provided at the time of account creation. 
+
+#### AWS Free services
+
+
+
