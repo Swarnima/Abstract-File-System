@@ -14,7 +14,7 @@ Open https://www.aws.com/, and click on Create New Account
 
 Fill in all the details such as email address, password, Confirm Password and AWS account name. AWS account name can be changed later if required. 
 Click on Continue. 
-![AWS Account details](hid-sp18-420/tutorial/images/aws steo 2.jpg)
+![AWS Account details](https://github.com/cloudmesh-community/hid-sp18-420/blob/master/tutorial/images/aws%20steo%202.jpg?raw=true)
 
 
 #### Step 3: Contact information
