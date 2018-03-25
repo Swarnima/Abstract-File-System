@@ -14,6 +14,7 @@ Open https://www.aws.com/, and click on Create New Account
 
 Fill in all the details such as email address, password, Confirm Password and AWS account name. AWS account name can be changed later if required. 
 Click on Continue. 
+
 ![AWS Account details](https://github.com/cloudmesh-community/hid-sp18-420/blob/master/tutorial/images/aws%20step%202.jpg?raw=true)
 
 
@@ -23,13 +24,16 @@ Step 3 requires to fill the contact information.
 Select account type as Professional or Personal. (Account creation steps are same for both).
 Provide all details such as Full Name, Company name (Only for Professional account), Phone number, Country, Address, State, City, and Postal code. 
 Before clicking on Create Account and Continue, go through the terms and conditions and confirm about the AWS Customer Agreement. 
+
 ![AWS Contact Information](https://github.com/cloudmesh-community/hid-sp18-420/blob/master/tutorial/images/aws_account_step3.PNG?raw=true)
+
 
 #### Step 4: Payment Information
 
 On the next page, AWS asks for credit card or debit card details. Payment information is required by AWS to verify the account. 
 Fill in all valid details and click on Secure Submit. 
 It will cut a small amount which is payed back once card is validated. 
+
 ![AWS Payment Information](https://github.com/cloudmesh-community/hid-sp18-420/blob/master/tutorial/images/aws_account_payment.PNG?raw=true)
 
 
@@ -52,7 +56,41 @@ Once a support plan is selected account creation is complete. AWS offers some vi
 
 AWS offers 12 months of period to access AWS services for free with limited access. If these limitations are crossed, AWS will charge for those services and respective amonut will be deducted from the card which was provided at the time of account creation. 
 
-#### AWS Free services
+#### Cost comparison for AWS Services
+
+- Amazon EC2:
+
+	- AWS free tier offers 750 hours of Amazon EC2 Linux or Microsoft Windows server with t2.micro instance that is 1 GiB memory and 32-bit or 64-bit platform.
+	- AWS Ec2 Regular costing varies based on the region (AWS region is nothing but the area specified by AWS for their resources) and type of service. 
+
+		For t2.micro linux machine with 1GiB memory and 32-bit or 64-bit platform costs $0.0146 per Hour in Singapore region. 
+        
+- Amazon Simple Storage Service (S3)
+
+	- AWS free tier offers 5 GB of standard storage, 20000 requests to get data, and 2000 requests to put data.
+	- AWS S3 Regular costing varies based on AWS region and storage.
+
+		Standard storage of over 500 TB per month costs for $0.0355 per GB.
+
+- Amazon Relational Database Service (RDS)
+
+	- AWS free tier provides 750 hours of Amazon RDS t2.micro instance with 20 GB database storage, 10 millions IOs and 20 GB backup storage. RDS can run MySQL, PostgreSQL, MariaDB, Oracle BYOL or SQL Server.
+	- RDS regular costing varies based on AWS region and database type.
+
+		For RDS with t2.micro instance in Singapore region costs for $0.026 per hour.  
+
+- Amazon API Gateway 
+
+	- AWS free tier offers 1 million API calls per month are free
+	- Regular costing for API Gateway varies based on AWS region. 
+
+		For Singapore region, $4.25 per million API calls are charged. 
+    
+- Data transfer
+	
+    - AWS supports 15 GB of data transfer out for free tier usage
+    - Regular data transfer cost for Singapore region is $0.12/GB for the first 10 TB then 
+$0.085/GB for the next 40 TB then $0.082/GB for the next 100 TB and $0.08/GB for the next 350 TB.
 
 
 
