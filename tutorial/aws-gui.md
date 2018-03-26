@@ -1,12 +1,12 @@
 # AWS GUI Access
 
-Amazon Web Services
-
+Amazon Web Service (AWS) is the cloud computing platform provided by Amazon. 
+<!-- need to add details -->
 
 
 ## AWS Account
 
-To access services provided by Amazon, account should be created on AWS console. 
+In order to access services provided by Amazon, user account should be created on AWS console. 
 
 ##### Existing User: 
 Open **https://aws.amazon.com/**, and click **Sign in to the console**
@@ -21,9 +21,7 @@ Step 3: Contact details: Give all specified contact details.
 
 Step 4: Payment Information: Give credit card/ debit card details for user verification by AWS. 
 
-
-Step 5: Phone verification:
-AWS will make a call on the given number and give a 4 digit code to verify your phone number. 
+Step 5: Phone verification: AWS will make a call on the given number and give a 4 digit code to verify your phone number. 
 
 Step 6: Select a support plan and Continue. 
 
