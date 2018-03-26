@@ -63,16 +63,16 @@ region.
 
 
 Amazon S3 stores data within resources called buckets and data is stored inside
-these bucjets as an object where object is nothing but a data like text file.
+these buckets as an object where object is nothing but a data like text file.
 Each bucket has its own name and this name is globally unique. Amazon has
 defined different regions based on availability of its resources and this
-globally unique name indicates uniquness across all regions provided by Amazon.
+globally unique name indicates uniqueness across all regions provided by Amazon.
 The global namespace allows to organize and access data effectively.
 
 Amazon has not specified any restriction on number of data objects to be stored
 in one bucket but number of buckets are limited to 100 per account. Each object
 is associated with a meta data which is in key value pair format and consists of
-predefined key values such as LastModified date time of an object.
+predefined key values such as Last Modified date time of an object.
 
 S3 files can be accessed or created based on the access control restrictions
 applied to that bucket. This adds security to data. Amazon S3 has a search
@@ -221,11 +221,27 @@ tier provides discount which includes 5GB storage, 20000 get requests, 2000 put
 requests and 15 GB data transfer for
 free''~\cite{hid-sp18-420-amazon-S3-pricing}.
 
+\section{Conclusion}
+These days, usage of internet is increased on a large scale.
+Amazon S3 is one of the key services that fulfils this increased demand of big
+data storage. It is a secure, fast, reliable and scalable storage
+solution provided by Amazon.
+Along with the secured data storage, Amazon offers multiple features such as
+computation and analytics on stored data or performing queries to get the
+subset of data.
+Since S3 does not require any additional storage provisioning it is used as a
+data storage for fast growing websites. Data intensive content on a website
+such as videos or photo sharing websites can make best use of Amazon S3.
+S3 buckets can be configured as a static website hosting where once a bucket is
+configured, a website is available.
+Due to such features of S3, it has become a choice of some of the big companies
+like Netflix, Airbnb, Thomson Reuters, Zillow and many
+more~\cite{hid-sp18-420-amazon-S3}.
 
 \begin{acks}
 
 The author would like to thank Dr.~Gregor~von~Laszewski for his support and
-suggestions to write this paper and improve its content.
+suggestions to write this paper and help to improve content.
 
 \end{acks}
 
