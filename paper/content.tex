@@ -21,8 +21,8 @@
 
 \begin{abstract}
 
-Amazon Simple Storage Service (S3) is an object storage built to store and
-retrieve any amount of data from anywhere such as web sites or mobile
+Amazon Simple Storage Service (S3) is a storage system built to store and
+retrieve any amount of data objects from anywhere on web such as web sites or mobile
 applications. It is a simple web service that provides flexibility for user to
 manage data in a secure way and optimized cost. Amazon S3 manages security by
 providing access control, data encryption and versioning capability. Amazon S3
@@ -61,25 +61,27 @@ region.
 
 \section{Concepts and Architecture}
 
-Amazon S3 stores data within resources called buckets and data is stored as an
-object where object can be a data file in any format. Each bucket has its own
-name and this name is globally unique. Amazon has defined different regions
-based on availability of its resources. The globally unique name is unique name
-across all regions provided by Amazon. This global namespace allows users to
-have the unique bucket globally which is useful for organizing and accessing
-data.
+
+Amazon S3 stores data within resources called buckets and data is stored inside
+these bucjets as an object where object is nothing but a data like text file.
+Each bucket has its own name and this name is globally unique. Amazon has
+defined different regions based on availability of its resources and this
+globally unique name indicates uniquness across all regions provided by Amazon.
+The global namespace allows to organize and access data effectively.
 
 Amazon has not specified any restriction on number of data objects to be stored
-in one bucket bur number of buckets are limited to 100 per account. Each object
-is associated with meta data which is in key value pair format and consists of
-predefined meta data such as LastModified date time of object.
+in one bucket but number of buckets are limited to 100 per account. Each object
+is associated with a meta data which is in key value pair format and consists of
+predefined key values such as LastModified date time of an object.
 
-Users can access or create objects based on the access control restrictions
-applied to that bucket. Amazon S3 has a search functionality which can be used
-to search the objects within the bucket. This search is based on the file name
-and the search string should contain the full file name or any prefix of file
-name. Amazon does not provide content based search functionality for S3 so one
-cannot search for the internal data in a file.
+S3 files can be accessed or created based on the access control restrictions
+applied to that bucket. This adds security to data. Amazon S3 has a search
+functionality which can be used to search the objects within the bucket. This
+search is based on the file name and the search string should contain the full
+file name or any prefix of file name. Amazon does not provide content based
+search functionality for S3 so one cannot search for the internal data in a
+file.
+
 
 
 
@@ -92,7 +94,7 @@ Amazon s3 is simple to access using web based AWS management console,
 mobile app, full REST APIs and AWS SDKs for integration with Mobile
 SDK, Java, PHP, Python, \.NET, Node.js, Ruby. S3 features allows users
 to take data driven approach for optimization and management of data
-efficiently.
+efficiently~\cite{hid-sp18-420-amazon-S3-FAQ}.
 
 
 \subsection{Data Durability and Reliability} 
@@ -122,7 +124,7 @@ or monitor data access to user.
 
 \begin{description}
 
-\item [User identities.] Each user registered to Amazon’s web service gets an
+\item [User identities.] Each user registered to Amazon web service gets an
 identity. These identities are linked to credit cards to prevent one person to
 create multiple fake user accounts. S3 also has a concept of anonymous requests
 when no information is associated about user within the request.
