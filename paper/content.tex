@@ -136,7 +136,7 @@ identity. These identities are linked to credit cards to prevent one person to
 create multiple fake user accounts. S3 also has a concept of anonymous requests
 when no information is associated about user within the request.
 
-\item [Access control.]Access controls are given by access control lists (ACL).
+\item [Access control.] Access controls are given by access control lists (ACL).
 Each ACL can specify the access for up to 100 
 identities~\cite{hid-sp18-420-amazon-S3-details}
 S3 supports different access controls.
@@ -190,13 +190,15 @@ demand. For fast growing websites such as hosting data intensive content like
 video or photo sharing websites, Amazon S3 is the solution as it does not
 require any additional storage provisioning.
 
+
 \item [Host Static Website.] Amazon S3 provides completely available and
 scalable solution for static website hosting. It can be used to host the
 websites with static content such has HTML files, images, videos and scripts
 such as java scripts.
 Bucket with this static content needs to be configured for website hosting.
 While configuring this bucket, index document which is nothing but the webpage
-to which all requests to root domain are redirected. It is normally index.html
+to which all requests to root domain are
+redirected~\cite{hid-sp18-420-amazon-S3-details}. It is normally index.html
 file.
 After configuring the bucket, it is available with its end point. There is no
 additional cost involved for hosting static website on Amazon S3. Pricing is
