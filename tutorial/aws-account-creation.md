@@ -93,4 +93,10 @@ AWS offers 12 months of period to access AWS services for free with limited acce
 $0.085/GB for the next 40 TB then $0.082/GB for the next 100 TB and $0.08/GB for the next 350 TB.
 
 
-
+## References
+ 
+https://aws.amazon.com/free/
+https://aws.amazon.com/ec2/pricing/on-demand/
+https://aws.amazon.com/s3/pricing/
+https://aws.amazon.com/rds/pricing/
+https://aws.amazon.com/api-gateway/pricing/
