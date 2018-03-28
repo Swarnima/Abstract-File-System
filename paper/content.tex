@@ -102,6 +102,15 @@ designed for durability of 99.999999999\% of objects. Data is redundantly
 stored across multiple facilities and multiple devices in each
 facility''~\cite{hid-sp18-420-amazon-S3}.
 
+\subsection{Scalability}
+
+Amazon S3 is useful for fast growing websites. No additional storage
+provisioning is required by S3. The payment is based on usage so developers can
+start with small and grow their application as per need with same performance
+and reliability. Industries like healthcare, media and financial services that
+requires big data and analytics or archive application with changing demand can
+best make use of Amazon S3.
+
 \subsection{Simple Data Transfer} 
 
 Amazon S3 makes it simple to transfer data as it provides set of tools and
@@ -128,8 +137,9 @@ create multiple fake user accounts. S3 also has a concept of anonymous requests
 when no information is associated about user within the request.
 
 \item [Access control.]Access controls are given by access control lists (ACL).
-Each ACL can specify the access for up to 100 identities. S3 supports different
-access controls.
+Each ACL can specify the access for up to 100 
+identities~\cite{hid-sp18-420-amazon-S3-details}
+S3 supports different access controls.
 
 \begin{description}
 \item [FULLCONTROL] The owner preserves full control over the object with all
@@ -204,14 +214,16 @@ different services that helps to manage big data in S3.
 
 
 \item [Backup and Archive.] Amazon S3 offers different ways to securely backup
-data stored in S3. Amazon glacier~\cite{hid-sp18-420-amazon-glacier} can be used
-to move data from S3 for backup purpose. Amazon S3 cross origin replication is
-also available which can copy objects to S3 buckets in different AWS regions
-asynchronously. Lifecycle rules can be defined to migrate less frequent data to
-storage class named S3 standard infrequent access and archive to Amazon Glacier.
-Amazon also provides versioning capability for S3 data. Versions are crated for
-data objects in S3 so older data can be accessed with the older version of that
-data object.
+data stored in S3. Amazon glacier~\cite{hid-sp18-420-amazon-glacier} can be
+usedto move data from S3 for backup purpose. Amazon has
+specified different regions based on the resource availability. Amazon S3 cross
+region replication can be used for disaster recovery. With cross region
+replication all S3 objects from main bucket are replicated to destination
+bucketin different region. So in case of failure, there is always a backup in
+another region. 
+Amazon also provides versioning capability for S3 data. Versions are
+crated for data objects in S3 so older data can be accessed with the older
+version of that data object.
 
 \end{description}
 
