@@ -16,58 +16,59 @@ Open https://www.aws.com/, and click on Create New Account
 
 ### Step 2: AWS Account details
 
-Fill in all the details such as email address, password, confirm
-Password and AWS account name. AWS account name can be changed later
-if required.  Click on Continue.
+Fill in all the details such as email address, password, confirm the
+password and AWS account name. The AWS account name can be changed
+later if required.  Click on Continue.
 
 ![AWS Account details](https://github.com/cloudmesh-community/hid-sp18-420/blob/master/tutorial/images/aws%20step%202.jpg?raw=true)
 
 
 ### Step 3: Contact information
 
-Fill the contact information.
+Fill out the contact information.
 
-Select account type as Professional or Personal. (Account creation
-steps are same for both).
+Select the account type as Professional or Personal. (Account creation
+steps are the same for both).
  
-Provide all details such as Full Name, Company name (Only for
-Professional account), Phone number, Country, Address, State, City,
+Provide all details such as Full Name, Company Name (Only for
+Professional account), Phone Number, Country, Address, State, City,
 and Postal code.
 
-Before clicking on Create Account and Continue, go through the terms
-and conditions and confirm about the AWS Customer Agreement.
+Before clicking on `Create Account and Continue`, go through the terms
+and conditions and confirm the AWS Customer Agreement.
 
 ![AWS Contact Information](https://github.com/cloudmesh-community/hid-sp18-420/blob/master/tutorial/images/aws_account_step3.PNG?raw=true)
 
 
 ### Step 4: Payment Information
 
-On the next page, AWS asks for credit card or debit card
-details. Payment information is required by AWS to verify user
-account. Fill in all valid details and click on Secure
-Submit. Validate card with OTP or secured password.  It will cut a
-small amount which is payed back once card is validated.
+On the next page, AWS asks for a credit card or debit card
+details. Payment information is required by AWS to verify the user
+account creation. We do not recommend that you use a debit card.  Fill
+in all valid details and click on `Secure Submit`. Validate the card
+with a one time password or secured password.  It will charge a small
+amount which is payed back once card is validated.
 
 ![AWS Payment Information](https://github.com/cloudmesh-community/hid-sp18-420/blob/master/tutorial/images/aws_account_payment.PNG?raw=true)
 
 
 ### Step 5: Phone verification
 
-Next step is to verify phone number. 
+The next step is to verify phone number. 
 
 On this page, give a valid phone number where calls can be received. 
 
-Write a captcha and choose Call me now
+Fill out a captcha and choose Call me now.
 
-AWS will make a call on given number and give a 4 digit code to verify
+AWS will make a call on the given number and give a 4 digit code to verify
 your phone number.
 
 ### Step 6: Select a support plan 
 
 AWS offers 3 plans while creating an account
 
-1. Basic Plan: This is a free plan which provides 24*7 availability of
-   resources, Best practices checks to improve secuirity and
+1. Basic Plan: This is a *free* plan which provides 24*7 availability of
+   resources, best practices checks to improve secuirity and
    performance, and access to health status and notifications.
 2. Developer plan: This plan costs from $29 per month which is used
    for development and testing.
@@ -76,20 +77,22 @@ AWS offers 3 plans while creating an account
 
 ### Account created successfully
 
-Once a support plan is selected account creation is complete. AWS
+Once a support plan is selected the account creation is completed. AWS
 offers some videos to get an understanding of AWS services.
 
+\TODO{inlcude the video links here}
 
 ## AWS Free Tier vs. Regular costing
 
-AWS offers 12 months of period to access AWS services for free with
+AWS offers a 12 months of period to access AWS services for *free* with
 limited access. If these limitations are crossed, AWS will charge for
 those services and respective amonut will be deducted from the card
-which was provided at the time of account creation.
+which was provided at the time of account creation. Thus it is
+important to identify exactly what is included with the free offering.
 
 #### Cost for AWS Services
 
-\TODO{This talks about SIngapore, but we also want US}
+\TODO{This talks about Singapore, but we also want US}
 
 - Amazon EC2:
 
