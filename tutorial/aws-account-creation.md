@@ -89,24 +89,25 @@ which was provided at the time of account creation.
 
 #### Cost for AWS Services
 
+\TODO{This talks about SIngapore, but we also want US}
+
 - Amazon EC2:
 
 	- AWS free tier offers 750 hours of Amazon EC2 Linux or Microsoft
       Windows server with t2.micro instance that is 1 GiB memory and
       32-bit or 64-bit platform.
-	- AWS Ec2 Regular costing varies based on the region (AWS region
+	- AWS EC2 Regular costing varies based on the region (AWS region
       is nothing but the area specified by AWS for their resources)
       and type of service.
-
-		For t2.micro linux machine with 1GiB memory and 32-bit or 64-bit platform costs $0.0146 per Hour in Singapore region. 
+    - For t2.micro linux machine with 1GiB memory and 32-bit or 64-bit
+      platform costs $0.0146 per Hour in Singapore region.
         
 - Amazon Simple Storage Service (S3)
 
 	- AWS free tier offers 5 GB of standard storage, 20000 requests to
       get data, and 2000 requests to put data.
 	- AWS S3 Regular costing varies based on AWS region and storage.
-
-		Standard storage of over 500 TB per month costs for $0.0355 per GB.
+    - Standard storage of over 500 TB per month costs for $0.0355 per GB.
 
 - Amazon Relational Database Service (RDS)
 
@@ -116,15 +117,13 @@ which was provided at the time of account creation.
       SQL Server.
 	- RDS regular costing varies based on AWS region and database
       type.
-
-		For RDS with t2.micro instance in Singapore region costs for $0.026 per hour.  
+    - For RDS with t2.micro instance in Singapore region costs for $0.026 per hour.
 
 - Amazon API Gateway 
 
 	- AWS free tier offers 1 million API calls per month are free
 	- Regular costing for API Gateway varies based on AWS region. 
-
-		For Singapore region, $4.25 per million API calls are charged. 
+    - For Singapore region, $4.25 per million API calls are charged. 
     
 - Data transfer
 	
