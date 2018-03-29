@@ -4,13 +4,13 @@ hid-sp18-420
 
 Amazon Web Service (AWS) is the cloud computing platform provided by Amazon.  To access any AWS service, one needs to create an account with AWS. Account created in AWS can be a free account or the regular account. AWS free tier provides 12 months of introductory period to use AWS services for free with some limitations on usage. 
 
-## Steps to create new account:
+## Steps to create new account
 
-#### Step 1 : Go to website
+### Step 1 : Go to website
 
 Open https://www.aws.com/, and click on Create New Account
 
-#### Step 2: AWS Account details
+### Step 2: AWS Account details
 
 Fill in all the details such as email address, password, confirm Password and AWS account name. AWS account name can be changed later if required. 
 Click on Continue. 
@@ -18,7 +18,7 @@ Click on Continue.
 ![AWS Account details](https://github.com/cloudmesh-community/hid-sp18-420/blob/master/tutorial/images/aws%20step%202.jpg?raw=true)
 
 
-#### Step 3: Contact information
+### Step 3: Contact information
 
 Fill the contact information.  
  Select account type as Professional or Personal. (Account creation steps are same for both).
@@ -30,7 +30,7 @@ Before clicking on Create Account and Continue, go through the terms and conditi
 ![AWS Contact Information](https://github.com/cloudmesh-community/hid-sp18-420/blob/master/tutorial/images/aws_account_step3.PNG?raw=true)
 
 
-#### Step 4: Payment Information
+### Step 4: Payment Information
 
 On the next page, AWS asks for credit card or debit card details. Payment information is required by AWS to verify user account. Fill in all valid details and click on Secure Submit. Validate card with OTP or secured password. 
 It will cut a small amount which is payed back once card is validated. 
@@ -38,7 +38,7 @@ It will cut a small amount which is payed back once card is validated.
 ![AWS Payment Information](https://github.com/cloudmesh-community/hid-sp18-420/blob/master/tutorial/images/aws_account_payment.PNG?raw=true)
 
 
-#### Step 5: Phone verification
+### Step 5: Phone verification
 
 Next step is to verify phone number. 
 
@@ -48,22 +48,22 @@ Write a captcha and choose Call me now
 
 AWS will make a call on given number and give a 4 digit code to verify your phone number. 
 
-#### Step 6: Select a support plan 
+### Step 6: Select a support plan 
 
 AWS offers 3 plans while creating an account
 1.	Basic Plan: This is a free plan which provides 24*7 availability of resources, Best practices checks to improve secuirity and performance, and access to health status and notifications.
 2.	Developer plan: This plan costs from $29 per month which is used for development and testing.
 3.	Business plan: This plan costs from $100 per month which is used in case of production workloads and business critical dependencies. 
 
-#### Account created successfully
+### Account created successfully
 Once a support plan is selected account creation is complete. AWS offers some videos to get an understanding of AWS services. 
 
 
-## AWS Free Tier vs Regular costing
+## AWS Free Tier vs. Regular costing
 
 AWS offers 12 months of period to access AWS services for free with limited access. If these limitations are crossed, AWS will charge for those services and respective amonut will be deducted from the card which was provided at the time of account creation. 
 
-#### Cost comparison for AWS Services
+#### Cost for AWS Services
 
 - Amazon EC2:
 
@@ -102,12 +102,12 @@ $0.085/GB for the next 40 TB then $0.082/GB for the next 100 TB and $0.08/GB for
 
 ## References
  
-https://aws.amazon.com/free/
+* <https://aws.amazon.com/free/>
 
-https://aws.amazon.com/ec2/pricing/on-demand/
+* <https://aws.amazon.com/ec2/pricing/on-demand/>
 
-https://aws.amazon.com/s3/pricing/
+* <https://aws.amazon.com/s3/pricing/>
 
-https://aws.amazon.com/rds/pricing/
+* <https://aws.amazon.com/rds/pricing/>
 
-https://aws.amazon.com/api-gateway/pricing/
+* <https://aws.amazon.com/api-gateway/pricing/>
