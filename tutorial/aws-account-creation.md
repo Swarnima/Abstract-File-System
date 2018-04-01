@@ -2,10 +2,11 @@
 
 hid-sp18-420
 
-Amazon Web Service (AWS) is the cloud computing platform provided by
-Amazon.  To access any AWS service, one needs to create an account
-with AWS. Account created in AWS can be a free account or the regular
-account. AWS free tier provides 12 months of introductory period to
+Amazon Web Service (AWS) is a cloud computing platform provided by
+Amazon.  To access any AWS service, it is mandatory to create an account
+with AWS. This account can be a free account or a regular
+account depending upon the service usage.
+AWS free tier provides 12 months of introductory period to
 use AWS services for free with some limitations on usage.
 
 ## Steps to create new account
@@ -77,10 +78,10 @@ AWS offers 3 plans while creating an account
 
 ### Account created successfully
 
-Once a support plan is selected the account creation is completed. AWS
-offers some videos to get an understanding of AWS services.
+Once a support plan is selected an account creation is complete. AWS
+offers some 10 minutes videos to get an understanding of each AWS service.
+These videos are available at https://aws.amazon.com/getting-started/tutorials/
 
-\TODO{inlcude the video links here}
 
 ## AWS Free Tier vs. Regular costing
 
@@ -92,7 +93,6 @@ important to identify exactly what is included with the free offering.
 
 #### Cost for AWS Services
 
-\TODO{This talks about Singapore, but we also want US}
 
 - Amazon EC2:
 
@@ -102,15 +102,16 @@ important to identify exactly what is included with the free offering.
 	- AWS EC2 Regular costing varies based on the region (AWS region
       is nothing but the area specified by AWS for their resources)
       and type of service.
-    - For t2.micro linux machine with 1GiB memory and 32-bit or 64-bit
-      platform costs $0.0146 per Hour in Singapore region.
+    - For general purpose t2.micro linux machine 
+      with 1GiB memory and 32-bit or 64-bit
+      platform costs $0.0116 per Hour in US region.
         
 - Amazon Simple Storage Service (S3)
 
 	- AWS free tier offers 5 GB of standard storage, 20000 requests to
       get data, and 2000 requests to put data.
 	- AWS S3 Regular costing varies based on AWS region and storage.
-    - Standard storage of over 500 TB per month costs for $0.0355 per GB.
+    - Standard storage of over 500 TB per month costs for $0.021 per GB in US region.
 
 - Amazon Relational Database Service (RDS)
 
@@ -120,20 +121,20 @@ important to identify exactly what is included with the free offering.
       SQL Server.
 	- RDS regular costing varies based on AWS region and database
       type.
-    - For RDS with t2.micro instance in Singapore region costs for $0.026 per hour.
+    - For RDS with t2.micro instance in US region costs for $0.017 per hour.
 
 - Amazon API Gateway 
 
 	- AWS free tier offers 1 million API calls per month are free
 	- Regular costing for API Gateway varies based on AWS region. 
-    - For Singapore region, $4.25 per million API calls are charged. 
+    - For US region, $3.50 per million API calls are charged. 
     
 - Data transfer
 	
     - AWS supports 15 GB of data transfer out for free tier usage
-    - Regular data transfer cost for Singapore region is $0.12/GB for
-      the first 10 TB then $0.085/GB for the next 40 TB then $0.082/GB
-      for the next 100 TB and $0.08/GB for the next 350 TB.
+    - Regular data transfer cost for US region is $0.09/GB for
+      the first 10 TB then $0.085/GB for the next 40 TB then $0.07/GB
+      for the next 100 TB and $0.05/GB for the next 350 TB.
 
 
 ## References
