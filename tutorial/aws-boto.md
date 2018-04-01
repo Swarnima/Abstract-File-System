@@ -156,10 +156,11 @@ It returns ResultSet object which has list of all buckets.
 Data objects stored in a bucket has a metadata associated with it such as
 LastModified date and time. This information can also be captured.
 
+	# To list files in selected bucket
 	for key in bucket.list():
         	print "{name}".format(name = key.name)
-		print "{size}".format(size = key.size)
-		print "{modified}".format(modified = key.last_modified)
+        	print "{size}".format(size = key.size)
+        	print "{modified}".format(modified = key.last_modified)
 
 
 #### Delete object
@@ -178,5 +179,6 @@ S3Connection object.
 
 
 ## References 
-https://github.com/boto/boto
-http://docs.pythonboto.org/en/latest/
+
+* <https://github.com/boto/boto>
+* <http://docs.pythonboto.org/en/latest/>
