@@ -48,10 +48,10 @@ User names can contain alphanumeric characters, or any of the following: _+=,.@-
 * Select AWS Access type:
 	1. Programmatic access
 		
-This will generate access key and secret key which can be used in AWS APIs or
-SDKs to access AWS resources.
-
-        2. AWS Management Console access
+	This will generate access key and secret key which can be used in AWS APIs or
+	SDKs to access AWS resources.
+	
+	2. AWS Management Console access
 
 	Enables user login to console based on password.
         
