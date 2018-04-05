@@ -1,0 +1,67 @@
+% status: 0
+% chapter: TBD
+
+\title{Abstract File System}
+
+
+\author{Swarnima Sowani}
+\affiliation{%
+  \institution{Indiana University}
+  \streetaddress{Smith Research Center}
+  \city{Bloomington} 
+  \state{IN} 
+  \postcode{47408}
+}
+\email{shsowani@iu.edu}
+
+\author{Gregor von Laszewski}
+\affiliation{%
+  \institution{Indiana University}
+  \streetaddress{Smith Research Center}
+  \city{Bloomington} 
+  \state{IN} 
+  \postcode{47408}
+  \country{USA}}
+\email{laszewski@gmail.com}
+
+
+% The default list of authors is too long for headers}
+\renewcommand{\shortauthors}{G. v. Laszewski}
+
+
+\begin{abstract}
+Abstract file system project is based on developing a rest services that
+provides abstraction for file system.
+This project aims at providing a common way to access entire file system. 
+
+
+\end{abstract}
+
+\keywords{hid-420, File system, abstraction}
+
+
+\maketitle
+
+\section{Introduction}
+
+Abstract file system provides rest APIs to access different storage systems. 
+Along with local system, user data can be stored on other device, or some
+spplications like google drive, box.
+This segregated data can be accessed by a singe rest service which can
+internally call one service per resources. Resources are nothing but the data
+storage end points.
+
+
+
+
+
+\begin{acks}
+
+  The author would like to thank Dr.~Gregor~von~Laszewski for his
+  support and suggestions to write this paper.
+
+\end{acks}
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{report} 
+
