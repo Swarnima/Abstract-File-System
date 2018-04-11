@@ -44,14 +44,24 @@ This project aims at providing a common way to access entire file system.
 
 \section{Introduction}
 
-Abstract file system provides rest APIs to access different storage systems. 
-Along with local system, user data can be stored on other device, or some
-spplications like google drive, box.
-This segregated data can be accessed by a singe rest service which can
-internally call one service per resources. Resources are nothing but the data
-storage end points.
+Abstract file system provides rest APIs to access different storage systems. Now
+a days it is likely possible to have data stored at different locations such as
+personal laptop, desktop or google drive. With the abstract file system, it will
+be easy to access any storage resources in a consolidated way. The idea here is
+to create different services with one service per resource. Here, resources are
+local system, remote system, google drive and S3. Once these services are created
+for individual resource, a single service can be created which will internally call all
+the developed services in order to provide a consolidated view of data.
 
-
+The project goals are
+\begin{enumerate}
+\item	Check an authentication mechanism to access the local system with REST API developed.
+\item	Create a service which will work for the given directory on local machine.
+\item	Create a service to access google drive data~\cite{hid-sp18-420-amazon-S3-FAQ}.
+\item	Create a service to access data on S3.
+\item	Create a service which will internally call individual service for local system, 
+google drive and S3 to return a consolidated view of file system. 
+\end{enumerate}
 
 
 
