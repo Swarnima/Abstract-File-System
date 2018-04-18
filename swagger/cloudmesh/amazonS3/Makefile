@@ -44,9 +44,7 @@ service:dest
 	$(SWAGGERCODEGEN) generate  -i $(YAML)  -l python-flask  -o $(DESTDIR)  -D supportPython2=true
 	
 	rm *.jar
-	
-	sudo chmod -R 777 $(SERVERDIR)
-	
+		
 	cp -r *.py $(DESTDIR)/swagger_server/controllers
 	cd $(DESTDIR) && pip install boto && pip install -r requirements.txt && \
 	python setup.py install && python -m swagger_server	
