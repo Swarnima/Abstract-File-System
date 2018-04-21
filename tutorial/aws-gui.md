@@ -1,8 +1,11 @@
 # AWS GUI Access
 
-Amazon Web Service (AWS) is the cloud computing platform provided by Amazon. 
-AWS provides browser based GUI called AWS management console. Through this
-console, a customer can manage their resources.
+Amazon Web Service (AWS) is the cloud computing platform provided by Amazon.
+AWSoffers different dunctionalities for database storage, compute power, content
+delivery and many more to help businesses scale and grow.
+AWS provides browser based Graphical User Interface(GUI). Through this GUI,
+customer can manage their resources.
+All AWS services can be accessed from the GUI. 
 
 
 
@@ -118,3 +121,47 @@ this step.
 Hence, it is important to download it or store it somewhere for using it later.
 ![AWS create
 user](https://github.com/cloudmesh-community/hid-sp18-420/blob/master/tutorial/images/userCreated.PNG?raw=true)
+
+## AWS Services
+
+All the services provided by Amazon are available at the ``Services`` drop down
+provided at the top of all pages.
+![AWS
+services](https://github.com/cloudmesh-community/hid-sp18-420/blob/master/tutorial/images/aws_services.PNG?raw=true)
+
+### Access S3
+
+To access Amazon S3, select ``S3`` from the ``Services`` drop down at the top
+ofweb page.
+
+#### Create new bucket
+
+Click on ``Create Bucket`` button. 
+
+Provide bucket name and Region
+
+There are other optional tabs to set bucket properties and permissions. 
+
+Click on ``Create``
+
+A new bucket will be created. 
+
+![AWS
+bucket](https://raw.githubusercontent.com/cloudmesh-community/hid-sp18-420/master/tutorial/images/s3-bucket.JPG?raw=true)
+
+#### Upload file
+
+To upload a file to S3 bucket, go to the bucket to which file needs to be
+uploaded.
+
+1. Simply drag and drop the required file.
+2. Click on Upload button
+
+A popup will appear to add more files, set file permission, set file properties
+and review.
+
+![file
+upload](https://github.com/cloudmesh-community/hid-sp18-420/blob/master/tutorial/images/upload.JPG?raw=true?raw=true)
+
+
+In this way, it is very simple to use the AWS services with the GUI provided.
