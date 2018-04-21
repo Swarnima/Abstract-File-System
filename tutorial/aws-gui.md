@@ -136,13 +136,13 @@ ofweb page.
 
 #### Create new bucket
 
-Click on ``Create Bucket`` button. 
+1. Click on ``Create Bucket`` button. 
 
-Provide bucket name and Region
+2. Provide bucket name and Region
 
-There are other optional tabs to set bucket properties and permissions. 
+3. There are other optional tabs to set bucket properties and permissions. 
 
-Click on ``Create``
+4. Click on ``Create``
 
 A new bucket will be created. 
 
