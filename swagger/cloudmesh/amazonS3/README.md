@@ -52,7 +52,7 @@ Use command ``make clean`` to clean the code
 
 #### 3. Using Docker
 
-Use command ``make docker-all``
+Use command ``make container``
 
 This will internally call ``make docker-build`` and ``make docker-start``
 

@@ -7,22 +7,22 @@ CREATED=server
 all: service start 
 	@echo "DONE"
 
-docker-all: docker-build docker-start
+container: docker-build docker-start
 	@echo "DONE"
 
 docker-build:
 	@echo "building the image from docker file..."
-	docker build --no-cache -t swarnima/swagger-docker .
+	docker build --no-cache -t swarnima/swagger-s3 .
 	@echo "image DONE"
 
 docker-pull:
 	@echo "pulling the image from dockerhub..."
-	docker pull swarnima/swagger-docker
+	docker pull swarnima/swagger-s3
 	@echo "image DONE"
 
 docker-start:
 	@echo "starting the service in container..."
-	docker run -p 8080:8080 swarnima/swagger-docker
+	docker run -p 8080:8080 swarnima/swagger-s3
 
 docker-stop:
 	@echo "stopping the service..."
@@ -31,7 +31,7 @@ docker-stop:
 
 docker-remove:
 	@echo "removing the image..."
-	docker rmi -f swarnima/swagger-docker
+	docker rmi -f swarnima/swagger-s3
 	@echo "image removed"
 
 docker-clean: docker-stop docker-remove
