@@ -1,61 +1,78 @@
 SWAGGERCODEGEN=java -jar swagger-codegen-cli-2.3.1.jar
-YAML=amazon.yaml
-SERVERDIR=server/
+YAMLFILE=amazon.yaml
 DESTDIR=server/amazonS3/flaskConnexion
+CREATED=server
+
 
 all: service start 
-	@echo "service started"
+	@echo "DONE"
 
-container: docker-build docker-start
+docker-all: docker-build docker-start
 	@echo "DONE"
 
 docker-build:
 	@echo "building the image from docker file..."
-	sudo docker build -t cloudmesh-amazonS3 .
+	docker build --no-cache -t swarnima/swagger-docker .
 	@echo "image DONE"
 
 docker-pull:
 	@echo "pulling the image from dockerhub..."
-	docker pull cloudmesh-amazonS3
+	docker pull swarnima/swagger-docker
 	@echo "image DONE"
 
 docker-start:
 	@echo "starting the service in container..."
-	docker run -p 8080:8080 cloudmesh-amazonS3
+	docker run -p 8080:8080 swarnima/swagger-docker
 
 docker-stop:
-	@echo "stoping the service..."
+	@echo "stopping the service..."
 	docker stop $$(docker ps -alq)
 	@echo "service stopped"
 
 docker-remove:
 	@echo "removing the image..."
-	docker rmi -f cloudmesh-amazonS3
+	docker rmi -f swarnima/swagger-docker
 	@echo "image removed"
 
 docker-clean: docker-stop docker-remove
 	@echo "DONE"
 
 dest:
-	mkdir $(SERVERDIR)
-
-service:dest 
-	wget https://oss.sonatype.org/content/repositories/releases/io/swagger/swagger-codegen-cli/2.3.1/swagger-codegen-cli-2.3.1.jar
-	$(SWAGGERCODEGEN) generate  -i $(YAML)  -l python-flask  -o $(DESTDIR)  -D supportPython2=true
+	mkdir -p $(DESTDIR)
+	 
+service: dest
+	@echo "creating the service..."
+	wget http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/2.3.1/swagger-codegen-cli-2.3.1.jar
+	$(SWAGGERCODEGEN) generate \
+	-i $(YAMLFILE) \
+	-l python-flask \
+	-o $(DESTDIR) \
+	-D supportPython2=true
 	
 	rm *.jar
-		
+	pip install --upgrade pip
+	pip install virtualenv
+    
 	cp -r *.py $(DESTDIR)/swagger_server/controllers
-	cd $(DESTDIR) && pip install boto && pip install -r requirements.txt && \
-	python setup.py install && python -m swagger_server	
+	cp base_model_.py $(DESTDIR)/swagger_server/models
+	cd $(DESTDIR) && pip install -r requirements.txt && \
+	python setup.py install 
+	
+	
+
+start:  
+	@echo "starting the service..."
+	cd $(DESTDIR) && python -m swagger_server
 
 test:
-	curl http://127.0.0.1:8080/cloudmesh/amazonS3/listBuckets
-	
+	curl http://localhost:8080/cloudmesh/amazonS3/listBuckets
+            
 stop:
-	ps -ef | grep swagger | grep -v "grep"| awk '{print $$2}' | xargs kill -9
+	@echo "stopping the service"
+	ps -ef | grep swagger_server | grep -v "grep" | awk '{print $$2}' | xargs kill -9
+	@echo "service stopped"
 
 clean:
-	sudo rm -r $(SERVERDIR)
-	rm *.jar
+	@echo "removing service files created"
+	rm -rf $(CREATED)
 

@@ -1,0 +1,81 @@
+---
+swagger: "2.0"
+info:
+  description: "This is a simple swagger service to list all s3 buckets of account\
+    \ and get all objects of selected bucket"
+  version: "1.0.0"
+  title: "Swagger for Amazon S3"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "shsowani@iu.edu"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "localhost:8080"
+basePath: "/cloudmesh/amazonS3"
+tags:
+- name: "listBuckets"
+  description: "Get all buckets"
+  externalDocs:
+    description: " Get all buckets"
+    url: "http://swagger.io"
+- name: "listObjects"
+  description: "List all objects in bucket"
+schemes:
+- "http"
+paths:
+  /listBuckets:
+    get:
+      tags:
+      - "listBuckets"
+      summary: "Get all buckets"
+      description: "Returns a list of buckets"
+      operationId: "list_buckets"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/OUTPUT"
+        400:
+          description: "Invalid request"
+      x-swagger-router-controller: "swagger_server.controllers.list_buckets_controller"
+  /listObjects/{bucketName}:
+    get:
+      summary: "List objects by bucket name"
+      description: "Returns list of objects in bucket"
+      operationId: "list_objects"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "bucketName"
+        in: "path"
+        description: "bucket name"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/OUTPUT"
+        400:
+          description: "Invalid request"
+        404:
+          description: "Invalid URL"
+        500:
+          description: "Bucket not found"
+      x-swagger-router-controller: "swagger_server.controllers.default_controller"
+definitions:
+  OUTPUT:
+    type: "object"
+    required:
+    - "finalstring"
+    properties:
+      finalstring:
+        type: "string"
+    example:
+      finalstring: "finalstring"
