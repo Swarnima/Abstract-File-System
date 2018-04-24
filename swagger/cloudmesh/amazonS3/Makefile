@@ -66,6 +66,10 @@ start:
 
 test:
 	curl http://localhost:8080/cloudmesh/amazonS3/listBuckets
+	curl http://localhost:8080/cloudmesh/amazonS3/listObjects/spring-18
+	curl http://localhost:8080/cloudmesh/amazonS3/listObjects/test-cloudmesh
+	curl http://localhost:8080/cloudmesh/amazonS3/listObjects/hid-420
+
             
 stop:
 	@echo "stopping the service"
