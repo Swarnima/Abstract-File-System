@@ -25,7 +25,7 @@ Main functionality can be found in below files-
 #### 1. Using swagger code generator
 
 * Clone repository ``hid-sp18-420.git``
-* Go to folder ``/server/cpu/flaskConnexion``
+* Go to folder ``/swagger/cloudmesh/amazonS3``
 * Download swagger-codegen-cli jar file by command
 	``wget http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/2.3.1/swagger-codegen-cli-2.3.1.jar
 ``
@@ -34,7 +34,7 @@ Main functionality can be found in below files-
 	
 	 This will generate server stubs
 * copy list_buckets_controller.py and default_controller.py files to ``/server/amazonS3/flaskConnexion/swagger_server/controllers``
-* go to ``cd swagger_example/client/cpu``
+* go to ``cd server/amazonS3/flaskConnexion``
 * run ``pip install -r requirements.txt``
 * run ``python setup.py install``
 * run ``python -m swagger_server``
