@@ -42,14 +42,17 @@ Main functionality can be found in below files-
 	`` * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)``
 
 * Test on broswer or make curl calls to test
-
-	url http://localhost:8080/cloudmesh/amazonS3/listBuckets
-	curl http://localhost:8080/cloudmesh/amazonS3/listObjects/spring-18
-	curl http://localhost:8080/cloudmesh/amazonS3/listObjects/test-cloudmesh
-	curl http://localhost:8080/cloudmesh/amazonS3/listObjects/hid-420
+	 
+		 curl http://localhost:8080/cloudmesh/amazonS3/listBuckets
+		 curl http://localhost:8080/cloudmesh/amazonS3/listObjects/spring-18
+		 curl http://localhost:8080/cloudmesh/amazonS3/listObjects/test-cloudmesh
+		 curl http://localhost:8080/cloudmesh/amazonS3/listObjects/hid-420
 
 
 #### 2. Using make file
+Clone repository ``hid-sp18-420.git``
+
+Go to folder ``/swagger/cloudmesh/amazonS3``
 
 Use command ``make`` to generate code 
 
@@ -59,6 +62,10 @@ Use command ``make clean`` to clean the code
 
 #### 3. Using Docker
 
+Clone repository ``hid-sp18-420.git``
+
+Go to folder ``/swagger/cloudmesh/amazonS3``
+
 Use command ``make container``
 
 This will internally call ``make docker-build`` and ``make docker-start``
@@ -67,5 +74,10 @@ Once docker build is successful and container is created, run ``make test`` to c
 
 Run ``make docker-clean`` to remove docker image
 
- 
+
+#### Output
+
+Video to display working of this assignment - https://drive.google.com/open?id=1RchYE1BHIkzScGbYRTuPnAwp6_1lYYfb
+
+
 
