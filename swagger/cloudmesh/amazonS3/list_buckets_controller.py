@@ -19,7 +19,7 @@ def list_buckets():  # noqa: E501
 
 def get_list():
     REGION_HOST = 's3.us-east-2.amazonaws.com'
-    conn = boto.connect_s3('AKIAINI72RFSXUFOYJ2Q','ZMqESFesgIh3iNTvqNi9VEf50ZV2P9/LnduDG1lm',host=REGION_HOST)
+    conn = boto.connect_s3('AKIAI6474KOO6UGL3EJA','y5bp5/2OdPDlBnDtcN52PxxRNCfBZSEONQI6x9kk',host=REGION_HOST)
     print(conn.get_all_buckets())
     result = list()
     print(result)
