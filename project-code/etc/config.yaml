@@ -1,0 +1,14 @@
+cloudmesh:
+  file-system-config:
+    amazonS3:
+      accessKey: "AKIAINI72RFSXUFOYJ2Q"
+      secretKey: "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"
+      region: "s3.us-east-2.amazonaws.com"
+      bucket: "cloudmesh-test"
+
+    VM:
+      hostName: "172.31.28.147"
+      port: "21"
+      userName: "test"
+      password: "Pingpong9!"
+

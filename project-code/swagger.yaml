@@ -1,0 +1,329 @@
+---
+swagger: "2.0"
+info:
+  description: "This is a simple swagger service to list all s3 buckets of account\
+    \ and get all objects of selected bucket"
+  version: "1.0.0"
+  title: "Swagger for Amazon S3"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "shsowani@iu.edu"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "localhost:8080"
+basePath: "/cloudmesh/file-system"
+tags:
+- name: "allS3Operations"
+  description: "For all file operations on S3 bucket"
+  externalDocs:
+    description: "all operations on S3 bucket"
+    url: "http://swagger.io"
+- name: "allDriveOperations"
+  description: "For all file operations on google drive"
+  externalDocs:
+    description: "all file operations on google drive"
+    url: "http://swagger.io"
+- name: "allVMOperations"
+  description: "For all file operations on virtual machine"
+  externalDocs:
+    description: "all file operations on virtual machine"
+    url: "http://swagger.io"
+schemes:
+- "http"
+paths:
+  /S3/listData:
+    get:
+      tags:
+      - "allS3Operations"
+      summary: "Get all buckets"
+      description: "Returns a list of buckets"
+      operationId: "list_buckets"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/OUTPUT"
+        400:
+          description: "Invalid request"
+      x-swagger-router-controller: "swagger_server.controllers.all_s3_operations_controller"
+  /S3/deleteFile/{fileName}:
+    get:
+      tags:
+      - "allS3Operations"
+      summary: "Delete file"
+      description: "deletes a specified file"
+      operationId: "delete_file"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "fileName"
+        in: "path"
+        description: "file name"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+        400:
+          description: "Invalid request"
+        404:
+          description: "Invalid URL"
+        500:
+          description: "Bucket not found"
+      x-swagger-router-controller: "swagger_server.controllers.all_s3_operations_controller"
+  /S3/uploadFile/{fileName}:
+    get:
+      tags:
+      - "allS3Operations"
+      summary: "Uploads a specified file to S3"
+      description: "upload file to specified bucket"
+      operationId: "upload_file"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "fileName"
+        in: "path"
+        description: "file name"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+        400:
+          description: "Invalid request"
+        404:
+          description: "Invalid URL"
+        500:
+          description: "Bucket not found"
+      x-swagger-router-controller: "swagger_server.controllers.all_s3_operations_controller"
+  /S3/downloadFile/{fileName}:
+    get:
+      tags:
+      - "allS3Operations"
+      summary: "Downloads file from bucket name"
+      description: "upload file to specified bucket"
+      operationId: "download_file"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "fileName"
+        in: "path"
+        description: "file name"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+        400:
+          description: "Invalid request"
+        404:
+          description: "Invalid URL"
+        500:
+          description: "Bucket not found"
+      x-swagger-router-controller: "swagger_server.controllers.all_s3_operations_controller"
+  /drive/listData:
+    get:
+      tags:
+      - "allDriveOperations"
+      summary: "Get all folders and files"
+      description: "Returns a list of folders and files"
+      operationId: "list_data"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/OUTPUT"
+        400:
+          description: "Invalid request"
+      x-swagger-router-controller: "swagger_server.controllers.all_drive_operations_controller"
+  /drive/deleteFile/{fileName}:
+    get:
+      tags:
+      - "allDriveOperations"
+      summary: "Delete file"
+      description: "Deletes file or folder"
+      operationId: "delete_drive_file"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "fileName"
+        in: "path"
+        description: "file name"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+        400:
+          description: "Invalid request"
+        404:
+          description: "Invalid URL"
+        500:
+          description: "Bucket not found"
+      x-swagger-router-controller: "swagger_server.controllers.all_drive_operations_controller"
+  /drive/uploadFile/{fileName}:
+    get:
+      tags:
+      - "allDriveOperations"
+      summary: "Uploads file"
+      description: "upload file"
+      operationId: "upload_drive_file"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "fileName"
+        in: "path"
+        description: "file name"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+        400:
+          description: "Invalid request"
+        404:
+          description: "Invalid URL"
+        500:
+          description: "Bucket not found"
+      x-swagger-router-controller: "swagger_server.controllers.all_drive_operations_controller"
+  /drive/downloadFile/{fileName}:
+    get:
+      tags:
+      - "allDriveOperations"
+      summary: "Downloads file"
+      description: "Downloads file"
+      operationId: "download_drive_file"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "fileName"
+        in: "path"
+        description: "file name"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+        400:
+          description: "Invalid request"
+        404:
+          description: "Invalid URL"
+        500:
+          description: "Bucket not found"
+      x-swagger-router-controller: "swagger_server.controllers.all_drive_operations_controller"
+  /VM/listData:
+    get:
+      tags:
+      - "allVMOperations"
+      summary: "Get all buckets"
+      description: "Returns a list of buckets"
+      operationId: "list_vm_data"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/OUTPUT"
+        400:
+          description: "Invalid request"
+      x-swagger-router-controller: "swagger_server.controllers.all_vm_operations_controller"
+  /VM/deleteFile/{fileName}:
+    get:
+      tags:
+      - "allVMOperations"
+      summary: "Delete file"
+      description: "Deletes file or folder"
+      operationId: "delete_vm_file"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "fileName"
+        in: "path"
+        description: "file name"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+        400:
+          description: "Invalid request"
+        404:
+          description: "Invalid URL"
+        500:
+          description: "Bucket not found"
+      x-swagger-router-controller: "swagger_server.controllers.all_vm_operations_controller"
+  /VM/uploadFile/{fileName}:
+    get:
+      tags:
+      - "allVMOperations"
+      summary: "Uploads file"
+      description: "upload file"
+      operationId: "upload_vm_file"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "fileName"
+        in: "path"
+        description: "file name"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+        400:
+          description: "Invalid request"
+        404:
+          description: "Invalid URL"
+        500:
+          description: "Bucket not found"
+      x-swagger-router-controller: "swagger_server.controllers.all_vm_operations_controller"
+  /VM/downloadFile/{fileName}:
+    get:
+      tags:
+      - "allVMOperations"
+      summary: "Downloads file"
+      description: "Downloads file"
+      operationId: "download_vm_file"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "fileName"
+        in: "path"
+        description: "file name"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+        400:
+          description: "Invalid request"
+        404:
+          description: "Invalid URL"
+        500:
+          description: "Bucket not found"
+      x-swagger-router-controller: "swagger_server.controllers.all_vm_operations_controller"
+definitions:
+  OUTPUT:
+    type: "object"
+    required:
+    - "finalstring"
+    properties:
+      finalstring:
+        type: "string"
+    example:
+      finalstring: "finalstring"

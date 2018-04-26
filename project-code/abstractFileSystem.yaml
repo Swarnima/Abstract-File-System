@@ -1,0 +1,322 @@
+swagger: '2.0'
+info:
+  description: >-
+    This is a simple swagger service to list all s3 buckets of account and get
+    all objects of selected bucket
+  version: 1.0.0
+  title: Swagger for Amazon S3
+  termsOfService: 'http://swagger.io/terms/'
+  contact:
+    email: shsowani@iu.edu
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+host: localhost:8080
+basePath: /cloudmesh/file-system
+tags:
+  - name: allS3Operations
+    description: For all file operations on S3 bucket
+    externalDocs:
+      description: 'all operations on S3 bucket'
+      url: 'http://swagger.io'
+  - name: allDriveOperations
+    description: For all file operations on google drive
+    externalDocs:
+      description: 'all file operations on google drive'
+      url: 'http://swagger.io'
+  - name: allVMOperations
+    description: For all file operations on virtual machine
+    externalDocs:
+      description: 'all file operations on virtual machine'
+      url: 'http://swagger.io'
+schemes:
+  - http
+paths:
+  '/S3/listData':
+    get:
+      tags:
+        - allS3Operations
+      summary: Get all buckets
+      description: Returns a list of buckets
+      operationId: listBuckets
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/OUTPUT'
+        '400':
+          description: Invalid request
+  '/S3/deleteFile/{fileName}':
+    get:      
+      tags:
+        - allS3Operations
+      summary: Delete file 
+      description: deletes a specified file
+      operationId: deleteFile
+      produces:
+        - application/json
+      parameters:
+        - name: fileName
+          in: path
+          description: file name
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+        '400':
+          description: Invalid request
+        '404':
+          description: Invalid URL
+        '500':
+          description: Bucket not found
+          
+  '/S3/uploadFile/{fileName}':
+    get:      
+      tags:
+        - allS3Operations
+      summary: Uploads a specified file to S3
+      description: upload file to specified bucket
+      operationId: uploadFile
+      produces:
+        - application/json
+      parameters:
+        - name: fileName
+          in: path
+          description: file name
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+        '400':
+          description: Invalid request
+        '404':
+          description: Invalid URL
+        '500':
+          description: Bucket not found
+          
+  '/S3/downloadFile/{fileName}':
+    get:      
+      tags:
+        - allS3Operations
+      summary: Downloads file from bucket name
+      description: upload file to specified bucket
+      operationId: downloadFile
+      produces:
+        - application/json
+      parameters:
+        - name: fileName
+          in: path
+          description: file name
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+        '400':
+          description: Invalid request
+        '404':
+          description: Invalid URL
+        '500':
+          description: Bucket not found
+  '/drive/listData':
+    get:
+      tags:
+        - allDriveOperations
+      summary: Get all folders and files
+      description: Returns a list of folders and files
+      operationId: listData
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/OUTPUT'
+        '400':
+          description: Invalid request
+  
+  '/drive/deleteFile/{fileName}':
+    get:      
+      tags:
+        - allDriveOperations
+      summary: Delete file
+      description: Deletes file or folder
+      operationId: deleteDriveFile
+      produces:
+        - application/json
+      parameters:
+        - name: fileName
+          in: path
+          description: file name
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+        '400':
+          description: Invalid request
+        '404':
+          description: Invalid URL
+        '500':
+          description: Bucket not found
+          
+  '/drive/uploadFile/{fileName}':
+    get:      
+      tags:
+        - allDriveOperations
+      summary: Uploads file
+      description: upload file
+      operationId: uploadDriveFile
+      produces:
+        - application/json
+      parameters:
+        - name: fileName
+          in: path
+          description: file name
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+        '400':
+          description: Invalid request
+        '404':
+          description: Invalid URL
+        '500':
+          description: Bucket not found
+          
+  '/drive/downloadFile/{fileName}':
+    get:      
+      tags:
+        - allDriveOperations
+      summary: Downloads file 
+      description: Downloads file 
+      operationId: downloadDriveFile
+      produces:
+        - application/json
+      parameters:
+        - name: fileName
+          in: path
+          description: file name
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+        '400':
+          description: Invalid request
+        '404':
+          description: Invalid URL
+        '500':
+          description: Bucket not found
+  '/VM/listData':
+    get:
+      tags:
+        - allVMOperations
+      summary: Get all buckets
+      description: Returns a list of buckets
+      operationId: listVMData
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/OUTPUT'
+        '400':
+          description: Invalid request
+  
+  '/VM/deleteFile/{fileName}':
+    get:      
+      tags:
+        - allVMOperations
+      summary: Delete file
+      description: Deletes file or folder
+      operationId: deleteVMFile
+      produces:
+        - application/json
+      parameters:
+        - name: fileName
+          in: path
+          description: file name
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+        '400':
+          description: Invalid request
+        '404':
+          description: Invalid URL
+        '500':
+          description: Bucket not found
+          
+  '/VM/uploadFile/{fileName}':
+    get:      
+      tags:
+        - allVMOperations
+      summary: Uploads file
+      description: upload file
+      operationId: uploadVMFile
+      produces:
+        - application/json
+      parameters:
+        - name: fileName
+          in: path
+          description: file name
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+        '400':
+          description: Invalid request
+        '404':
+          description: Invalid URL
+        '500':
+          description: Bucket not found
+          
+  '/VM/downloadFile/{fileName}':
+    get:      
+      tags:
+        - allVMOperations
+      summary: Downloads file 
+      description: Downloads file 
+      operationId: downloadVMFile
+      produces:
+        - application/json
+      parameters:
+        - name: fileName
+          in: path
+          description: file name
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+        '400':
+          description: Invalid request
+        '404':
+          description: Invalid URL
+        '500':
+          description: Bucket not found        
+definitions:
+  OUTPUT:
+    type: object
+    required:
+      - finalstring
+    properties:
+      finalstring:
+        type: string
+        items:
+           type: string
