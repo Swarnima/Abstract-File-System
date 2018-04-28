@@ -58,7 +58,7 @@ service: dest
 	pip install --upgrade google-api-python-client
     
 	cp -r *.py $(DESTDIR)/swagger_server/controllers
-	scp -r etc $(DESTDIR)
+	cp -r etc $(DESTDIR)
 	cp base_model_.py $(DESTDIR)/swagger_server/models
 	cd $(DESTDIR) && pip install -r requirements.txt && \
 	python setup.py install 

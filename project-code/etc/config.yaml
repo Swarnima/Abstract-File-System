@@ -1,0 +1,15 @@
+cloudmesh:
+  file-system-config:
+    amazonS3:
+      accessKey: ""
+      secretKey: ""
+      region: ""
+      bucket: ""
+
+    VM:
+      hostName: ""
+      port: ""
+      userName: ""
+      password: ""
+
+    localPath: ""

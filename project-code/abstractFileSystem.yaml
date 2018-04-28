@@ -1,10 +1,9 @@
 swagger: '2.0'
 info:
   description: >-
-    This is a simple swagger service to list all s3 buckets of account and get
-    all objects of selected bucket
+    This is a simple swagger service to create different APIs to be used in the Abstract File System project
   version: 1.0.0
-  title: Swagger for Amazon S3
+  title: Swagger for Abstract File System
   termsOfService: 'http://swagger.io/terms/'
   contact:
     email: shsowani@iu.edu
@@ -17,12 +16,12 @@ tags:
   - name: allS3Operations
     description: For all file operations on S3 bucket
     externalDocs:
-      description: 'all operations on S3 bucket'
+      description: 'For all file operations on S3 bucket'
       url: 'http://swagger.io'
   - name: allDriveOperations
     description: For all file operations on google drive
     externalDocs:
-      description: 'all file operations on google drive'
+      description: 'For all file operations on google drive'
       url: 'http://swagger.io'
   - name: allVMOperations
     description: For all file operations on virtual machine
@@ -36,8 +35,8 @@ paths:
     get:
       tags:
         - allS3Operations
-      summary: Get all buckets
-      description: Returns a list of buckets
+      summary: Get all files in specific bucket 
+      description: Returns a list files in bucket
       operationId: listBuckets
       produces:
         - application/json
@@ -50,6 +49,7 @@ paths:
               $ref: '#/definitions/OUTPUT'
         '400':
           description: Invalid request
+          
   '/S3/deleteFile/{fileName}':
     get:      
       tags:
@@ -128,8 +128,8 @@ paths:
     get:
       tags:
         - allDriveOperations
-      summary: Get all folders and files
-      description: Returns a list of folders and files
+      summary: Get all files in drive
+      description: Returns a list of files in google drive
       operationId: listData
       produces:
         - application/json
@@ -165,8 +165,6 @@ paths:
           description: Invalid request
         '404':
           description: Invalid URL
-        '500':
-          description: Bucket not found
           
   '/drive/uploadFile/{fileName}':
     get:      
@@ -198,7 +196,7 @@ paths:
       tags:
         - allDriveOperations
       summary: Downloads file 
-      description: Downloads file 
+      description: Downloads file on drive
       operationId: downloadDriveFile
       produces:
         - application/json
@@ -215,14 +213,13 @@ paths:
           description: Invalid request
         '404':
           description: Invalid URL
-        '500':
-          description: Bucket not found
+          
   '/VM/listData':
     get:
       tags:
         - allVMOperations
-      summary: Get all buckets
-      description: Returns a list of buckets
+      summary: Get all files on virtual machine
+      description: Returns a list of files on virtual machine
       operationId: listVMData
       produces:
         - application/json
@@ -241,7 +238,7 @@ paths:
       tags:
         - allVMOperations
       summary: Delete file
-      description: Deletes file or folder
+      description: Deletes file on virtual machine
       operationId: deleteVMFile
       produces:
         - application/json
@@ -258,14 +255,12 @@ paths:
           description: Invalid request
         '404':
           description: Invalid URL
-        '500':
-          description: Bucket not found
           
   '/VM/uploadFile/{fileName}':
     get:      
       tags:
         - allVMOperations
-      summary: Uploads file
+      summary: Uploads file to virtual machine
       description: upload file
       operationId: uploadVMFile
       produces:
@@ -283,15 +278,13 @@ paths:
           description: Invalid request
         '404':
           description: Invalid URL
-        '500':
-          description: Bucket not found
           
   '/VM/downloadFile/{fileName}':
     get:      
       tags:
         - allVMOperations
-      summary: Downloads file 
-      description: Downloads file 
+      summary: Downloads file from virtual machine
+      description: Downloads file from virtual machine
       operationId: downloadVMFile
       produces:
         - application/json
@@ -308,8 +301,7 @@ paths:
           description: Invalid request
         '404':
           description: Invalid URL
-        '500':
-          description: Bucket not found        
+          
 definitions:
   OUTPUT:
     type: object

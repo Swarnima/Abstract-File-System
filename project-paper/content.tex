@@ -30,39 +30,143 @@
 
 
 \begin{abstract}
-Abstract file system project is based on developing a rest services that
-provides abstraction for file system.
-This project aims at providing a common way to access entire file system. 
+bstract File System is a web services package that implements and abstracts
+the underlying storage services and provides a uniform web services APIs for
+users to do file operations like, retrieving, storing, removing  etc. The
+services are provided to support storage engines such as Amazon Simple Storage
+Service, google drive and virtual machine. This web service package can be
+used by different big data applications client to perform file operations with
+consolidated data view. 
 
 
 \end{abstract}
 
-\keywords{hid-420, File system, abstraction}
+\keywords{hid-420, File system, abstraction, Amazon S3, Google drive, virtual machine}
 
 
 \maketitle
 
 \section{Introduction}
 
-Abstract file system provides rest APIs to access different storage systems. Now
-a days it is likely possible to have data stored at different locations such as
-personal laptop, desktop or google drive. With the abstract file system, it will
-be easy to access any storage resources in a consolidated way. The idea here is
-to create different services with one service per resource. Here, resources are
-local system, remote system, google drive and S3. Once these services are created
-for individual resource, a single service can be created which will internally call all
-the developed services in order to provide a consolidated view of data.
+
+File system operations is an integral part of the operating system and a
+quintessential part of most of the applications that deals with storing,
+retrieving or reading the files. Now a days it is likely possible to have data
+stored at different locations with different storage systems. Managing all this
+data together is a difficult task.
+
+There are numerous storage providers who facilitates their customers to store,
+read, write, retrieve and other sorts of file operations, however integrating
+with each one of them is a tedious tasks since, understanding and implementing
+APIs for each service is a time consuming tasks.
+
+That is why abstract file system comes into picture. Abstract file system
+provides a layer of abstraction over the underlying file system so that the
+users or customers can integrate storage services as file systems like 
+Amazon S3, Google Drive and other services without even 
+knowing their real implementation.
+
 
 The project goals are
 \begin{enumerate}
-\item	Check an authentication mechanism to access the local system with REST API developed.
-\item	Create a service which will work for the given directory on local machine.
-\item	Create a service to access google drive data~\cite{hid-sp18-420-amazon-S3-FAQ}.
+\item	Create a service to connect to some virtual system and perform file operations.
+\item	Create a service to access Google drive data~\cite{hid-sp18-420-google-drive}.
 \item	Create a service to access data on S3.
-\item	Create a service which will internally call individual service for local system, 
-google drive and S3 to return a consolidated view of file system. 
+\item	Create a service which will internally call above 
+3 services to return the consolidated view of file system. 
 \end{enumerate}
 
+\section{Technology Used}
+
+\section{Supported Storage Engines}
+Abstract file system is currently supporting three types of storage engines
+which are Amazon S3, Google drive and any virtual machine.
+
+\subsection{Amazon S3}
+
+Amazon S3 stands for Simple Storage Service. It is the most popular storage
+service provided by Amazon Web Service. It provides a highly scalable,
+reliable, and low latency data storage infrastructure at low costs. Amazon S3
+can be used to store and retrieve data of any kind and any amount from anywhere.
+
+Amazon S3 is known for its durability and stability. Amazon S3 SLAs claims to
+provide 99.999999999\% durability for files stored in its durable 
+storage~\cite{hid-sp18-420-amazon-S3}.
+
+Amazon S3 is popularly an object storage, where each file is treated as an
+object. Amazon S3 claims no cap on the amount of data that can be stored, that
+is why companies who needs scale on the go prefer to choose Amazon S3 as their
+file or object storage.
+
+Abstract File System encashes on the scalability and simplicity Amazon S3
+provides by abstracting the underlying mechanism and providing a way to users
+to store their data into the durable S3 storage.\\
+
+
+\textbf{File Operations Supported by Abstract File System}
+\\
+
+\begin{itemize}
+    \item   Listing of files inside a specified bucket (bucket logical
+segregation of files)
+    \item       Retrieving a specific file
+    \item       Storing file in  the specified bucket
+    \item       Removing the file from the bucket
+\end{itemize}
+
+\textbf{How to enable Amazon S3 as a storage in Abstract File System}\\
+In order to use Amazon S3 as a storage system, first user needs to have an
+account with AWS system.
+\textbf{Steps to create new root account with AWS}\\
+\begin{enumerate}
+    \item Open https://aws.amazon.com/ and click Create New Account.
+    \item Give details such as email address, password and user name.
+    \item Contact details: Give all specified contact details.
+    \item Payment Information: Give credit card or debit card details for user
+verification by AWS side.
+    \item       Phone verification: AWS will make a call on the given number
+and give a 4 digit code to verify your phone number.
+    \item Select a support plan and Continue.
+\end{enumerate}
+\\
+\textbf{Steps to create new user in AWS account and giving programmatic access}
+\\
+\begin{enumerate}
+    \item Login to AWS account.
+    \item Go to Services and select IAM from drop down. 
+	IAM stands for Access and Identity Management.
+    \item Inside IAM resources, click on User.
+    \item This will show the list of users. Click on Add User to add a new user.
+    \item Provide user name and select programmatic access.
+    \item On next page, provide optional permissions to user such as S3 Full
+access and similar.
+    \item On next page, review all settings and click Next.
+    \item Access key and secret key are displayed here. Save it somewhere safe.
+Key file can be downloaded here in \.csv format.
+\end{enumerate}
+\\
+
+\textbf{To use Amazon S3 as a storage engine within Abstract File System}, AWS
+credentials must be provided in the config.yaml file.
+Abstract file system requires user to provide 3 parameters to start using S3
+service.
+\begin{enumerate}
+ \item  Access Key
+ \item  Secret Key
+ \item  AWS region
+ \item  Bucket name
+\end{enumerate}
+
+Access key and secret key are required for the programmatic authentication for
+using S3 services. These keys are provided at the time of account creation of
+user.
+
+While creating a new bucket, an AWS region is assigned to that bucket. Though
+the buckets are globally unique and can be accessible from anywhere, they are
+placed in specific AWS region.
+Amazon S3 stores data within resources called bucket. Buckets are logical
+segregation of files. Bucket name is configurable from the config.yaml file
+which specifies the location where all file operations can be performed.
 
 
 \begin{acks}
