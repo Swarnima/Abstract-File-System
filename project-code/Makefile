@@ -54,7 +54,6 @@ service: dest
 	pip install virtualenv
 	pip install boto3
 	pip install pyyaml
-	pip install paramiko
 	pip install --upgrade google-api-python-client
     
 	cp -r *.py $(DESTDIR)/swagger_server/controllers

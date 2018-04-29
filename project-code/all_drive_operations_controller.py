@@ -86,7 +86,7 @@ def download_drive_file(fileName):  # noqa: E501
                 status, done = downloader.next_chunk()
                 print(int(status.progress() * 100))
 	    cwd_dir = os.getcwd()
-	    os.chdir(localPath)
+	    path = os.chdir(localPath)
             f = open(path + '/' + name, 'wb')
             f.write(handler.getvalue())
             f.close()

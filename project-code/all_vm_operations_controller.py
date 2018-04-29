@@ -40,7 +40,10 @@ def delete_vm_file(fileName):  # noqa: E501
 	    ftp = FTP()
             ftp.connect(hostname ,21)
             ftp.login(username, password)
+	    cwd_dir = os.getcwd()
+	    os.chdir(localPath)	   # local directory as configured in config.yaml
             ftp.delete(fileName)
+	    os.chdir(cwd_dir)
         except:
             return 'Unable to delete file'
         return 'File deleted'
@@ -68,6 +71,7 @@ def download_vm_file(fileName):  # noqa: E501
 	    os.chdir(localPath)	   # local directory as configured in config.yaml
             ftp.retrbinary("RETR " + fileName,open(fileName, 'wb').write)
 	    os.chdir(cwd_dir)
+	    print(cwd_dir)
         except:
             return "Unable to download file"
         return 'File downloaded'
@@ -118,6 +122,7 @@ def upload_vm_file(fileName):  # noqa: E501
 	    ftp.storbinary('STOR '+fileName, open(fileName, 'rb')) # this is to store file file
             ftp.sendcmd('SITE CHMOD 777 ' + fileName)
 	    os.chdir(cwd_dir)
+	    print(cwd_dir)
         except:
             return 'Unable to upload file'
         return 'File uploaded'

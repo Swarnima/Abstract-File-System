@@ -78,6 +78,7 @@ def download_file(fileName):  # noqa: E501
 	    s3.meta.client.download_file(bucketName, fileName, fileName)
             return 'file downloaded'
 	    os.chdir(cwd_dir)
+	    print(cwd_dir)
 	except:
 	    return 'File can not be downloaded'
     else:
@@ -162,6 +163,7 @@ def upload_file(fileName):  # noqa: E501
 	    s3.meta.client.upload_file(fileName, bucketName, fileName)
             return 'File uploaded'
 	    os.chdir(cwd_dir)
+	    print(cwd_dir)
         except:
 	    return 'File can not be uploaded'
     else:
