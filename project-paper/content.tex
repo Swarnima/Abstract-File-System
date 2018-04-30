@@ -30,7 +30,7 @@
 
 
 \begin{abstract}
-bstract File System is a web services package that implements and abstracts
+Abstract File System is a web services package that implements and abstracts
 the underlying storage services and provides a uniform web services APIs for
 users to do file operations like, retrieving, storing, removing  etc. The
 services are provided to support storage engines such as Amazon Simple Storage
@@ -41,7 +41,8 @@ consolidated data view.
 
 \end{abstract}
 
-\keywords{hid-sp18-420, File system, abstraction, Amazon S3, Google drive, virtual 
+\keywords{hid-sp18-420, File system, abstraction, Amazon S3, Google drive, 
+virtual 
 machine}
 
 
@@ -69,17 +70,49 @@ Google Drive~\cite{hid-sp18-420-google-drive} and other services
 without even knowing their real implementation.
 
 
+
+\begin{figure}[!ht]
+        \centering\includegraphics[width=\columnwidth]
+        {image/architecture.JPG}
+        \caption{System components}\label{fig:architecture}
+\end{figure}
+
+
+As shown in the Figure~\ref{fig:architecture}, 
+client applications can interact with abstract file 
+system with the web service package provided. With the APis, it will be easy 
+to perform file operations such as listing, uploading, downloading and 
+deleting in a uniform way with supported storage engines. 
+
+With an abstract layer, all file operations will be like a same process for 
+all storage engines and it will be as easy as performing operations on local 
+system. 
+
+
+To get the clear understanding of application, Figure~\ref{fig:client} 
+shows a sample wireframe 
+design of simple client application using Abstract File System. 
+
+Figure~\ref{fig:client}
+\begin{figure}[!ht]
+        \centering\includegraphics[width=\columnwidth]
+        {image/client.JPG}
+        \caption{Sample Client Application}\label{fig:client}
+\end{figure}
+
+
+
+
 \section{Technologies used}
 \textbf{Python:}
 
-Python 2.7 is the underlying language that was used to implement all the APIs 
+Python 2.7 is the underlying language that is used to implement all the APIs 
 provided by Abstract File System.  There are 3 main python files having 
 implementation of file operations to be performed with Amazon S3, Google drive 
 and Virtual machine storage respectively. 
 
 
 Different python modules are used to support the implemented functionality.
-
 
 Some of the important modules are 
 
@@ -109,16 +142,15 @@ to store the configurations required by different storage engines.
 This is a python specific client library provided by google to handle the 
 Google drive APIs.
 
-
-
-\item \textbf{Swagger}:
-
-Swagger Codegen is used to generate server side stubs based on the 
-abstractFileSystem.yaml file with swagger specifications. Swagger was used to 
-enable APIs for accessing storage systems provided in this project.
-
 \end{description}
 
+
+\textbf{Swagger}:
+
+Swagger Codegen is used to generate server side stubs based on the 
+abstractFileSystem.yaml file with swagger specifications. 
+Swagger was then used to install and run REST service. It enabled 
+APIs for accessing storage systems provided in this project.
 
 
 
@@ -149,37 +181,6 @@ file or object storage.
 Abstract File System encashes on the scalability and simplicity Amazon S3
 provides by abstracting the underlying mechanism and providing a way to users
 to store their data into the durable S3 storage.
-
-Figure~\ref{fig:architecture}
-
-\begin{figure}[!ht]
-        \centering\includegraphics[width=\columnwidth]
-        {image/architecture.JPG}
-        \caption{System components}\label{fig:architecture}
-\end{figure}
-
-
-As shown in the figure, client applications can interact with abstract file 
-system with the web service package provided. With the APis, it will be easy 
-to perform file operations such as listing, uploading, downloading and 
-deleting in a uniform way with supported storage engines. 
-
-With an abstract layer, all file operations will be like a same process for 
-all storage engines and it will be as easy as performing operations on local 
-system. 
-
-
-To get the clear understanding of application, Figure1 figure shows a sample 
-wireframe view of simple client application using Abstract File System. 
-
-Figure~\ref{fig:client}
-
-\begin{figure}[!ht]
-        \centering\includegraphics[width=\columnwidth]
-        {image/client.JPG}
-        \caption{Sample Client Application}\label{fig:client}
-\end{figure}
-
 
 
 \textbf{File Operations Supported by Abstract File System}
@@ -216,7 +217,7 @@ and give a 4 digit code to verify your phone number.
 \end{enumerate}
 
 
-\textbf{Steps to create new user in AWS account and giving programmatic access}
+\textbf{Steps to create new user in AWS account and give programmatic access}
 
 
 \begin{enumerate}
@@ -236,10 +237,11 @@ Key file can be downloaded here in \.csv format.
 
 
 
-\textbf{To use Amazon S3 as a storage engine within Abstract File System}, AWS
-credentials must be provided in the config.yaml file.
-Abstract file system requires user to provide 3 parameters to start using S3
-service.
+\textbf{To use Amazon S3 as a storage engine within Abstract File System}, 
+access key and secret key credentials must be provided 
+in the config.yaml file. Abstract File System requires user to 
+provide four parameters to configure and start using Amazon S3 service.
+
 \begin{enumerate}
  \item  Access Key
  \item  Secret Key
@@ -248,17 +250,20 @@ service.
 \end{enumerate}
 
 
-Access key and secret key are required for the programmatic authentication for
-using S3 services. These keys are provided at the time of account creation of
-user.
+Access key and secret key are required for the programmatic authentication of 
+using S3 services. These keys are provided at the time of 
+user account creation with a role to access Amazon S3.
+This can be completed by following steps to create new user 
+in AWS account and give programmatic access section of this document.
 
-While creating a new bucket, an AWS region is assigned to that bucket. Though
-the buckets are globally unique and can be accessible from anywhere, they are
-placed in specific AWS region.
 Amazon S3 stores data within resources called bucket. Buckets are logical
 segregation of files. Bucket name is configurable from the config.yaml file
 which specifies the location where all file operations can be performed.
 
+While creating a new bucket, an AWS region is assigned to that bucket. These 
+buckets are globally unique and are accessible from anywhere. They are
+placed in specific AWS region. AWS region is an area provided by AWS where
+AWS resources available.
 
 \subsection{Google Drive}
 
@@ -274,6 +279,7 @@ use their existing account or new one to store files seamlessly.
 
 Abstract file system provides integration with Google drive by the means of 
 API keys. 
+\\
 
 \textbf{File Operations Supported by Abstract File System }
 \begin{itemize}
@@ -430,11 +436,13 @@ System.
 
 \section{Implementation results}
 
-\textbf{When no configurations done in /etc/config.yaml file, no storage 
+\textbf{When no configurations present in config.yaml file, no storage 
 system will be accessible.}
 
 
-Figure~\ref{fig:not-configured}
+Figure~\ref{fig:not-configured} shows an output generated when none of 
+the storage engines is configured within Abstract File System. 
+
 
 \begin{figure}[!ht]
         \centering\includegraphics[width=\columnwidth]
@@ -455,7 +463,10 @@ APIs used:
     \item /cloudmesh/file-system/drive/listData
 \end{itemize}
 
-Figure~\ref{fig:make-test}
+Figure~\ref{fig:make-test} shows result of output by running make test 
+command. Make test calls this listData API of all storage engines. 
+Hence, it is displaying files from all 3 storage engines which are 
+Amazon S3, Google Drive and Virtual Machine. 
 
 \begin{figure}[!ht]
         \centering\includegraphics[width=\columnwidth]
@@ -476,7 +487,8 @@ APIs used:
     \item /cloudmesh/file-system/S3/deleteFile/{fileName}
 \end{itemize}
 
-Figure~\ref{fig:all-s3}
+Figure~\ref{fig:all-s3} shows all file operation performed by 
+Abstract File System with Amazon S3 as an underlying storage engines. 
 
 \begin{figure}[!ht]
         \centering\includegraphics[width=\columnwidth]
@@ -497,7 +509,8 @@ API used:
     \item /cloudmesh/file-system/VM/deleteFile/{fileName}
 \end{itemize}
 
-Figure~\ref{fig:VM}
+Figure~\ref{fig:VM} shows all file operation performed by Abstract 
+File System with Virtual Machine as an underlying storage engines. 
 
 \begin{figure}[!ht]
         \centering\includegraphics[width=\columnwidth]
@@ -506,8 +519,8 @@ Figure~\ref{fig:VM}
 \end{figure}
 
 
-\textbf{All file operations supported by Abstract File System to integrate 
-with Google Drive}
+\textbf{All file operations supported by Abstract File System 
+to integrate with Google Drive}
 
 
 API used:
@@ -520,7 +533,8 @@ API used:
 
 \end{itemize}
 
-Figure~\ref{fig:drive-upload}
+Figure~\ref{fig:drive-upload} shows output of file upload operation performed 
+by Abstract File System with Google Drive as an underlying storage engines. 
 
 \begin{figure}[!ht]
         \centering\includegraphics[width=\columnwidth]
@@ -529,7 +543,8 @@ Figure~\ref{fig:drive-upload}
 \end{figure}
 
 
-Figure~\ref{fig:drive-delete}
+Figure~\ref{fig:drive-delete} shows output of file delete operation performed 
+by Abstract File System with Google Drive as an underlying storage engines. 
 
 \begin{figure}[!ht]
         \centering\includegraphics[width=\columnwidth]
@@ -538,7 +553,9 @@ Figure~\ref{fig:drive-delete}
 \end{figure}
 
 
-Figure~\ref{fig:drive-download}
+Figure~\ref{fig:drive-download} 
+shows output of file download operation performed 
+by Abstract File System with Google Drive as an underlying storage engines. 
 
 \begin{figure}[!ht]
         \centering\includegraphics[width=\columnwidth]
