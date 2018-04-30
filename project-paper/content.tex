@@ -349,6 +349,49 @@ mechanism to deal with remote file operations.
 
 \textbf{How to enable Virtual Machine as a storage in Abstract File System}
 
+To use storage of some virtual machine, it is impoertant to perform 
+FTP installation on that server. 
+
+Steps to install ftp on server~\cite{hid-sp18-420-FTP}
+(Ubuntu Linux distribution is taken as example)
+
+
+\$ sudo apt-get install vsftpd
+
+
+Edit the configuration file to allow writes to file system as well as set the 
+default file system path for file operations as \/srv\/ftp
+
+
+\$ sudo service vsftpd restart
+
+
+Now make the ftp directory \/srv\/ftp writable 
+
+
+It is required to create a local file system user on the Virtual Machine, you 
+can do that by using following command
+
+	
+local\_root = \/srv\/ftp  
+
+
+write\_enable=YES       
+
+
+\$ sudo adduser your\_user\_name    
+
+
+This will ask for password and other details and will create a local user on 
+the virtual machine which can access the ftp installations.
+
+Now everything is ready and abstract file system can make connection with the 
+file system of virtual machine.
+
+
+
+
+
 Use config.yaml file in Abstract File System to add the required details of 
 Virtual machine. 
 It will be required to provide details in config.yaml files
