@@ -306,7 +306,7 @@ Figure~\ref{fig:auth}
 
 
 Once user allows access to Abstract File system, user specific API keys will 
-be generated and stored inside etc/google-drive-credentials.json file. 
+be generated and stored inside google-drive-credentials.json file. 
 For all later accesses of Abstract file system drive API, these keys will be 
 referred and there will be no need to login again. 
 
@@ -322,7 +322,7 @@ There can be multiple ways to access the storage provided by virtual machines.
 One way is to write an http service accept and transfer file and storage on 
 local file system and host this service on the virtual machine. Second way 
 could be to do SSH or SCP by writing a sub-process for making a connection to 
-machine using machineâs IP, port and authentication through username, 
+machine using machines IP, port and authentication through username, 
 password or \.pem files. Third way is to do FTP installation on virtual 
 machine and using the newly created FTP user in the program to access files on 
 the virtual machine.
@@ -343,42 +343,9 @@ mechanism to deal with remote file operations.
 
 \textbf{How to enable Virtual Machine as a storage in Abstract File System}
 
-Here are the steps to install ftp on server~\cite{hid-sp18-420-FTP}
-(Ubuntu Linux distribution is taken as example)
-
-
-\$ sudo apt-get install vsftpd
-
-
-Edit the configuration file to allow writes to file system as well as set the 
-default file system path for file operations as \/srv\/ftp
-
-
-\$ sudo service vsftpd restart
-
-
-Now make the ftp directory \/srv\/ftp writable 
-
-
-It is required to create a local file system user on the Virtual Machine, you 
-can do that by using following command
-
-	
-local\_root = \/srv\/ftp  
-write\_enable=YES       
-\$ sudo adduser your\_user\_name    
-
-
-This will ask for password and other details and will create a local user on 
-the virtual machine which can access the ftp installations.
-
-Now everything is ready and abstract file system can make connection with the 
-file system of virtual machine.
-
-
 Use config.yaml file in Abstract File System to add the required details of 
 Virtual machine. 
-It will be required to provide details in config.yaml fileâ 
+It will be required to provide details in config.yaml files
 \begin{enumerate}
     \item Hostname
     \item Port
@@ -589,7 +556,7 @@ services like Amazon S3, Google Drive SDKs etc
     \item Switching between underlying storage mechanism is a hassle free task 
 and can be done even by a newbie
     
-    \item Once the abstract file system is integrated into userâs 
+    \item Once the abstract file system is integrated into user 
 applications, there is no code change required apart from only the 
 configuration change to switch the underlying storage mechanism.
     
