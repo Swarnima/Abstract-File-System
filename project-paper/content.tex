@@ -89,7 +89,7 @@ Some of the important modules are
 Boto3 is a software development kit (SDK) that provides AWS interface for 
 Python applications. Abstract File System is using Boto3 which is the latest 
 version of the SDK provided. Boto 3 supports Python versions 2.6.5, 2.7 and 
-3.3 ~\cite{hid-sp18-420-boto}. 
+3.3 version~\cite{hid-sp18-420-boto}. 
 It is used to support Amazon S3 interface with Abstract File System.
 
 \item \textbf{ftplib}:
@@ -322,7 +322,7 @@ There can be multiple ways to access the storage provided by virtual machines.
 One way is to write an http service accept and transfer file and storage on 
 local file system and host this service on the virtual machine. Second way 
 could be to do SSH or SCP by writing a sub-process for making a connection to 
-machine using machine’s IP, port and authentication through username, 
+machine using machineâs IP, port and authentication through username, 
 password or \.pem files. Third way is to do FTP installation on virtual 
 machine and using the newly created FTP user in the program to access files on 
 the virtual machine.
@@ -351,22 +351,22 @@ Here are the steps to install ftp on server~\cite{hid-sp18-420-FTP}
 
 
 Edit the configuration file to allow writes to file system as well as set the 
-default file system path for file operations as \�/srv/ftp’
+default file system path for file operations as \/srv/ftpâ
 
 
 \$ sudo service vsftpd restart
 
 
-Now make the ftp directory ‘/srv/ftp’ writable 
+Now make the ftp directory â/srv/ftpâ writable 
 
 
 It is required to create a local file system user on the Virtual Machine, you 
 can do that by using following command
 
 	
-local\_root = /srv/ftp  \\
-write\_enable=YES       \\
-\$ sudo adduser your\_user\_name    \\
+local\_root = \/srv\/ftp  
+write\_enable=YES       
+\$ sudo adduser your\_user\_name    
 
 
 This will ask for password and other details and will create a local user on 
@@ -378,7 +378,7 @@ file system of virtual machine.
 
 Use config.yaml file in Abstract File System to add the required details of 
 Virtual machine. 
-It will be required to provide details in config.yaml file– 
+It will be required to provide details in config.yaml fileâ 
 \begin{enumerate}
     \item Hostname
     \item Port
@@ -589,7 +589,7 @@ services like Amazon S3, Google Drive SDKs etc
     \item Switching between underlying storage mechanism is a hassle free task 
 and can be done even by a newbie
     
-    \item Once the abstract file system is integrated into user’s 
+    \item Once the abstract file system is integrated into userâs 
 applications, there is no code change required apart from only the 
 configuration change to switch the underlying storage mechanism.
     
