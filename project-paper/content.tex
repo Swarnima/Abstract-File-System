@@ -104,7 +104,12 @@ Figure~\ref{fig:client}
 
 
 \section{Technologies used}
-\textbf{Python:}
+
+\TODO{TEXT MISSING}
+
+\paragraph{Python:}
+
+\TODO{THIS IS NOT WORD, USE STRUCTURE}
 
 Python 2.7 is the underlying language that is used to implement all the APIs 
 provided by Abstract File System.  There are 3 main python files having 
@@ -117,33 +122,28 @@ Different python modules are used to support the implemented functionality.
 Some of the important modules are 
 
 \begin{description}
-\item \textbf{Boto3}: 
-
-Boto3 is a software development kit (SDK) that provides AWS interface for 
+\item[Boto3:] Boto3 is a software development kit (SDK) that provides AWS interface for 
 Python applications. Abstract File System is using Boto3 which is the latest 
 version of the SDK provided. Boto 3 supports Python versions 2.6.5, 2.7 and 
 3.3 version~\cite{hid-sp18-420-boto}. 
 It is used to support Amazon S3 interface with Abstract File System.
 
-\item \textbf{ftplib}:
-
-The ftplib module in Python is used to perform different file opearations on 
+\item[ftplib:] The ftplib module in Python is used to perform different file opearations on 
 virtual machine by connecting to FTP server installed on that 
 machine~\cite{hid-sp18-420-FTP}.
 
-\item \textbf{yaml}:
-
-This library is used to read the confog.yaml file used in Abstract File System 
+\item[yaml:] This library is used to read the confog.yaml file used in Abstract File System 
 to store the configurations required by different storage engines.
 
 
-\item \item \textbf{google-api-python-client}:
+\item[google-api-python-client:]
 
 This is a python specific client library provided by google to handle the 
 Google drive APIs.
 
 \end{description}
 
+\TODO{TEXT MISSING}
 
 \textbf{Swagger}:
 
@@ -155,8 +155,10 @@ APIs for accessing storage systems provided in this project.
 
 
 \section{Supported Storage Engines}
-Abstract file system is currently supporting three types of storage engines
-which are Amazon S3, Google drive and any virtual machine.
+
+The REST Abstract File System Service developed by us, is currently
+supporting three types of storage engines which are Amazon S3, Google
+drive and any virtual machine.
 
 \subsection{Amazon S3}
 
@@ -182,6 +184,8 @@ Abstract File System encashes on the scalability and simplicity Amazon S3
 provides by abstracting the underlying mechanism and providing a way to users
 to store their data into the durable S3 storage.
 
+\TODO{YOU ARE NOT ALLOWED TO USE textbf use section, supsections,
+  paragraphs and description lists}
 
 \textbf{File Operations Supported by Abstract File System}
 
@@ -241,13 +245,10 @@ Key file can be downloaded here in \.csv format.
 access key and secret key credentials must be provided 
 in the config.yaml file. Abstract File System requires user to 
 provide four parameters to configure and start using Amazon S3 service.
-
-\begin{enumerate}
- \item  Access Key
- \item  Secret Key
- \item  AWS region
- \item  Bucket name
-\end{enumerate}
+(1) Access Key, 
+(2) Secret Key,
+(3) AWS region, and
+(4) Bucket name.
 
 
 Access key and secret key are required for the programmatic authentication of 
@@ -279,7 +280,6 @@ use their existing account or new one to store files seamlessly.
 
 Abstract file system provides integration with Google drive by the means of 
 API keys. 
-\\
 
 \textbf{File Operations Supported by Abstract File System }
 \begin{itemize}
@@ -318,6 +318,7 @@ referred and there will be no need to login again.
 
 
 \subsection{Virtual Machine}
+
 The virtual machine on any cloud service provider can be used as a storage. In 
 certain scenarios, user needs to store the files on their specific servers for 
 variety of reasons. Abstract file system facilitates storing the files on the 
@@ -329,7 +330,7 @@ One way is to write an http service accept and transfer file and storage on
 local file system and host this service on the virtual machine. Second way 
 could be to do SSH or SCP by writing a sub-process for making a connection to 
 machine using machines IP, port and authentication through username, 
-password or \.pem files. Third way is to do FTP installation on virtual 
+password or \verb|.pem| files. Third way is to do FTP installation on virtual 
 machine and using the newly created FTP user in the program to access files on 
 the virtual machine.
 
@@ -355,9 +356,11 @@ FTP installation on that server.
 Steps to install ftp on server~\cite{hid-sp18-420-FTP}
 (Ubuntu Linux distribution is taken as example)
 
-
+\TODO{USE VERBATIM}
+\begin{verbatim}
 \$ sudo apt-get install vsftpd
-
+\end{verbatim}
+%$
 
 Edit the configuration file to allow writes to file system as well as set the 
 default file system path for file operations as \/srv\/ftp
@@ -366,7 +369,9 @@ default file system path for file operations as \/srv\/ftp
 \$ sudo service vsftpd restart
 
 
-Now make the ftp directory \/srv\/ftp writable 
+\TODO{USE VERB}
+
+Now make the ftp directory \verb|/srv/ftp| writable 
 
 
 It is required to create a local file system user on the Virtual Machine, you 
@@ -392,15 +397,9 @@ file system of virtual machine.
 
 
 
-Use config.yaml file in Abstract File System to add the required details of 
-Virtual machine. 
-It will be required to provide details in config.yaml files
-\begin{enumerate}
-    \item Hostname
-    \item Port
-    \item Username
-    \item Password
-\end{enumerate}
+Use config.yaml file in Abstract File System to add the required
+details of Virtual machine.  It will be required to provide details in
+config.yaml files to fill out hostname, port, username, and password.
 
 
 Host name is an IP address of the virtual machine which hosts the ftp 
@@ -412,8 +411,12 @@ the FTP user created in FTP installation.
 
 
 
-\section{MAIN PROJECT ARTIFACTS}
+\section{Main Project Artifacts}
+
+\TODO{TEXT MISSING}
+
 \subsection{abstractFileSystem.yaml}
+
 This file is used for giving swagger specification for all the APIs used in 
 the Abstract File System. This file will be used by Swagger code generator to 
 create python stubs as per specification given in the yaml file.
