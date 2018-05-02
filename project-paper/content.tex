@@ -1,4 +1,4 @@
-% status: 70
+% status: 90
 % chapter: TBD
 
 \title{Abstract File System}
@@ -149,7 +149,8 @@ Google drive APIs.
 
 \end{description}
 
-
+These python modules are used in different python files to improve 
+implemetation of abstract file system.
 
 \paragraph{Swagger}:
 
@@ -288,7 +289,8 @@ use their existing account or new one to store files seamlessly.
 Abstract file system provides integration with Google drive by the means of 
 API keys. 
 
-\textbf{File Operations Supported by Abstract File System }
+\paragraph{File Operations Supported by Abstract File System }
+
 \begin{itemize}
     \item  Listing of files inside a drive
     \item  Retrieving a specific file 
@@ -296,8 +298,8 @@ API keys.
     \item  Removing the file from drive
 \end{itemize}
 
-\textbf{How to enable Google Drive as a storage in Abstract File System}
-\\
+\paragraph{How to enable Google Drive as a storage in Abstract File System}
+
 Abstract file system requires user to login to their Google account only for 
 the first time of using this application and all later requests will not 
 require to authenticate again. 
@@ -534,7 +536,6 @@ the storage engines is configured within Abstract File System.
 
 
 \paragraph{All files listed from all storage engines}
-\\
 
 APIs used:
 
@@ -558,8 +559,10 @@ Amazon S3, Google Drive and Virtual Machine.
 
 \paragraph{All file operations supported by Abstract File System to integrate 
 with Amazon S3}
-\\
+
+
 APIs used:
+
 
 \begin{itemize}
     \item /cloudmesh/file-system/S3/listData
@@ -580,7 +583,7 @@ Abstract File System with Amazon S3 as an underlying storage engines.
 
 \paragraph{All file operations supported by Abstract File System to integrate 
 with Virtual Machine storage}
-\\
+
 
 API used:
 \begin{itemize}
@@ -602,7 +605,7 @@ File System with Virtual Machine as an underlying storage engines.
 
 \paragraph{All file operations supported by Abstract File System 
 to integrate with Google Drive}
-\\
+
 
 API used:
 \begin{itemize}
@@ -664,27 +667,87 @@ S3, Google Drive which
 provides huge amount of data to be stored and retrieved on demand, scalability 
 is the biggest benefit of abstract file system
 	project
+	
+    \item Abstract File system is currently dealing with only 3 types of storage engines 
+which are Amazon S3, Google Drive and Virtual machines. 
+It is flexible to add other storage systems that can be configurable from config.yaml 
+file and API specification provided in abstractFileSystem.yaml file.
     
 \end{enumerate}
 
+
 \section{Benchmarks}
 
-\TODO{A BENCHMARK SECTION IS MISSING}
+Abstract File system project uses Amazon S3, google drive and Virtual machine 
+as its underlying storage engines. There are total 4 APIs provided for each of 
+the storage engine. The APis include listing of files, file upload, download 
+and deletion respectively. 
+
+In order to make use of this project, it is required to have access to all 
+these storage systems. To use Amazon S3, it is required to have an account in 
+AWS with a bucket created in S3 where file operations can be performed. To use 
+google drive as a storage system in this project, user needs to have an account 
+in google and it is required to login to it when any of the Google drive API is 
+called from the project for first time. To use Virtual machine as a storage 
+system, it is required to complete FTP installation on the virtual machine and 
+then the credentials can be provided in the config.yaml file present in the 
+project to perform file operations on virtual machine.
+In case if any of the configuration is not available, abstract file system APIs 
+call to the respective storage engine will provide a response message saying 
+that this storage system is not configured. 
+
+The performance of all APIs is dependent upon the size of the file and the 
+speed of internet. System performance was tested with internet speed of 4.29 
+mbps for upload and 6.1 mbps for download
+To test the performance of list API to list files from each of the storage 
+engines, Amazon S3 took 0.01 seconds, Google drive took 0.02 seconds and 
+Virtual machine took 0.01 seconds.
+To check the upload and download APIs for each of the storage engines, a file 
+with 87,856 kilobyte is used.
+
+Figure~\ref{fig:upload-test} shows records of time taken 
+by file upload operation on different storage systems
+
+\begin{figure*}[!ht]
+        \centering\includegraphics[width=\columnwidth]
+        {image/upload-test.JPG}
+        \caption{File upload performance test}\label{fig:upload-test}
+\end{figure*}
+
+
+Table~\ref{tab:timing} shows outcome of the performance test 
+with number of seconds taken to execute all four APIs by different 
+storage engines respectively.
+
+\begin{table}[htb]
+	\centering
+  \caption{Processing time of all APIs for different storage 
+  engines}\label{tab:timing}
+
+	\begin{tabular}{*{4}{c}}
+		\toprule
+		APIs & Amazon S3 & Google Drive & Virtual Machine \\
+		\midrule
+		Listing & 0.01  & 0.02 & 0.01 \\
+		Upload & 0.14 & 0.24 & 0.05 \\
+        Download & 0.13 & 0.18 & 0.06 \\
+        Delete & 0.04 & 0.06 & 0.02 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+
+
 
 \section{Challenges and Limitations}
-Abstract File system is currently dealing with only 3 types of storage engines 
-which are Amazon S3, Google Drive and Virtual machines. It can be further 
-improved to support other storage engines such as Box, DropBox, Azure and many 
-more. Abstract File system is scalable and can add other storage systems that 
-can be configurable from config.yaml file and writing specific API calls in 
-abstractFileSystem.yaml file that will generate stubs to write implementation 
-logic. 
 
+Abstract File System project requires a strong internet connection. 
+Performance of the system is dependent on the speed of internet. 
 
-Abstract File system is dealing with only file operations right now which are 
-listing, uploading, downloading and deleting. It can be improved to add 
-directory operations such as create directory, delete directory or sync 
-directory operations. 
+The file name is passed as a URL parameter for APIs such as file upload,
+file download. Abstract file system is not supporting multiple file 
+upload and download at a time. Only one file can be uploaded or 
+downloaded or deleted with one API call. 
 
 
 \section{Conclusion}
