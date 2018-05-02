@@ -48,6 +48,7 @@ machine}
 
 \maketitle
 
+
 \section{Introduction}
 
 
@@ -93,7 +94,7 @@ To get the clear understanding of application, Figure~\ref{fig:client}
 shows a sample wireframe 
 design of simple client application using Abstract File System. 
 
-Figure~\ref{fig:client}
+
 \begin{figure}[!ht]
         \centering\includegraphics[width=\columnwidth]
         {image/client.JPG}
@@ -105,11 +106,12 @@ Figure~\ref{fig:client}
 
 \section{Technologies used}
 
-\TODO{TEXT MISSING}
+Abstract File System project is developed based on different 
+technologies. It is using Python as am implementation language 
+and APIs are generated using Swagger Codegen by reading 
+OpenAPI document.
 
 \paragraph{Python:}
-
-\TODO{THIS IS NOT WORD, USE STRUCTURE}
 
 Python 2.7 is the underlying language that is used to implement all the APIs 
 provided by Abstract File System.  There are 3 main python files having 
@@ -122,18 +124,22 @@ Different python modules are used to support the implemented functionality.
 Some of the important modules are 
 
 \begin{description}
-\item[Boto3:] Boto3 is a software development kit (SDK) that provides AWS interface for 
+\item[Boto3:] Boto3 is a software development kit (SDK) that provides AWS 
+interface for 
 Python applications. Abstract File System is using Boto3 which is the latest 
 version of the SDK provided. Boto 3 supports Python versions 2.6.5, 2.7 and 
 3.3 version~\cite{hid-sp18-420-boto}. 
 It is used to support Amazon S3 interface with Abstract File System.
 
-\item[ftplib:] The ftplib module in Python is used to perform different file opearations on 
+\item[ftplib:] The ftplib module in Python is used to perform different file 
+opearations on 
 virtual machine by connecting to FTP server installed on that 
 machine~\cite{hid-sp18-420-FTP}.
 
-\item[yaml:] This library is used to read the confog.yaml file used in Abstract File System 
-to store the configurations required by different storage engines.
+\item[yaml:] This library is used to read the confog.yaml file used in Abstract 
+File System 
+project to store the configurations required by different storage engines.
+
 
 
 \item[google-api-python-client:]
@@ -143,12 +149,15 @@ Google drive APIs.
 
 \end{description}
 
-\TODO{TEXT MISSING}
 
-\textbf{Swagger}:
 
-Swagger Codegen is used to generate server side stubs based on the 
+\paragraph{Swagger}:
+
+Abstract File System project is using Swagger Codegen 
+to generate server side stubs based on the 
 abstractFileSystem.yaml file with swagger specifications. 
+This yaml file is an OpenAPI document which is in JSON format. 
+It contains swagger version, and description of REST APIs. 
 Swagger was then used to install and run REST service. It enabled 
 APIs for accessing storage systems provided in this project.
 
@@ -163,7 +172,8 @@ drive and any virtual machine.
 \subsection{Amazon S3}
 
 Amazon S3 stands for Simple Storage Service. It is the most popular storage
-service provided by Amazon Web Service. It provides a highly scalable,
+service provided by Amazon Web Service~\cite{hid-sp18-420-amazon-S3}. It 
+provides a highly scalable,
 reliable, and low latency data storage infrastructure at low costs. Amazon S3
 can be used to store and retrieve data of any kind and any amount from 
 anywhere.
@@ -184,10 +194,7 @@ Abstract File System encashes on the scalability and simplicity Amazon S3
 provides by abstracting the underlying mechanism and providing a way to users
 to store their data into the durable S3 storage.
 
-\TODO{YOU ARE NOT ALLOWED TO USE textbf use section, supsections,
-  paragraphs and description lists}
-
-\textbf{File Operations Supported by Abstract File System}
+\paragraph{File Operations Supported by Abstract File System}
 
 
 \begin{itemize}
@@ -200,14 +207,14 @@ segregation of files)
 
 
 
-\textbf{How to enable Amazon S3 as a storage in Abstract File System}
+\paragraph{How to enable Amazon S3 as a storage in Abstract File System}
 
-
+\\
 In order to use Amazon S3 as a storage system, first user needs to have an
 account with AWS system.
 
 
-\textbf{Steps to create new root account with AWS}
+\paragraph{Steps to create new root account with AWS}
 
 \begin{enumerate}
     \item Open https://aws.amazon.com/ and click Create New Account.
@@ -221,7 +228,7 @@ and give a 4 digit code to verify your phone number.
 \end{enumerate}
 
 
-\textbf{Steps to create new user in AWS account and give programmatic access}
+\paragraph{Steps to create new user in AWS account and give programmatic access}
 
 
 \begin{enumerate}
@@ -241,7 +248,7 @@ Key file can be downloaded here in \.csv format.
 
 
 
-\textbf{To use Amazon S3 as a storage engine within Abstract File System}, 
+\paragraph{To use Amazon S3 as a storage engine within Abstract File System}, 
 access key and secret key credentials must be provided 
 in the config.yaml file. Abstract File System requires user to 
 provide four parameters to configure and start using Amazon S3 service.
@@ -291,18 +298,22 @@ API keys.
 
 \textbf{How to enable Google Drive as a storage in Abstract File System}
 \\
-Abstract file system requires user to login to their google account only for 
+Abstract file system requires user to login to their Google account only for 
 the first time of using this application and all later requests will not 
 require to authenticate again. 
 
-For the first request to google drive API via Abstract file system, it will 
+For the first request to Google drive API via Abstract file system, it will 
 open a browser for authentication. An existing account or new account with 
-google is required for authentication. 
+Google is required for authentication. 
 
 User needs to perform authentication first and then Google drive will ask user 
-to allow or deny Abstract File system to access the google drive. 
+to allow or deny Abstract File system to access the Google drive. 
 
-Figure~\ref{fig:auth}
+Figure~\ref{fig:auth} shows the screenshot of how authentication is 
+required by application to access the Google drive data. 
+The project registered with Google drive API has name file-system. 
+Hence, Figure~\ref{fig:auth} shows that Google drive is asking user 
+to allow or cancel file access to file-system application. 
 
 \begin{figure}[!ht]
         \centering\includegraphics[width=\columnwidth]
@@ -340,7 +351,7 @@ means of ftp installation. FTP is a file transfer protocol and is a standard
 mechanism to deal with remote file operations.
 
 
-\textbf{File Operations Supported by Abstract File System }
+\paragraph{File Operations Supported by Abstract File System }
 \begin{itemize}
     \item  Listing of files inside a specified folder allowed by ftp
     \item  Retrieving a specific file 
@@ -348,28 +359,29 @@ mechanism to deal with remote file operations.
     \item  Removing the file from the folder
 \end{itemize}   
 
-\textbf{How to enable Virtual Machine as a storage in Abstract File System}
+\paragraph{How to enable Virtual Machine as a storage in Abstract File System}
 
-To use storage of some virtual machine, it is impoertant to perform 
+To use storage of some virtual machine, it is important to perform 
 FTP installation on that server. 
 
 Steps to install ftp on server~\cite{hid-sp18-420-FTP}
 (Ubuntu Linux distribution is taken as example)
 
-\TODO{USE VERBATIM}
+
 \begin{verbatim}
-\$ sudo apt-get install vsftpd
+$ sudo apt-get install vsftpd
 \end{verbatim}
 %$
 
 Edit the configuration file to allow writes to file system as well as set the 
-default file system path for file operations as \/srv\/ftp
+default file system path for file operations as \verb|/srv/ftp|
+
+\begin{verbatim}
+$ sudo service vsftpd restart
+\end{verbatim}
+%$
 
 
-\$ sudo service vsftpd restart
-
-
-\TODO{USE VERB}
 
 Now make the ftp directory \verb|/srv/ftp| writable 
 
@@ -377,15 +389,14 @@ Now make the ftp directory \verb|/srv/ftp| writable
 It is required to create a local file system user on the Virtual Machine, you 
 can do that by using following command
 
-	
-local\_root = \/srv\/ftp  
+\begin{verbatim}
+local_root = /srv/ftp  
 
+write_enable=YES       
 
-write\_enable=YES       
-
-
-\$ sudo adduser your\_user\_name    
-
+$ sudo adduser your_user_name    
+\end{verbatim}
+%$
 
 This will ask for password and other details and will create a local user on 
 the virtual machine which can access the ftp installations.
@@ -397,7 +408,7 @@ file system of virtual machine.
 
 
 
-Use config.yaml file in Abstract File System to add the required
+Use \verb|config.yaml| file in Abstract File System to add the required
 details of Virtual machine.  It will be required to provide details in
 config.yaml files to fill out hostname, port, username, and password.
 
@@ -413,9 +424,15 @@ the FTP user created in FTP installation.
 
 \section{Main Project Artifacts}
 
-\TODO{TEXT MISSING}
+Abstract File System project uses different files. 
+Each one of them is used for some specific function in this project.
 
-\subsection{abstractFileSystem.yaml}
+\begin{description}
+
+
+
+\item[abstractFileSystem.yaml:]
+
 
 This file is used for giving swagger specification for all the APIs used in 
 the Abstract File System. This file will be used by Swagger code generator to 
@@ -423,27 +440,35 @@ create python stubs as per specification given in the yaml file.
 This file contains swagger version, description, base path, path for each APIs 
 respective input and output parameters of each API respectively.
 
-\subsection{config.yaml}
+\item[config.yaml:]
+
+
 This file is used to store the configurations required in the project. 
 Config.yaml file is used to store access key, secret key, bucket name and 
 region for integrating Amazon S3 in the system. It also stores host name, 
 port, username and password required to integrate virtual machine as a storage 
 engine in the Abstract File System project.
 
-\subsection{client\_id.json}
+\item[client\_id.json]
+
+
 This file is used by Abstract File system to enable using google drive api in 
 the project. This file is generated at the time of registering Abstract File 
 System for API of Google drive. It has the key information that enables usage 
 of google drive in this application. 
 
-\subsection{google\-drive\-credentials.json}
+\item[google\-drive\-credentials.json:]
+
+
 This file will store the keys of client who will be using Abstract File 
 System. When any drive API is called for first time, it is required to login 
 to the google drive and allow Abstract File System to access the user drive. 
 After approval, user specific keys will be stored in 
 google-drive-credentials.json file
 
-\subsection{MakeFile}
+\item[MakeFile:]
+
+
 MakeFile has different targets and it is used to build the project. 
 Make service is used for performing all the configurations required for 
 Abstract File System and then using swagger-codegen to generate code using 
@@ -458,7 +483,9 @@ docker-build and docker-start target which will generate docker container and
 run project services in the new container. Make docker-clean is used to stop 
 the service and remove the container. 
 
-\subsection{DockerFile}
+\item[DockerFile:]
+
+
 DockerFile is used to generate docker image Abstract File System can be run. 
 It has specifications required for generating Ubuntu instance along with 
 installation of python, java, curl, git, wget and required files to generate 
@@ -466,40 +493,48 @@ an image with all required installations ready. It then uses git repository by
 cloning inside image and then running a project based on targets available in 
 the make file. 
 
-\subsection{all\_drive\_operations\_controller.py}
+\item[all\_drive\_operations\_controller.py:]
+
+
 This is a python file that contains the code to implement required file 
 operations for using Google drive as a storage engine in Abstract File System.
 
-\subsection{all\_s3\_operations\_controller.py}
+\item[all\_s3\_operations\_controller.py:]
+
+
 This is a python file that contains the code to implement required file 
 operations for using Amazon S3 as a storage engine in Abstract File System. 
 
-\subsection{all\_vm\_operations\_controller.py}
+\item[all\_vm\_operations\_controller.py:]
+
 This is a python file that contains the code to implement required file 
 operations for using virtual machine as a storage engine in Abstract File 
 System. 
 
+\end{description}
+
+
 
 \section{Implementation results}
 
-\textbf{When no configurations present in config.yaml file, no storage 
+\paragraph{When no configurations present in config.yaml file, no storage 
 system will be accessible.}
-
+\\
 
 Figure~\ref{fig:not-configured} shows an output generated when none of 
 the storage engines is configured within Abstract File System. 
 
 
-\begin{figure}[!ht]
+\begin{figure*}[!ht]
         \centering\includegraphics[width=\columnwidth]
         {image/not-configured.JPG}
         \caption{No storage system configured}\label{fig:not-configured}
-\end{figure}
+\end{figure*}
 
 
 
-\textbf{All files listed from all storage engines }
-
+\paragraph{All files listed from all storage engines}
+\\
 
 APIs used:
 
@@ -514,21 +549,21 @@ command. Make test calls this listData API of all storage engines.
 Hence, it is displaying files from all 3 storage engines which are 
 Amazon S3, Google Drive and Virtual Machine. 
 
-\begin{figure}[!ht]
+\begin{figure*}[!ht]
         \centering\includegraphics[width=\columnwidth]
         {image/make-test.JPG}
         \caption{all files from all engines}\label{fig:make-test}
-\end{figure}
+\end{figure*}
 
 
-\textbf{All file operations supported by Abstract File System to integrate 
+\paragraph{All file operations supported by Abstract File System to integrate 
 with Amazon S3}
-
+\\
 APIs used:
 
 \begin{itemize}
     \item /cloudmesh/file-system/S3/listData
-    \item / cloudmesh/file-system/S3/downloadFile/{fileName}
+    \item /cloudmesh/file-system/S3/downloadFile/{fileName}
     \item /cloudmesh/file-system/S3/uploadFile/{fileName}
     \item /cloudmesh/file-system/S3/deleteFile/{fileName}
 \end{itemize}
@@ -536,16 +571,16 @@ APIs used:
 Figure~\ref{fig:all-s3} shows all file operation performed by 
 Abstract File System with Amazon S3 as an underlying storage engines. 
 
-\begin{figure}[!ht]
+\begin{figure*}[!ht]
         \centering\includegraphics[width=\columnwidth]
         {image/all-s3.JPG}
         \caption{all S3 opearations}\label{fig:all-s3}
-\end{figure}
+\end{figure*}
 
 
-\textbf{All file operations supported by Abstract File System to integrate 
+\paragraph{All file operations supported by Abstract File System to integrate 
 with Virtual Machine storage}
-
+\\
 
 API used:
 \begin{itemize}
@@ -558,22 +593,22 @@ API used:
 Figure~\ref{fig:VM} shows all file operation performed by Abstract 
 File System with Virtual Machine as an underlying storage engines. 
 
-\begin{figure}[!ht]
+\begin{figure*}[!ht]
         \centering\includegraphics[width=\columnwidth]
         {image/VM.JPG}
         \caption{all VM opearations}\label{fig:VM}
-\end{figure}
+\end{figure*}
 
 
-\textbf{All file operations supported by Abstract File System 
+\paragraph{All file operations supported by Abstract File System 
 to integrate with Google Drive}
-
+\\
 
 API used:
 \begin{itemize}
 
     \item /cloudmesh/file-system/drive/listData
-    \item / cloudmesh/file-system/drive/downloadFile/{fileName}
+    \item /cloudmesh/file-system/drive/downloadFile/{fileName}
     \item /cloudmesh/file-system/drive/uploadFile/{fileName}
     \item /cloudmesh/file-system/drive/deleteFile/{fileName}
 
@@ -582,50 +617,53 @@ API used:
 Figure~\ref{fig:drive-upload} shows output of file upload operation performed 
 by Abstract File System with Google Drive as an underlying storage engines. 
 
-\begin{figure}[!ht]
+\begin{figure*}[!ht]
         \centering\includegraphics[width=\columnwidth]
         {image/drive-upload.JPG}
         \caption{Drive upload opearations}\label{fig:drive-upload}
-\end{figure}
+\end{figure*}
 
 
 Figure~\ref{fig:drive-delete} shows output of file delete operation performed 
 by Abstract File System with Google Drive as an underlying storage engines. 
 
-\begin{figure}[!ht]
+\begin{figure*}[!ht]
         \centering\includegraphics[width=\columnwidth]
         {image/drive-delete.JPG}
         \caption{Drive delete opearations}\label{fig:drive-delete}
-\end{figure}
+\end{figure*}
 
 
 Figure~\ref{fig:drive-download} 
 shows output of file download operation performed 
 by Abstract File System with Google Drive as an underlying storage engines. 
 
-\begin{figure}[!ht]
+\begin{figure*}[!ht]
         \centering\includegraphics[width=\columnwidth]
         {image/drive-download.JPG}
         \caption{Drive download opearations}\label{fig:drive-download}
-\end{figure}
+\end{figure*}
 
 
 \section{Benefits of Abstract File System}
 \begin{enumerate}
     \item Since Abstract File System abstracts the underlying storing 
-mechanism, user does not need to know the core implementation of the storage 
+mechanism, there is no need for client application to know 
+the core implementation of the storage 
 services like Amazon S3, Google Drive SDKs etc
     
     \item Switching between underlying storage mechanism is a hassle free task 
-and can be done even by a newbie
+and can be done even by a newbie.
     
-    \item Once the abstract file system is integrated into user 
+    \item Once abstract file system project is integrated into client 
 applications, there is no code change required apart from only the 
-configuration change to switch the underlying storage mechanism.
+configuration changes which are specific to underlying storage mechanism.
     
-    \item Scalability is the biggest benefit of the abstract file system, 
-since the underlying storage mechanisms can be anything like Amazon S3 which 
-provides almost infinite amount of data to be stored and retrieved on demand.
+    \item Since the underlying storage mechanisms can be anything like Amazon 
+S3, Google Drive which 
+provides huge amount of data to be stored and retrieved on demand, scalability 
+is the biggest benefit of abstract file system
+	project
     
 \end{enumerate}
 
@@ -633,7 +671,7 @@ provides almost infinite amount of data to be stored and retrieved on demand.
 
 \TODO{A BENCHMARK SECTION IS MISSING}
 
-\section{Challenges and Scope of improvement}
+\section{Challenges and Limitations}
 Abstract File system is currently dealing with only 3 types of storage engines 
 which are Amazon S3, Google Drive and Virtual machines. It can be further 
 improved to support other storage engines such as Box, DropBox, Azure and many 
@@ -647,13 +685,6 @@ Abstract File system is dealing with only file operations right now which are
 listing, uploading, downloading and deleting. It can be improved to add 
 directory operations such as create directory, delete directory or sync 
 directory operations. 
-
-
-Current implementation of Abstract File system involved copying files from 
-different storage engines to local machine or from local machine to these 
-storage systems. An enhancement could include moving files from one storage 
-engine to other engine. 
-
 
 
 \section{Conclusion}
@@ -673,7 +704,6 @@ storage engines will be same process as being saved locally or transferred
 over the network to other storage system. Such abstraction makes it simpler to 
 switch from one system to another without having to rewrite vast swathes of 
 application code.
-
 
 
 
