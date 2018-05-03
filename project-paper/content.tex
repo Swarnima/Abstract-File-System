@@ -1,7 +1,7 @@
 % status: 100
 % chapter: REST
 
-\title{Abstract File System}
+\title{REST Abstract File System}
 
 
 \author{Swarnima Sowani}
@@ -30,14 +30,14 @@
 
 
 \begin{abstract}
-  We developed a Abstract File System which is a web services that
-  implements and abstracts the underlying storage services and
-  provides a uniform web services APIs for users to do file operations
-  like, retrieving, storing, removing etc. The services are provided
-  to support storage engines such as Amazon Simple Storage Service,
-  google drive and virtual machine. This web service package can be
-  used by different big data applications client to perform file
-  operations with consolidated data view.
+  We developed a REST Abstract File System Service which is a web
+  services that implements and abstracts the underlying storage
+  services and provides a uniform web services APIs for users to do
+  file operations like, retrieving, storing, removing etc. The
+  services are provided to support storage engines such as Amazon
+  Simple Storage Service, google drive and virtual machine. This web
+  service package can be used by different big data applications
+  client to perform file operations with consolidated data view.
 \end{abstract}
 
 \keywords{hid-sp18-420, File system, abstraction, Amazon S3, Google drive, 
@@ -62,7 +62,7 @@ however integrating with each one of them is a tedious tasks since,
 understanding and implementing APIs for each service is a time
 consuming tasks.
 
-That is why the REST Abstract File System comes into picture. It
+That is why the REST Abstract File System Service comes into picture. It
 provides a layer of abstraction over the underlying file system so
 that the users or customers can integrate storage services as file
 systems like Amazon S3~\cite{hid-sp18-420-amazon-S3}, Google
@@ -89,9 +89,9 @@ process for all storage engines and it will be as easy as performing
 operations on local system.
 
 
-To get the clear understanding of application, Figure~\ref{fig:client} 
-shows a sample wireframe 
-design of simple client application using Abstract File System. 
+To get the clear understanding of application, Figure~\ref{fig:client}
+shows a sample wireframe design of simple client application using
+the REST Abstract File System Service.
 
 
 \begin{figure}[!ht]
@@ -105,36 +105,36 @@ design of simple client application using Abstract File System.
 
 \section{Technologies used}
 
-Abstract File System project is developed based on different 
-technologies. It is using Python as am implementation language 
-and APIs are generated using Swagger Codegen by reading 
+The REST Abstract File System Service project is developed based on
+different technologies. It is using Python as am implementation
+language and APIs are generated using Swagger Codegen by reading
 OpenAPI document.
 
 \subsection{Python}
 
 Python 2.7 is the underlying language that is used to implement all
-the APIs provided by Abstract File System.  There are 3 main python
-files having implementation of file operations to be performed with
-Amazon S3, Google drive and Virtual machine storage respectively. A
-number of python modules are used to support the implemented
-functionality. Some of the important modules are
+the APIs provided by the REST Abstract File System Service.  There are
+3 main python files having implementation of file operations to be
+performed with Amazon S3, Google drive and Virtual machine storage
+respectively. A number of python modules are used to support the
+implemented functionality. Some of the important modules are
 
 \begin{description}
 
 \item[Boto3:] Boto3 is a software development kit (SDK) that provides
-  AWS interface for Python applications. Abstract File System is using
-  Boto3 which is the latest version of the SDK provided. Boto 3
-  supports Python versions 2.6.5, 2.7 and 3.3
+  AWS interface for Python applications. The REST Abstract File System
+  Service is using Boto3 which is the latest version of the SDK
+  provided. Boto 3 supports Python versions 2.6.5, 2.7 and 3.3
   version~\cite{hid-sp18-420-boto}.  It is used to support Amazon S3
-  interface with Abstract File System.
+  interface with the REST Abstract File System Service.
 
 \item[ftplib:] The ftplib module in Python is used to perform
   different file opearations on virtual machine by connecting to FTP
   server installed on that machine~\cite{hid-sp18-420-FTP}.
 
 \item[yaml:] This library is used to read the confog.yaml file used in
-  Abstract File System project to store the configurations required by
-  different storage engines.
+  the REST Abstract File System Service project to store the
+  configurations required by different storage engines.
 
 \item[google-api-python-client:] This is a python specific client
   library provided by google to handle the Google drive APIs.
@@ -146,7 +146,7 @@ implemetation of abstract file system.
 
 \subsection{Swagger}
 
-Our \emph{REST Abstract File System} service is using Swagger Codegen
+Our \emph{REST Abstract File System Service} service is using Swagger Codegen
 to generate server side stubs based on the abstractFileSystem.yaml
 file with swagger specifications.  This yaml file is an OpenAPI
 document which is in JSON format.  It contains swagger version, and
@@ -156,7 +156,7 @@ in this project.
 
 \section{Supported Storage Engines}
 
-The REST Abstract File System Service developed by us, is currently
+The REST Abstract File System Service Service developed by us, is currently
 supporting three types of storage engines which are Amazon S3, Google
 drive and any virtual machine. 
 
@@ -176,18 +176,20 @@ claims no cap on the amount of data that can be stored, that is why
 companies who needs scale on the go prefer to choose Amazon S3 as
 their file or object storage.
 
-The REST Abstract File System encashes on the scalability and
+The REST Abstract File System Service encashes on the scalability and
 simplicity Amazon S3 provides by abstracting the underlying mechanism
 and providing a way to users to store their data into the durable S3
 storage.
 
-File Operations Supported by Abstract File System includes,
+File operations supported by the REST Abstract File System Service
+includes,
+
 \begin{itemize}
-    \item   Listing of files inside a specified bucket (bucket logical
-segregation of files)
-    \item       Retrieving a specific file
-    \item       Storing file in  the specified bucket
-    \item       Removing the file from the bucket
+\item Listing of files inside a specified bucket (bucket logical
+  segregation of files)
+\item Retrieving a specific file
+\item Storing file in the specified bucket
+\item Removing the file from the bucket
 \end{itemize}
 
 
@@ -231,7 +233,7 @@ Key file can be downloaded here in \.csv format.
 
 To use Amazon S3 as a storage engine within Abstract File 
 System, access key and secret key credentials must be provided in
-the config.yaml file. Abstract File System requires user to provide
+the config.yaml file. The REST Abstract File System Service requires user to provide
 four parameters to configure and start using Amazon S3 service.  (1)
 Access Key, (2) Secret Key, (3) AWS region, and (4) Bucket name.
 
@@ -266,7 +268,7 @@ use their existing account or new one to store files seamlessly.
 Abstract file system provides integration with Google drive by the means of 
 API keys. 
 
-File Operations Supported by Abstract File System includes,
+File Operations Supported by the REST Abstract File System Service includes,
 \begin{itemize}
     \item  Listing of files inside a drive
     \item  Retrieving a specific file 
@@ -325,12 +327,12 @@ created FTP user in the program to access files on the virtual
 machine.
 
 
-Abstract File System facilitates integration with any virtual machine
+The REST Abstract File System Service facilitates integration with any virtual machine
 by the means of ftp installation. FTP is a file transfer protocol and
 is a standard mechanism to deal with remote file operations.
 
 
-File Operations Supported by Abstract File System include,
+File Operations Supported by the REST Abstract File System Service include,
 \begin{itemize}
     \item  Listing of files inside a specified folder allowed by ftp
     \item  Retrieving a specific file 
@@ -385,9 +387,10 @@ file system of virtual machine.
 
 
 
-Use \verb|config.yaml| file in Abstract File System to add the required
-details of Virtual machine.  It will be required to provide details in
-config.yaml files to fill out hostname, port, username, and password.
+Use \verb|config.yaml| file in for REST Abstract File System Service
+to add the required details of Virtual machine.  It will be required
+to provide details in config.yaml files to fill out hostname, port,
+username, and password.
 
 
 Host name is an IP address of the virtual machine which hosts the ftp 
@@ -401,54 +404,46 @@ the FTP user created in FTP installation.
 
 \section{Main Project Artifacts}
 
-Abstract File System project uses different files. 
+Thge REST Abstract File System Service uses different files. 
 Each one of them is used for some specific function in this project.
 
 \begin{description}
 
 
 
-\item[abstractFileSystem.yaml:]
+\item[abstractFileSystem.yaml:] This file is used for giving swagger
+  specification for all the APIs used in the REST Abstract File System
+  Service. This file will be used by Swagger code generator to create
+  python stubs as per specification given in the yaml file.  This file
+  contains swagger version, description, base path, path for each APIs
+  respective input and output parameters of each API respectively.
 
+\item[config.yaml:] This file is used to store the configurations
+  required in the project.  Config.yaml file is used to store access
+  key, secret key, bucket name and region for integrating Amazon S3 in
+  the system. It also stores host name, port, username and password
+  required to integrate virtual machine as a storage engine in the
+  REST Abstract File System Service project.
 
-This file is used for giving swagger specification for all the APIs used in 
-the Abstract File System. This file will be used by Swagger code generator to 
-create python stubs as per specification given in the yaml file.
-This file contains swagger version, description, base path, path for each APIs 
-respective input and output parameters of each API respectively.
+\item[client\_id.json:] This file is used by Abstract File system to
+  enable using google drive api in the project. This file is generated
+  at the time of registering Abstract File System for API of Google
+  drive. It has the key information that enables usage of google drive
+  in this application.
 
-\item[config.yaml:]
-
-
-This file is used to store the configurations required in the project. 
-Config.yaml file is used to store access key, secret key, bucket name and 
-region for integrating Amazon S3 in the system. It also stores host name, 
-port, username and password required to integrate virtual machine as a storage 
-engine in the Abstract File System project.
-
-\item[client\_id.json]
-
-
-This file is used by Abstract File system to enable using google drive api in 
-the project. This file is generated at the time of registering Abstract File 
-System for API of Google drive. It has the key information that enables usage 
-of google drive in this application. 
-
-\item[google\-drive\-credentials.json:]
-
-
-This file will store the keys of client who will be using Abstract File 
-System. When any drive API is called for first time, it is required to login 
-to the google drive and allow Abstract File System to access the user drive. 
-After approval, user specific keys will be stored in 
-google-drive-credentials.json file
+\item[google\-drive\-credentials.json:] This file will store the keys
+  of client who will be using Abstract File System. When any drive API
+  is called for first time, it is required to login to the google
+  drive and allow the REST Abstract File System Service to access the
+  user drive.  After approval, user specific keys will be stored in
+  google-drive-credentials.json file
 
 \item[MakeFile:]
 
 
 MakeFile has different targets and it is used to build the project. 
 Make service is used for performing all the configurations required for 
-Abstract File System and then using swagger-codegen to generate code using 
+the REST Abstract File System Service and then using swagger-codegen to generate code using 
 swagger specification file abstractFileSystem.yaml. It will then copy all 
 python files to the controller and download the requirements. Make start is 
 used to run the service. Make clean is used to clean all the changes done 
@@ -463,24 +458,23 @@ the service and remove the container.
 \item[DockerFile:]
 
 
-DockerFile is used to generate docker image Abstract File System can be run. 
-It has specifications required for generating Ubuntu instance along with 
-installation of python, java, curl, git, wget and required files to generate 
-an image with all required installations ready. It then uses git repository by 
-cloning inside image and then running a project based on targets available in 
-the make file. 
+  DockerFile is used to generate a docker image for the REST Abstract
+  File System Service so it can be run.  It has specifications required for
+  generating Ubuntu instance along with installation of python, java,
+  curl, git, wget and required files to generate an image with all
+  required installations ready. It then uses git repository by cloning
+  inside image and then running a project based on targets available
+  in the make file.
 
-\item[all\_drive\_operations\_controller.py:]
+\item[all\_drive\_operations\_controller.py:] This is a python file
+  that contains the code to implement required file operations for
+  using Google drive as a storage engine in the REST Abstract File
+  System Service.
 
-
-This is a python file that contains the code to implement required file 
-operations for using Google drive as a storage engine in Abstract File System.
-
-\item[all\_s3\_operations\_controller.py:]
-
-
-This is a python file that contains the code to implement required file 
-operations for using Amazon S3 as a storage engine in Abstract File System. 
+\item[all\_s3\_operations\_controller.py:] This is a python file that
+  contains the code to implement required file operations for using
+  Amazon S3 as a storage engine in the REST Abstract File System
+  Service.
 
 \item[all\_vm\_operations\_controller.py:]
 
@@ -499,8 +493,9 @@ system will be accessible it will be displayed as message in
 API result.
 
 
-Figure~\ref{fig:not-configured} shows an output generated when none of 
-the storage engines is configured within Abstract File System. 
+Figure~\ref{fig:not-configured} shows an output generated when none of
+the storage engines is configured within the REST Abstract File System
+Service.
 
 
 \begin{figure*}[!ht]
@@ -533,8 +528,8 @@ Amazon S3, Google Drive and Virtual Machine.
 \end{figure*}
 
 
-To check file operations supported by Abstract File System to integrate 
-with Amazon S3 these APIs are used,
+To check file operations supported by the REST Abstract File System
+Service to integrate with Amazon S3 these APIs are used,
 \begin{itemize}
     \item /cloudmesh/file-system/S3/listData
     \item /cloudmesh/file-system/S3/downloadFile/{fileName}
@@ -543,7 +538,7 @@ with Amazon S3 these APIs are used,
 \end{itemize}
 
 Figure~\ref{fig:all-s3} shows all file operation performed by 
-Abstract File System with Amazon S3 as an underlying storage engines. 
+REST Abstract File System Service with Amazon S3 as an underlying storage engines. 
 
 \begin{figure*}[!ht]
         \centering\includegraphics[width=\columnwidth]
@@ -552,7 +547,7 @@ Abstract File System with Amazon S3 as an underlying storage engines.
 \end{figure*}
 
 
-To check all file operations supported by Abstract File System to integrate 
+To check all file operations supported by the REST Abstract File System Service to integrate 
 with Virtual Machine storage these APIs are used,
 
 \begin{itemize}
@@ -572,7 +567,7 @@ File System with Virtual Machine as an underlying storage engines.
 \end{figure*}
 
 
-To check all file operations supported by Abstract File System 
+To check all file operations supported by the REST Abstract File System Service 
 to integrate with Google Drive these APIs are used,
 
 \begin{itemize}
@@ -584,8 +579,9 @@ to integrate with Google Drive these APIs are used,
 
 \end{itemize}
 
-Figure~\ref{fig:drive-upload} shows output of file upload operation performed 
-by Abstract File System with Google Drive as an underlying storage engines. 
+Figure~\ref{fig:drive-upload} shows output of file upload operation
+performed by the REST Abstract File System Service with Google Drive
+as an underlying storage engines.
 
 \begin{figure*}[!ht]
         \centering\includegraphics[width=\columnwidth]
@@ -594,8 +590,9 @@ by Abstract File System with Google Drive as an underlying storage engines.
 \end{figure*}
 
 
-Figure~\ref{fig:drive-delete} shows output of file delete operation performed 
-by Abstract File System with Google Drive as an underlying storage engines. 
+Figure~\ref{fig:drive-delete} shows output of file delete operation
+performed by the REST Abstract File System Service with Google Drive
+as an underlying storage engines.
 
 \begin{figure*}[!ht]
         \centering\includegraphics[width=\columnwidth]
@@ -604,9 +601,9 @@ by Abstract File System with Google Drive as an underlying storage engines.
 \end{figure*}
 
 
-Figure~\ref{fig:drive-download} 
-shows output of file download operation performed 
-by Abstract File System with Google Drive as an underlying storage engines. 
+Figure~\ref{fig:drive-download} shows output of file download
+operation performed by the REST Abstract File System Service with
+Google Drive as an underlying storage engines.
 
 \begin{figure*}[!ht]
         \centering\includegraphics[width=\columnwidth]
@@ -615,9 +612,9 @@ by Abstract File System with Google Drive as an underlying storage engines.
 \end{figure*}
 
 
-\section{Benefits of Abstract File System}
+\section{Benefits of the REST Abstract File System Service}
 \begin{enumerate}
-    \item Since Abstract File System abstracts the underlying storing 
+    \item Since the REST Abstract File System Service abstracts the underlying storing 
 mechanism, there is no need for client application to know 
 the core implementation of the storage 
 services like Amazon S3, Google Drive SDKs etc
@@ -710,8 +707,9 @@ storage engines respectively.
 
 \section{Challenges and Limitations}
 
-Abstract File System project requires a strong internet connection. 
-Performance of the system is dependent on the speed of internet. 
+The REST Abstract File System Service project requires a strong
+internet connection.  Performance of the system is dependent on the
+speed of internet.
 
 The file name is passed as a URL parameter for APIs such as file upload,
 file download. Abstract file system is not supporting multiple file 
@@ -720,22 +718,25 @@ downloaded or deleted with one API call.
 
 
 \section{Conclusion}
-Abstract File System provides uniform APIs to perform file operations on 
-different storage systems in an abstract way. Abstract File System currently 
-supports Amazon S3, Google drive and Virtual machine as its storage engine. It 
-can be scalable to include other services as well. 
+
+The REST Abstract File System Service provides uniform APIs to perform
+file operations on different storage systems in an abstract way. The
+REST Abstract File System Service currently supports Amazon S3, Google
+drive and Virtual machine as its storage engine. It can be scalable to
+include other services as well.
 
 
-Using Abstract File system, a tedious task to manage files between different 
-storage providers will be reduced and client applications can interact with 
-different storage engines in a seamless way. 
+Using the REST Abstract File system servuce allows to simplify the
+tedious task to manage files between different storage providers. This
+is achieved while using the same API by the client accessing different
+storage engines in a seamless way.
 
 
-By using the abstraction layer, storing or retrieving files from different 
-storage engines will be same process as being saved locally or transferred 
-over the network to other storage system. Such abstraction makes it simpler to 
-switch from one system to another without having to rewrite vast swathes of 
-application code.
+By using the abstraction layer, storing or retrieving files from
+different storage engines will be same process as being saved locally
+or transferred over the network to other storage system. Such
+abstraction makes it simpler to switch from one system to another
+without having to rewrite vast swathes of application code.
 
 
 
