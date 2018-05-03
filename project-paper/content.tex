@@ -28,8 +28,8 @@
 % The default list of authors is too long for headers}
 \renewcommand{\shortauthors}{G. v. Laszewski}
 
-
 \begin{abstract}
+
   We developed a REST Abstract File System Service which is a web
   services that implements and abstracts the underlying storage
   services and provides a uniform web services APIs for users to do
@@ -40,9 +40,8 @@
   to perform file operations with consolidated data view.
 \end{abstract}
 
-\keywords{hid-sp18-420, File system, abstraction, Amazon S3, Google drive, 
-virtual 
-machine}
+\keywords{hid-sp18-420, File system, abstraction, Amazon S3, Google
+  drive, virtual machine}
 
 
 \maketitle
@@ -101,16 +100,45 @@ system.
 \end{figure}
 
 
+\section{Requirements}
+
+List of requirments bal bl bla
+
+\begin{description}
+\item[Storing files:] bla
+
+\item[Distributing files across different services:] bla
+
+\item[Accessing boto, google amazon ,....:] bla
+
+\item[Security and permissins for file access:] bla
+
+\item[Directories:] bla
+
+\item[Virtual directories:] bla
+
+\end{description}
+
+\section{Architecture}
+
+Ondependent form the technology
+
+OpenAPI and advantage
 
 
-\section{Technologies used}
+\section{Implementation}
+
+
+\TODO{TEXT MISSING}
+
+\subsection{Technologies used}
 
 The REST Abstract File System Service project is developed based on
 different technologies. It is using Python as am implementation
 language and APIs are generated using Swagger Codegen by reading
 OpenAPI document.
 
-\subsection{Python}
+\subsubsection{Python}
 
 Python 2.7 is the underlying language that is used to implement all
 the APIs provided by the REST Abstract File System Service.  There are
@@ -144,7 +172,7 @@ implemented functionality. Some of the important modules are
 These python modules are used in different python files to improve 
 implemetation of abstract file system.
 
-\subsection{Swagger}
+\subsubsection{Swagger}
 
 Our \emph{REST Abstract File System Service} service is using Swagger Codegen
 to generate server side stubs based on the abstractFileSystem.yaml
@@ -154,13 +182,13 @@ description of REST APIs.  Swagger was then used to install and run
 REST service. It enabled APIs for accessing storage systems provided
 in this project.
 
-\section{Supported Storage Engines}
+\subsection{Supported Storage Engines}
 
 The REST Abstract File System Service Service developed by us, is currently
 supporting three types of storage engines which are Amazon S3, Google
 drive and any virtual machine. 
 
-\subsection{Amazon S3}
+\subsubsection{Amazon S3}
 
 Amazon S3 stands for Simple Storage Service. It is the most popular
 storage service provided by Amazon Web
@@ -254,7 +282,7 @@ buckets are globally unique and are accessible from anywhere. They are
 placed in specific AWS region. AWS region is an area provided by AWS where
 AWS resources available.
 
-\subsection{Google Drive}
+\subsubsection{Google Drive}
 
 With 3 billion file uploads every day, Google drive is certainly one of the 
 most popular and widely used storage provided by Google. Google drive offers 
@@ -309,7 +337,7 @@ file.  For all later accesses of Abstract file system drive API, these
 keys will be referred and there will be no need to login again.
 
 
-\subsection{Virtual Machine}
+\subsubsection{Virtual Machine}
 
 The virtual machine on any cloud service provider can be used as a
 storage. In certain scenarios, user needs to store the files on their
@@ -403,10 +431,7 @@ default port 21 is used for connection, and finally username and password of
 the FTP user created in FTP installation.
 
 
-
-
-
-\section{Main Project Artifacts}
+\subsection{Project Artifacts}
 
 Thge REST Abstract File System Service uses different files. 
 Each one of them is used for some specific function in this project.
@@ -488,7 +513,7 @@ System.
 
 
 
-\section{Implementation results}
+\section{Results}
 
 When no configurations present in config.yaml file, no storage 
 system will be accessible it will be displayed as message in 
@@ -501,9 +526,14 @@ Service.
 
 
 \begin{figure*}[!ht]
-        \centering\includegraphics[width=\columnwidth]
-        {image/not-configured.JPG}
-        \caption{No storage system configured}\label{fig:not-configured}
+\centering\includegraphics[width=\columnwidth]{image/not-configured.JPG}
+\begin{footnotesize}
+\begin{verbatim}
+root@ip$ make test
+curl http://....
+\end{verbatim}
+\end{footnotesize}
+\caption{No storage system configured}\label{fig:not-configured}
 \end{figure*}
 
 
