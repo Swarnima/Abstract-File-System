@@ -36,12 +36,12 @@ report.pdf:
     make
 
 Please remember that you MUST NOT commit the report.pdf file to the
-repository. If we detect this we will remove it and do not review
-your paper. This is to avoid that students submit papers that actually
-do not compile in LaTeX. Make sure you paper always compiles.
+repository. If we detect this we will remove it and do not review your
+paper. This is to avoid that students submit papers that actually do
+not compile in LaTeX. Make sure you paper always compiles.
 
-This will also generate a simple check on some common issues. The 
-log file is located in 
+This will also generate a simple check on some common issues. The log
+file is located in
 
     report.log
     
