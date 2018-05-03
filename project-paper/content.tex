@@ -262,8 +262,9 @@ terabytes, 10 terabytes, 20 terabytes and 30 terabytes through optional paid
 plans. Files uploaded in Google drive can be up to 5 terabytes in size. Google 
 drive provides 99.9\% up-time guarantee~\cite{hid-sp18-420-google-drive-wiki}. 
 
-Abstract file system provides integration with Google drive so that they can 
-use their existing account or new one to store files seamlessly.
+Thw REST Abstract file system service provides integration with Google
+drive so that they can use their existing account or new one to store
+files seamlessly.
 
 Abstract file system provides integration with Google drive by the means of 
 API keys. 
@@ -327,9 +328,10 @@ created FTP user in the program to access files on the virtual
 machine.
 
 
-The REST Abstract File System Service facilitates integration with any virtual machine
-by the means of ftp installation. FTP is a file transfer protocol and
-is a standard mechanism to deal with remote file operations.
+The REST Abstract File System Service facilitates integration with any
+virtual machine by the means of ftp installation. FTP is a file
+transfer protocol and is a standard mechanism to deal with remote file
+operations.
 
 
 File Operations Supported by the REST Abstract File System Service include,
@@ -352,8 +354,9 @@ $ sudo apt-get install vsftpd
 \end{verbatim}
 %$
 
-Edit the configuration file to allow writes to file system as well as set the 
-default file system path for file operations as \verb|/srv/ftp|
+Edit the configuration file to allow writes to file system as well as
+set the default file system path for file operations as
+\verb|/srv/ftp|
 
 \begin{verbatim}
 $ sudo service vsftpd restart
@@ -365,8 +368,8 @@ $ sudo service vsftpd restart
 Now make the ftp directory \verb|/srv/ftp| writable 
 
 
-It is required to create a local file system user on the Virtual Machine, you 
-can do that by using following command
+It is required to create a local file system user on the Virtual
+Machine, you can do that by using following command
 
 \begin{verbatim}
 local_root = /srv/ftp  
@@ -377,11 +380,11 @@ $ sudo adduser your_user_name
 \end{verbatim}
 %$
 
-This will ask for password and other details and will create a local user on 
-the virtual machine which can access the ftp installations.
+This will ask for password and other details and will create a local
+user on the virtual machine which can access the ftp installations.
 
-Now everything is ready and abstract file system can make connection with the 
-file system of virtual machine.
+Now everything is ready and abstract file system can make connection
+with the file system of virtual machine.
 
 
 
@@ -438,22 +441,20 @@ Each one of them is used for some specific function in this project.
   user drive.  After approval, user specific keys will be stored in
   google-drive-credentials.json file
 
-\item[MakeFile:]
+\item[MakeFile:] MakeFile has different targets and it is used to
+  build the project.  Make service is used for performing all the
+  configurations required for the REST Abstract File System Service
+  and then using swagger-codegen to generate code using swagger
+  specification file abstractFileSystem.yaml. It will then copy all
+  python files to the controller and download the requirements. Make
+  start is used to run the service. Make clean is used to clean all
+  the changes done while configuring the project.
 
 
-MakeFile has different targets and it is used to build the project. 
-Make service is used for performing all the configurations required for 
-the REST Abstract File System Service and then using swagger-codegen to generate code using 
-swagger specification file abstractFileSystem.yaml. It will then copy all 
-python files to the controller and download the requirements. Make start is 
-used to run the service. Make clean is used to clean all the changes done 
-while configuring the project. 
-
-
-MakeFile also supports docker implementation. Make container is used to call 
-docker-build and docker-start target which will generate docker container and 
-run project services in the new container. Make docker-clean is used to stop 
-the service and remove the container. 
+  MakeFile also supports docker implementation. Make container is used
+  to call docker-build and docker-start target which will generate
+  docker container and run project services in the new container. Make
+  docker-clean is used to stop the service and remove the container.
 
 \item[DockerFile:]
 
@@ -537,8 +538,9 @@ Service to integrate with Amazon S3 these APIs are used,
     \item /cloudmesh/file-system/S3/deleteFile/{fileName}
 \end{itemize}
 
-Figure~\ref{fig:all-s3} shows all file operation performed by 
-REST Abstract File System Service with Amazon S3 as an underlying storage engines. 
+Figure~\ref{fig:all-s3} shows all file operation performed by REST
+Abstract File System Service with Amazon S3 as an underlying storage
+engines.
 
 \begin{figure*}[!ht]
         \centering\includegraphics[width=\columnwidth]
@@ -547,8 +549,9 @@ REST Abstract File System Service with Amazon S3 as an underlying storage engine
 \end{figure*}
 
 
-To check all file operations supported by the REST Abstract File System Service to integrate 
-with Virtual Machine storage these APIs are used,
+To check all file operations supported by the REST Abstract File
+System Service to integrate with Virtual Machine storage these APIs
+are used,
 
 \begin{itemize}
     \item /cloudmesh/file-system/VM/listData
@@ -567,8 +570,8 @@ File System with Virtual Machine as an underlying storage engines.
 \end{figure*}
 
 
-To check all file operations supported by the REST Abstract File System Service 
-to integrate with Google Drive these APIs are used,
+To check all file operations supported by the REST Abstract File
+System Service to integrate with Google Drive these APIs are used,
 
 \begin{itemize}
 
