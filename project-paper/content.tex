@@ -30,16 +30,14 @@
 
 
 \begin{abstract}
-  Abstract File System is a web services package that implements and
-  abstracts the underlying storage services and provides a uniform web
-  services APIs for users to do file operations like, retrieving,
-  storing, removing etc. The services are provided to support storage
-  engines such as Amazon Simple Storage Service, google drive and
-  virtual machine. This web service package can be used by different
-  big data applications client to perform file operations with
-  consolidated data view.
-
-
+  We developed a Abstract File System which is a web services that
+  implements and abstracts the underlying storage services and
+  provides a uniform web services APIs for users to do file operations
+  like, retrieving, storing, removing etc. The services are provided
+  to support storage engines such as Amazon Simple Storage Service,
+  google drive and virtual machine. This web service package can be
+  used by different big data applications client to perform file
+  operations with consolidated data view.
 \end{abstract}
 
 \keywords{hid-sp18-420, File system, abstraction, Amazon S3, Google drive, 
@@ -51,7 +49,6 @@ machine}
 
 
 \section{Introduction}
-
 
 File system operations is an integral part of the operating system and
 a quintessential part of most of the applications that deals with
@@ -65,9 +62,9 @@ however integrating with each one of them is a tedious tasks since,
 understanding and implementing APIs for each service is a time
 consuming tasks.
 
-That is why abstract file system comes into picture. Abstract file
-system provides a layer of abstraction over the underlying file system
-so that the users or customers can integrate storage services as file
+That is why the REST Abstract File System comes into picture. It
+provides a layer of abstraction over the underlying file system so
+that the users or customers can integrate storage services as file
 systems like Amazon S3~\cite{hid-sp18-420-amazon-S3}, Google
 Drive~\cite{hid-sp18-420-google-drive} and other services without even
 knowing their real implementation.
@@ -87,7 +84,7 @@ provided. With the APis, it will be easy to perform file operations
 such as listing, uploading, downloading and deleting in a uniform way
 with supported storage engines.
 
-With an abstract layer, all file operations will be like a same
+With an abstract layer, all file operations will follow the same
 process for all storage engines and it will be as easy as performing
 operations on local system.
 
@@ -113,17 +110,14 @@ technologies. It is using Python as am implementation language
 and APIs are generated using Swagger Codegen by reading 
 OpenAPI document.
 
-\paragraph{Python:}
+\subsection{Python}
 
-Python 2.7 is the underlying language that is used to implement all the APIs 
-provided by Abstract File System.  There are 3 main python files having 
-implementation of file operations to be performed with Amazon S3, Google drive 
-and Virtual machine storage respectively. 
-
-
-Different python modules are used to support the implemented functionality.
-
-Some of the important modules are 
+Python 2.7 is the underlying language that is used to implement all
+the APIs provided by Abstract File System.  There are 3 main python
+files having implementation of file operations to be performed with
+Amazon S3, Google drive and Virtual machine storage respectively. A
+number of python modules are used to support the implemented
+functionality. Some of the important modules are
 
 \begin{description}
 
@@ -150,48 +144,42 @@ Some of the important modules are
 These python modules are used in different python files to improve 
 implemetation of abstract file system.
 
-\paragraph{Swagger}:
+\subsection{Swagger}
 
-Abstract File System project is using Swagger Codegen 
-to generate server side stubs based on the 
-abstractFileSystem.yaml file with swagger specifications. 
-This yaml file is an OpenAPI document which is in JSON format. 
-It contains swagger version, and description of REST APIs. 
-Swagger was then used to install and run REST service. It enabled 
-APIs for accessing storage systems provided in this project.
-
-
+Our \emph{REST Abstract File System} service is using Swagger Codegen
+to generate server side stubs based on the abstractFileSystem.yaml
+file with swagger specifications.  This yaml file is an OpenAPI
+document which is in JSON format.  It contains swagger version, and
+description of REST APIs.  Swagger was then used to install and run
+REST service. It enabled APIs for accessing storage systems provided
+in this project.
 
 \section{Supported Storage Engines}
 
 The REST Abstract File System Service developed by us, is currently
 supporting three types of storage engines which are Amazon S3, Google
-drive and any virtual machine.
+drive and any virtual machine. 
 
 \subsection{Amazon S3}
 
-Amazon S3 stands for Simple Storage Service. It is the most popular storage
-service provided by Amazon Web Service~\cite{hid-sp18-420-amazon-S3}. It 
-provides a highly scalable,
-reliable, and low latency data storage infrastructure at low costs. Amazon S3
-can be used to store and retrieve data of any kind and any amount from 
-anywhere.
+Amazon S3 stands for Simple Storage Service. It is the most popular
+storage service provided by Amazon Web
+Service~\cite{hid-sp18-420-amazon-S3}. It provides a highly scalable,
+reliable, and low latency data storage infrastructure at low
+costs. Amazon S3 can be used to store and retrieve data of any kind
+and any amount from anywhere. Amazon S3 is known for its durability
+and stability. Amazon S3 SLAs claims to provide 99.999999999\%
+durability for files stored in its durable
+storage~\cite{hid-sp18-420-amazon-S3}. Amazon S3 is popularly an
+object storage, where each file is treated as an object. Amazon S3
+claims no cap on the amount of data that can be stored, that is why
+companies who needs scale on the go prefer to choose Amazon S3 as
+their file or object storage.
 
-
-Amazon S3 is known for its durability and stability. Amazon S3 SLAs claims to
-provide 99.999999999\% durability for files stored in its durable 
-storage~\cite{hid-sp18-420-amazon-S3}.
-
-
-Amazon S3 is popularly an object storage, where each file is treated as an
-object. Amazon S3 claims no cap on the amount of data that can be stored, that
-is why companies who needs scale on the go prefer to choose Amazon S3 as their
-file or object storage.
-
-
-Abstract File System encashes on the scalability and simplicity Amazon S3
-provides by abstracting the underlying mechanism and providing a way to users
-to store their data into the durable S3 storage.
+The REST Abstract File System encashes on the scalability and
+simplicity Amazon S3 provides by abstracting the underlying mechanism
+and providing a way to users to store their data into the durable S3
+storage.
 
 \paragraph{File Operations Supported by Abstract File System}
 
