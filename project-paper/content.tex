@@ -50,25 +50,26 @@ machine}
 
 \section{Introduction}
 
-File system operations is an integral part of the operating system and
-a quintessential part of most of the applications that deals with
-storing, retrieving or reading the files. Now a days it is likely
-possible to have data stored at different locations with different
-storage systems. Managing all this data together is a difficult task.
+File system operations are an integral part of the operating system as
+well as cloud services. They are a quintessential part of any big data
+applications that deals with storing, retrieving or reading the
+files. Modern distributed applications are likely to have data stored at
+different locations with different storage systems. Managing the data
+at the different locations is a difficult task.
 
-There are numerous storage providers who facilitates their customers
-to store, read, write, retrieve and other sorts of file operations,
-however integrating with each one of them is a tedious tasks since,
-understanding and implementing APIs for each service is a time
-consuming tasks.
+There are numerous storage providers who facilitate their customers to
+store, read, write, retrieve files. However, integrating with each one
+of them is a potential tedious tasks since, understanding and
+implementing APIs for each service is a time consuming.
 
-That is why the REST Abstract File System Service comes into picture. It
-provides a layer of abstraction over the underlying file system so
-that the users or customers can integrate storage services as file
-systems like Amazon S3~\cite{hid-sp18-420-amazon-S3}, Google
-Drive~\cite{hid-sp18-420-google-drive} and other services without even
-knowing their real implementation.
-
+This motivates the development of our \emp{REST Abstract File System
+  Service}. It provides a layer of abstraction over the underlying
+file system so that the users or customers can integrate storage
+services as file systems like Amazon S3~\cite{hid-sp18-420-amazon-S3},
+Google Drive~\cite{hid-sp18-420-google-drive} and other such services
+without even knowing their implementation details. Because of the
+abstraction, backend services can easily be switched while the client
+application uses the same API to access the various services.
 
 
 \begin{figure}[!ht]
@@ -78,7 +79,7 @@ knowing their real implementation.
 \end{figure}
 
 
-As shown in the Figure~\ref{fig:architecture}, client applications can
+As shown in Figure~\ref{fig:architecture}, client applications can
 interact with abstract file system with the web service package
 provided. With the APis, it will be easy to perform file operations
 such as listing, uploading, downloading and deleting in a uniform way
