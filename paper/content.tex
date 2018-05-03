@@ -19,23 +19,24 @@
 
 \begin{abstract}
 
-Amazon Simple Storage Service (S3) is a storage system built to store and 
-retrieve any amount of data from anywhere on web such as web sites or mobile 
-applications. It is a simple web service that provides flexibility for user to 
-manage data in a secure way and optimized cost. Amazon S3 manages security by 
-providing access control, data encryption and versioning capability. This 
-simple storage service can be used to access and manage data by web sites, 
-mobile applications, corporate applications and data from IoT 
-devices~\cite{hid-sp18-420-amazon-S3}.
+  Amazon Simple Storage Service (S3) is a storage system built to
+  store and retrieve any amount of data from anywhere on web such as
+  web sites or mobile applications. It is a simple web service that
+  provides flexibility for user to manage data in a secure way and
+  optimized cost. Amazon S3 manages security by providing access
+  control, data encryption and versioning capability. This simple
+  storage service can be used to access and manage data by web sites,
+  mobile applications, corporate applications and data from IoT
+  devices~\cite{hid-sp18-420-amazon-S3}.
 
 
-Amazon S3 is being used as a secured, reliable and scalable data storage. With 
-multiple features of S3, it can be used for data intensive web content
-storage,static website hosting, data achieving, performing computations and
-analytics
-on stored data along with other Amazon services. Due to these multiple 
-advantages of Amazon S3, many big companies such as Netflix, Airbnb, Thomson 
-Reuters and Zillow are using it as a secured storage solution.
+  Amazon S3 is being used as a secured, reliable and scalable data
+  storage. With multiple features of S3, it can be used for data
+  intensive web content storage,static website hosting, data
+  achieving, performing computations and analytics on stored data
+  along with other Amazon services. Due to these multiple advantages
+  of Amazon S3, many big companies such as Netflix, Airbnb, Thomson
+  Reuters and Zillow are using it as a secured storage solution.
 
 
 \end{abstract}
@@ -46,51 +47,53 @@ Reuters and Zillow are using it as a secured storage solution.
 
 \section{Introduction}
 
-Amazon S3 stands for Simple Storage Service. Amazon S3 provides a highly
-scalable, reliable, and low latency data storage infrastructure at low
-costs~\cite{hid-sp18-420-amazon-S3-FAQ}. Amazon S3 can be used to store and
-retrieve data of any kind and any amount. It can be accessed from anywhere.
-Amazon S3 can be used for static website hosting for different web applications.
+Amazon S3 stands for Simple Storage Service. Amazon S3 provides a
+highly scalable, reliable, and low latency data storage infrastructure
+at low costs~\cite{hid-sp18-420-amazon-S3-FAQ}. Amazon S3 can be used
+to store and retrieve data of any kind and any amount. It can be
+accessed from anywhere.  Amazon S3 can be used for static website
+hosting for different web applications.
 
-One of the important features of using S3 is it offers a highly durable,
-scalable, and secure destination for backing up and archiving critical
-data~\cite{hid-sp18-420-amazon-S3}. As per AWS documentation, ``Amazon S3 is
-designed to deliver 99.999999999\% durability, and it is used to store data for
-millions of applications used by market leaders in every
-industry''~\cite{hid-sp18-420-amazon-S3}.
+One of the important features of using S3 is it offers a highly
+durable, scalable, and secure destination for backing up and archiving
+critical data~\cite{hid-sp18-420-amazon-S3}. As per AWS documentation,
+``Amazon S3 is designed to deliver 99.999999999\% durability, and it
+is used to store data for millions of applications used by market
+leaders in every industry''~\cite{hid-sp18-420-amazon-S3}.
 
-Amazon S3 provides versioning capability for protection of stored data by giving
-versions to each of the data file. Amazon S3 enables user to write lifecycle
-rules to migrate less frequently accessed data. One can store any number of file
-objects. Size of one object ranges from 0 bytes to 5 terabytes. Price for using
-Amazon S3 service depends on the usage of the service and is specific to the AWS
-region.
+Amazon S3 provides versioning capability for protection of stored data
+by giving versions to each of the data file. Amazon S3 enables user to
+write lifecycle rules to migrate less frequently accessed data. One
+can store any number of file objects. Size of one object ranges from 0
+bytes to 5 terabytes. Price for using Amazon S3 service depends on the
+usage of the service and is specific to the AWS region.
 
 
 
 \section{Concepts and Architecture}
 
 
-Amazon S3 stores data within resources called buckets and data is stored
-inside these buckets as an object where object is nothing but a data like text
-file.
-Each bucket has its own name and this name is globally unique. Amazon has 
-defined different regions based on availability of its resources and this 
-globally unique name indicates uniqueness across all regions provided by 
-Amazon. The global namespace allows to organize and access data effectively.
+Amazon S3 stores data within resources called buckets and data is
+stored inside these buckets as an object where object is nothing but a
+data like text file.  Each bucket has its own name and this name is
+globally unique. Amazon has defined different regions based on
+availability of its resources and this globally unique name indicates
+uniqueness across all regions provided by Amazon. The global namespace
+allows to organize and access data effectively.
 
-Amazon has not specified any restriction on number of data objects to be 
-stored in one bucket but number of buckets are limited to 100 per account. 
-Each objectis associated with a meta data which is in key value pair format 
-and consists ofpredefined key values such as Last Modified date time of an
-object.
+Amazon has not specified any restriction on number of data objects to
+be stored in one bucket but number of buckets are limited to 100 per
+account.  Each objectis associated with a meta data which is in key
+value pair format and consists ofpredefined key values such as Last
+Modified date time of an object.
 
-S3 files can be accessed or created based on the access control restrictions 
-applied to that bucket. This adds security to data. Amazon S3 has a search 
-functionality which can be used to search the objects within the bucket. This 
-search is based on the file name and the search string should contain the full 
-file name or any prefix of file name. Amazon does not provide content based 
-search functionality for S3 so one cannot search for the internal data in a 
+S3 files can be accessed or created based on the access control
+restrictions applied to that bucket. This adds security to
+data. Amazon S3 has a search functionality which can be used to search
+the objects within the bucket. This search is based on the file name
+and the search string should contain the full file name or any prefix
+of file name. Amazon does not provide content based search
+functionality for S3 so one cannot search for the internal data in a
 file.
 
 
@@ -102,191 +105,202 @@ file.
 
 \subsection{Simplicity and Flexibility} 
 
-Amazon S3 is very simple to access and use. With the GUI provided by amazon,
-it is very easy to perform different operations such as bucket creation or
-deletion, file upload and download, attaching different policies to bucket and 
-many more. Amazon s3 can be accessed using web based AWS management console, 
-mobile app, full REST APIs and AWS SDKs for integration with Mobile SDK, Java, 
-PHP, Python, NET, Node.js, Ruby. Amazon S3 provides different mechanisms which 
-gives flexibility to control data access by providing different options to 
-manage where, how and when the data can be accessed. In this way, different S3 
-features allows users to take data driven approach for optimization and 
-management of data efficiently~\cite{hid-sp18-420-amazon-S3-FAQ}.
+Amazon S3 is very simple to access and use. With the GUI provided by
+amazon, it is very easy to perform different operations such as bucket
+creation or deletion, file upload and download, attaching different
+policies to bucket and many more. Amazon s3 can be accessed using web
+based AWS management console, mobile app, full REST APIs and AWS SDKs
+for integration with Mobile SDK, Java, PHP, Python, NET, Node.js,
+Ruby. Amazon S3 provides different mechanisms which gives flexibility
+to control data access by providing different options to manage where,
+how and when the data can be accessed. In this way, different S3
+features allows users to take data driven approach for optimization
+and management of data efficiently~\cite{hid-sp18-420-amazon-S3-FAQ}.
 
 
 \subsection{Data Durability and Reliability} 
 
-``Amazon S3 provides durable infrastructure to store important data and is 
-designed for durability of 99.999999999\% of objects. Data is redundantly 
-stored across multiple facilities and multiple devices in each 
-facility''~\cite{hid-sp18-420-amazon-S3}.
+``Amazon S3 provides durable infrastructure to store important data
+and is designed for durability of 99.999999999\% of objects. Data is
+redundantly stored across multiple facilities and multiple devices in
+each facility''~\cite{hid-sp18-420-amazon-S3}.
 
-Different mechanisms such as access control, versioning capability, data 
-encryption, audit logs, multi-factor user authentication, limited time access 
-to objects and many more makes Amazon S3 as a reliable storage solution.
+Different mechanisms such as access control, versioning capability,
+data encryption, audit logs, multi-factor user authentication, limited
+time access to objects and many more makes Amazon S3 as a reliable
+storage solution.
 
 \subsection{Scalability}
 
-Amazon S3 is useful for fast growing websites. No additional storage 
-provisioning is required by S3. The payment is based on usage so developers 
-can start with small and grow their application as per need with same 
-performance and reliability. 
-Industries like healthcare, media and financial services that 
-requires big data and analytics or archive application with changing demand 
-can best make use of Amazon S3.
+Amazon S3 is useful for fast growing websites. No additional storage
+provisioning is required by S3. The payment is based on usage so
+developers can start with small and grow their application as per need
+with same performance and reliability.  Industries like healthcare,
+media and financial services that requires big data and analytics or
+archive application with changing demand can best make use of Amazon
+S3.
 
 \subsection{Simple Data Transfer} 
 
-Amazon S3 makes it simple to transfer data as it provides set of tools and 
-different options of data migration to move large volume files from Amazon S3.
-Using S3 transfer acceleration~\cite{hid-sp18-420-amazon-S3-dataTransfer-FAQ}, 
-it is fast, easy and secure to transfer files over long distance. AWS 
-Snowball~\cite{hid-sp18-420-amazon-snowball}, AWS Snowball 
-Edge~\cite{hid-sp18-420-amazon-snowball-edge} and AWS 
-Snowmobile~\cite{hid-sp18-420-amazon-snowmobile} are used for large 
-transferring where data migration can be made at one fifth of the cost of high 
-speed internet~\cite{hid-sp18-420-amazon-S3-cloud-migration}.
+Amazon S3 makes it simple to transfer data as it provides set of tools
+and different options of data migration to move large volume files
+from Amazon S3.  Using S3 transfer
+acceleration~\cite{hid-sp18-420-amazon-S3-dataTransfer-FAQ}, it is
+fast, easy and secure to transfer files over long distance. AWS
+Snowball~\cite{hid-sp18-420-amazon-snowball}, AWS Snowball
+Edge~\cite{hid-sp18-420-amazon-snowball-edge} and AWS
+Snowmobile~\cite{hid-sp18-420-amazon-snowmobile} are used for large
+transferring where data migration can be made at one fifth of the cost
+of high speed internet~\cite{hid-sp18-420-amazon-S3-cloud-migration}.
 
 \subsection{Security and Access Management} 
 
-Amazon S3 provides multiple mechanisms to provide data security and to control 
-or monitor data access to user.
+Amazon S3 provides multiple mechanisms to provide data security and to
+control or monitor data access to user.
 
 
 \begin{description}
 
-\item [User identities.] Each user registered to Amazon web service gets an 
-identity. These identities are linked to credit cards to prevent one person to 
-create multiple fake user accounts. S3 also has a concept of anonymous 
-requests when no information is associated about user within the request.
+\item [User identities.] Each user registered to Amazon web service
+  gets an identity. These identities are linked to credit cards to
+  prevent one person to create multiple fake user accounts. S3 also
+  has a concept of anonymous requests when no information is
+  associated about user within the request.
 
-\item [Access control.] Access controls are given by access control lists 
-(ACL).Each ACL can specify the access for up to 100 
-identities~\cite{hid-sp18-420-amazon-S3-details}
-S3 supports different access controls.
+\item [Access control.] Access controls are given by access control
+  lists (ACL).Each ACL can specify the access for up to 100
+  identities~\cite{hid-sp18-420-amazon-S3-details} S3 supports
+  different access controls.
 
 \begin{description}
-\item [FULLCONTROL] The owner preserves full control over the object with all 
-permissions.
+\item [FULLCONTROL] The owner preserves full control over the object
+  with all permissions.
 \item [READ] It is given to buckets or users to read the object.
-\item [WRITE] It is given to buckets so that user can create objects in the 
-bucket.
-\item [READACL] It is given to buckets or objects by which a user can read the
-ACL and get the identity of the owner.
-\item [WRITEACL] It is given to user to change the Access control list. It is 
-similar to full user control since the user can assign any right.
+\item [WRITE] It is given to buckets so that user can create objects
+  in the bucket.
+\item [READACL] It is given to buckets or objects by which a user can
+  read the ACL and get the identity of the owner.
+\item [WRITEACL] It is given to user to change the Access control
+  list. It is similar to full user control since the user can assign
+  any right.
 \end{description}
 
-\item [Encryption.] Data can be securely uploaded or downloaded in S3 using 
-SSL encrypted endpoints. If user chooses to server side encryption, 
-Amazon s3 will 
-automatically encrypt the data on every write and decrypt the data on every 
-read~\cite{hid-sp18-420-amazon-S3-data-encryption}.
+\item [Encryption.] Data can be securely uploaded or downloaded in S3
+  using SSL encrypted endpoints. If user chooses to server side
+  encryption, Amazon s3 will automatically encrypt the data on every
+  write and decrypt the data on every
+  read~\cite{hid-sp18-420-amazon-S3-data-encryption}.
 
-\item [Versioning.] Amazon S3 provides versioning capability to preserve and 
-restore all the versions of objects in a bucket. This allows the recovery for 
-any application failure or wrong action of user or it is available whenever 
-required for reference. S3 enables user to configure life cycle 
-rules~\cite{hid-sp18-420-amazon-S3-lidecycle-rule} to automatically manage the 
-versioning.
+\item [Versioning.] Amazon S3 provides versioning capability to
+  preserve and restore all the versions of objects in a bucket. This
+  allows the recovery for any application failure or wrong action of
+  user or it is available whenever required for reference. S3 enables
+  user to configure life cycle
+  rules~\cite{hid-sp18-420-amazon-S3-lidecycle-rule} to automatically
+  manage the versioning.
 
 \end{description}
 
 
 \subsection{Query in Place} 
 
-This is one of the important features of Amazon. S3 allows to run some big 
-data analytics on data without moving it to any other system. 
-Amazon provides suit
-of tools for analysing and processing data in S3. Using different queries, 
-subset of data required from S3 object can be 
-taken~\cite{hid-sp18-420-amazon-S3}.
+This is one of the important features of Amazon. S3 allows to run some
+big data analytics on data without moving it to any other system.
+Amazon provides suit of tools for analysing and processing data in
+S3. Using different queries, subset of data required from S3 object
+can be taken~\cite{hid-sp18-420-amazon-S3}.
 
 \section{Use cases}
 Amazon S3 can be used in different ways based on the requirement. 
 
 \begin{description}
-\item [Static web content and media.] Amazon S3 is widely used for storing 
-static web content and media for different applications. Each object in the S3 
-has a unique HTTP URL to access that object. Hence, this content can be 
-delivered directly. Amazon S3 can be used as an origin store for content 
-delivery networks like Amazon
-CloudFront~\cite{hid-sp18-420-amazon-cloudfront}. 
-Amazon S3 is suited for hosting web content that requires bandwidth for 
-addressing extreme spikes in demand. For fast growing websites such as hosting 
-data intensive content like video or photo sharing websites, Amazon S3 is the   
-solution as it does not require any additional storage provisioning.
+\item [Static web content and media.] Amazon S3 is widely used for
+  storing static web content and media for different
+  applications. Each object in the S3 has a unique HTTP URL to access
+  that object. Hence, this content can be delivered directly. Amazon
+  S3 can be used as an origin store for content delivery networks like
+  Amazon CloudFront~\cite{hid-sp18-420-amazon-cloudfront}.  Amazon S3
+  is suited for hosting web content that requires bandwidth for
+  addressing extreme spikes in demand. For fast growing websites such
+  as hosting data intensive content like video or photo sharing
+  websites, Amazon S3 is the solution as it does not require any
+  additional storage provisioning.
 
 
 
-\item [Host Static Website.] Amazon S3 provides completely available and 
-scalable solution for static website hosting. It can be used to host the 
-websites with static content such has HTML files, images, videos and scripts 
-such as java scripts.
-Bucket with this static content needs to be configured for website hosting.
-While configuring this bucket, index document which is nothing but the webpage 
-to which all requests to root domain are 
-redirected~\cite{hid-sp18-420-amazon-S3-details}. It is normally index.html 
-file.
-After configuring the bucket, it is available with its end point. There is no 
-additional cost involved for hosting static website on Amazon S3. Pricing is 
-same as S3 storage, requests and data transfer pricing.
+\item [Host Static Website.] Amazon S3 provides completely available
+  and scalable solution for static website hosting. It can be used to
+  host the websites with static content such has HTML files, images,
+  videos and scripts such as java scripts.  Bucket with this static
+  content needs to be configured for website hosting.  While
+  configuring this bucket, index document which is nothing but the
+  webpage to which all requests to root domain are
+  redirected~\cite{hid-sp18-420-amazon-S3-details}. It is normally
+  index.html file.  After configuring the bucket, it is available with
+  its end point. There is no additional cost involved for hosting
+  static website on Amazon S3. Pricing is same as S3 storage, requests
+  and data transfer pricing.
 
 
-\item [Computation and Analytics.] Amazon S3 is used as a data store for big 
-data analytics. It is suitable for data that requires large scale analysis 
-like financial transaction analysis and multimedia
-transcoding~\cite{hid-sp18-420-amazon-S3-FAQ}.
-Since Amazon S3 is scalable horizontally, user can access data from multiple 
-computing nodes simultaneously without any constrain of single connection. 
-Amazon offers different services that helps to manage big data in S3.
+\item [Computation and Analytics.] Amazon S3 is used as a data store
+  for big data analytics. It is suitable for data that requires large
+  scale analysis like financial transaction analysis and multimedia
+  transcoding~\cite{hid-sp18-420-amazon-S3-FAQ}.  Since Amazon S3 is
+  scalable horizontally, user can access data from multiple computing
+  nodes simultaneously without any constrain of single connection.
+  Amazon offers different services that helps to manage big data in
+  S3.
 
 
-\item [Backup and Archive.] Amazon S3 offers different ways to securely backup 
-data stored in S3. Amazon glacier~\cite{hid-sp18-420-amazon-glacier} can be 
-used to move data from S3 for backup purpose. Amazon has specified different 
-regions based on the resource availability. Amazon S3 cross region replication 
-can be used for disaster recovery. With cross region replication all S3 
-objects from main bucket are replicated to destination bucket in different
-region. So in case of failure, there is always a backup in another region. 
+\item [Backup and Archive.] Amazon S3 offers different ways to
+  securely backup data stored in S3. Amazon
+  glacier~\cite{hid-sp18-420-amazon-glacier} can be used to move data
+  from S3 for backup purpose. Amazon has specified different regions
+  based on the resource availability. Amazon S3 cross region
+  replication can be used for disaster recovery. With cross region
+  replication all S3 objects from main bucket are replicated to
+  destination bucket in different region. So in case of failure, there
+  is always a backup in another region.
 
-Amazon also provides versioning capability for S3 data. Versions are crated 
-for data objects in S3 so older data can be accessed with the older version of 
-that data object.
+  Amazon also provides versioning capability for S3 data. Versions are
+  crated for data objects in S3 so older data can be accessed with the
+  older version of that data object.
 
 \end{description}
 
 \section{Pricing}
 
-For Amazon S3 storage, pricing is performed based on the storage used. 
-There is no cost required for setup and no minimum fee applicable. Amazon S3 
-pricing is 
-based on the storage in the form of per GB per month, data transfer and number 
-of requests per month. These rates differ based on the AWS region. ``AWS free 
-tier provides discount which includes 5GB storage, 20000 get requests, 
-2000 putrequests and 15 GB data transfer for 
+For Amazon S3 storage, pricing is performed based on the storage used.
+There is no cost required for setup and no minimum fee
+applicable. Amazon S3 pricing is based on the storage in the form of
+per GB per month, data transfer and number of requests per
+month. These rates differ based on the AWS region. ``AWS free tier
+provides discount which includes 5GB storage, 20000 get requests, 2000
+putrequests and 15 GB data transfer for
 free''~\cite{hid-sp18-420-amazon-S3-pricing}.
 
 \section{Conclusion}
-These days, usage of internet is increased on a large scale. Amazon S3 is one 
-of the key services that fulfils this increased demand of big data storage. It 
-is a secure, fast, reliable and scalable storage solution provided by Amazon. 
-Along with the secured data storage, Amazon offers multiple features such as 
-computation and analytics on stored data or performing queries to get the 
-subset of data. 
-Since S3 does not require any additional storage provisioning it is used as a 
-data storage for fast growing websites. Data intensive content on a website 
-such as videos or photo sharing websites can make best use of Amazon S3. S3 
-buckets can be configured as a static website hosting where once a bucket is 
-configured, a website is available. 
-Due to such features of S3, it has become a choice of some of the big 
-companies like Netflix, Airbnb, Thomson Reuters, Zillow and many 
+
+These days, usage of internet is increased on a large scale. Amazon S3
+is one of the key services that fulfils this increased demand of big
+data storage. It is a secure, fast, reliable and scalable storage
+solution provided by Amazon.  Along with the secured data storage,
+Amazon offers multiple features such as computation and analytics on
+stored data or performing queries to get the subset of data.  Since S3
+does not require any additional storage provisioning it is used as a
+data storage for fast growing websites. Data intensive content on a
+website such as videos or photo sharing websites can make best use of
+Amazon S3. S3 buckets can be configured as a static website hosting
+where once a bucket is configured, a website is available.  Due to
+such features of S3, it has become a choice of some of the big
+companies like Netflix, Airbnb, Thomson Reuters, Zillow and many
 more~\cite{hid-sp18-420-amazon-S3}.
 
 \begin{acks}
 
-The author would like to thank Dr.~Gregor~von~Laszewski for his support and
-suggestions to write this paper and help to improve content.
+  The author would like to thank Dr.~Gregor~von~Laszewski for his
+  support and suggestions to write this paper and help to improve
+  content.
 
 \end{acks}
 
