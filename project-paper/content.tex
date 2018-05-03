@@ -62,7 +62,7 @@ store, read, write, retrieve files. However, integrating with each one
 of them is a potential tedious tasks since, understanding and
 implementing APIs for each service is a time consuming.
 
-This motivates the development of our \emp{REST Abstract File System
+This motivates the development of our \emph{REST Abstract File System
   Service}. It provides a layer of abstraction over the underlying
 file system so that the users or customers can integrate storage
 services as file systems like Amazon S3~\cite{hid-sp18-420-amazon-S3},
@@ -91,7 +91,8 @@ operations on local system.
 En example shown in Figure~\ref{fig:client} identifies the ability to
 not only use the services in parallel, but also use them in
 conjunction. While files are stored on different backend systems, the
-REST file system abstraction makes them appear to be in teh same file system.
+REST file system abstraction makes them appear to be in teh same file
+system.
 
 \begin{figure}[!ht]
         \centering\includegraphics[width=\columnwidth]
@@ -230,11 +231,12 @@ Key file can be downloaded here in \.csv format.
 \end{enumerate}
 
 
-To use Amazon S3 as a storage engine within Abstract File 
-System, access key and secret key credentials must be provided in
-the config.yaml file. The REST Abstract File System Service requires user to provide
-four parameters to configure and start using Amazon S3 service.  (1)
-Access Key, (2) Secret Key, (3) AWS region, and (4) Bucket name.
+To use Amazon S3 as a storage engine within Abstract File System,
+access key and secret key credentials must be provided in the
+config.yaml file. The REST Abstract File System Service requires user
+to provide four parameters to configure and start using Amazon S3
+service.  (1) Access Key, (2) Secret Key, (3) AWS region, and (4)
+Bucket name.
 
 
 Access key and secret key are required for the programmatic
@@ -615,24 +617,28 @@ Google Drive as an underlying storage engines.
 
 
 \section{Benefits of the REST Abstract File System Service}
+
+\TODO{TEXT MISSING}
+
 \begin{enumerate}
-    \item Since the REST Abstract File System Service abstracts the underlying storing 
-mechanism, there is no need for client application to know 
-the core implementation of the storage 
-services like Amazon S3, Google Drive SDKs etc
+
+\item Since the REST Abstract File System Service abstracts the
+  underlying storing mechanism, there is no need for client
+  application to know the core implementation of the storage services
+  like Amazon S3, Google Drive SDKs etc
     
-    \item Switching between underlying storage mechanism is a hassle free task 
-and can be done even by a newbie.
+\item Switching between underlying storage mechanism is a hassle free
+  task and can be done even by a newbie.
     
-    \item Once abstract file system project is integrated into client 
-applications, there is no code change required apart from only the 
-configuration changes which are specific to underlying storage mechanism.
+\item Once abstract file system project is integrated into client
+  applications, there is no code change required apart from only the
+  configuration changes which are specific to underlying storage
+  mechanism.
     
-    \item Since the underlying storage mechanisms can be anything like Amazon 
-S3, Google Drive which 
-provides huge amount of data to be stored and retrieved on demand, scalability 
-is the biggest benefit of abstract file system
-	project
+\item Since the underlying storage mechanisms can be anything like
+  Amazon S3, Google Drive which provides huge amount of data to be
+  stored and retrieved on demand, scalability is the biggest benefit
+  of abstract file system project
 	
 \item Abstract File system is currently dealing with only 3 types of
   storage engines which are Amazon S3, Google Drive and Virtual
