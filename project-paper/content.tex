@@ -75,25 +75,23 @@ application uses the same API to access the various services.
 \begin{figure}[!ht]
         \centering\includegraphics[width=\columnwidth]
         {image/architecture.JPG}
-        \caption{System components}\label{fig:architecture}
+        \caption{Abstraction Layer}\label{fig:architecture}
 \end{figure}
 
-
-As shown in Figure~\ref{fig:architecture}, client applications can
-interact with abstract file system with the web service package
-provided. With the APis, it will be easy to perform file operations
-such as listing, uploading, downloading and deleting in a uniform way
-with supported storage engines.
-
-With an abstract layer, all file operations will follow the same
+The general layerd acrhitecture of the Service is depicted in
+Figure~\ref{fig:architecture}. Client applications can interact
+through an abstract file system with the file system services hosted
+by a variety of storage vendors. With the APis, it is easy to perform
+file operations such as listing, uploading, downloading and deleting
+in a uniform way with supported storage engines. Consequently through
+the abstraction layer, all file operations will follow the same
 process for all storage engines and it will be as easy as performing
 operations on local system.
 
-
-To get the clear understanding of application, Figure~\ref{fig:client}
-shows a sample wireframe design of simple client application using
-the REST Abstract File System Service.
-
+En example shown in Figure~\ref{fig:client} identifies the ability to
+not only use the services in parallel, but also use them in
+conjunction. While files are stored on different backend systems, the
+REST file system abstraction makes them appear to be in teh same file system.
 
 \begin{figure}[!ht]
         \centering\includegraphics[width=\columnwidth]
