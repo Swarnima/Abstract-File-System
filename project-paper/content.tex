@@ -193,9 +193,7 @@ Abstract File System encashes on the scalability and simplicity Amazon S3
 provides by abstracting the underlying mechanism and providing a way to users
 to store their data into the durable S3 storage.
 
-\paragraph{File Operations Supported by Abstract File System}
-
-
+File Operations Supported by Abstract File System includes,
 \begin{itemize}
     \item   Listing of files inside a specified bucket (bucket logical
 segregation of files)
@@ -206,21 +204,12 @@ segregation of files)
 
 
 
-\paragraph{How to enable Amazon S3 as a storage in Abstract File System}
-
-
 In order to use Amazon S3 as a storage system, first user needs to have an
 account with AWS system.
 
-\TODO{YOU USE LATEX PARAGRAPHS WRONG}
-
-\paragraph{Steps to create new root account with AWS}
-
-\TODO{TEXT MISING}
-\TODO{NO URLS IN TEXT THEY MUST BE CITATIONS}
-
+To create new root account with AWS,
 \begin{enumerate}
-\item Open https://aws.amazon.com/ and click Create New Account.
+\item Go to AWS console and create new account.
 \item Give details such as email address, password and user name.
 \item Contact details: Give all specified contact details.
 \item Payment Information: Give credit card or debit card details for
@@ -231,10 +220,10 @@ account with AWS system.
 \end{enumerate}
 
 
-\paragraph{Steps to create new user in AWS account and give
-  programmatic access}
 
-\TODO{TEXT MISING}
+It is required to create new user in AWS account and give 
+programmatic access so that the account credentials can be 
+used for configuring with project.
 
 \begin{enumerate}
     \item Login to AWS account.
@@ -252,9 +241,8 @@ Key file can be downloaded here in \.csv format.
 \end{enumerate}
 
 
-\TODO{INCONSITANT USE OF PARAGRAPHS}
-\paragraph{To use Amazon S3 as a storage engine within Abstract File
-  System}, access key and secret key credentials must be provided in
+To use Amazon S3 as a storage engine within Abstract File 
+System, access key and secret key credentials must be provided in
 the config.yaml file. Abstract File System requires user to provide
 four parameters to configure and start using Amazon S3 service.  (1)
 Access Key, (2) Secret Key, (3) AWS region, and (4) Bucket name.
@@ -290,17 +278,13 @@ use their existing account or new one to store files seamlessly.
 Abstract file system provides integration with Google drive by the means of 
 API keys. 
 
-\paragraph{File Operations Supported by Abstract File System}
-
+File Operations Supported by Abstract File System includes,
 \begin{itemize}
     \item  Listing of files inside a drive
     \item  Retrieving a specific file 
     \item  Storing file inside drive
     \item  Removing the file from drive
 \end{itemize}
-
-\paragraph{How to enable Google Drive as a storage in Abstract File
-  System} 
 
 Abstract file system requires user to login to their Google
 account only for the first time of using this application and all
@@ -358,18 +342,13 @@ by the means of ftp installation. FTP is a file transfer protocol and
 is a standard mechanism to deal with remote file operations.
 
 
-\paragraph{File Operations Supported by Abstract File System }
-
-\TODO{TEXT MISSING}
-
+File Operations Supported by Abstract File System include,
 \begin{itemize}
     \item  Listing of files inside a specified folder allowed by ftp
     \item  Retrieving a specific file 
     \item  Storing file inside specified folder
     \item  Removing the file from the folder
 \end{itemize}   
-
-\paragraph{How to enable Virtual Machine as a storage in Abstract File System}
 
 To use storage of some virtual machine, it is important to perform 
 FTP installation on that server. 
@@ -527,8 +506,9 @@ System.
 
 \section{Implementation results}
 
-\paragraph{When no configurations present in config.yaml file, no storage 
-system will be accessible.}
+When no configurations present in config.yaml file, no storage 
+system will be accessible it will be displayed as message in 
+API result.
 
 
 Figure~\ref{fig:not-configured} shows an output generated when none of 
@@ -543,7 +523,7 @@ the storage engines is configured within Abstract File System.
 
 
 
-\paragraph{All files listed from all storage engines}
+All files listed from all storage engines,
 
 APIs used:
 
@@ -565,13 +545,8 @@ Amazon S3, Google Drive and Virtual Machine.
 \end{figure*}
 
 
-\paragraph{All file operations supported by Abstract File System to integrate 
-with Amazon S3}
-
-
-APIs used:
-
-
+To check file operations supported by Abstract File System to integrate 
+with Amazon S3 these APIs are used,
 \begin{itemize}
     \item /cloudmesh/file-system/S3/listData
     \item /cloudmesh/file-system/S3/downloadFile/{fileName}
@@ -589,11 +564,9 @@ Abstract File System with Amazon S3 as an underlying storage engines.
 \end{figure*}
 
 
-\paragraph{All file operations supported by Abstract File System to integrate 
-with Virtual Machine storage}
+To check all file operations supported by Abstract File System to integrate 
+with Virtual Machine storage these APIs are used,
 
-
-API used:
 \begin{itemize}
     \item /cloudmesh/file-system/VM/listData
     \item /cloudmesh/file-system/VM/downloadFile/{fileName}
@@ -611,11 +584,9 @@ File System with Virtual Machine as an underlying storage engines.
 \end{figure*}
 
 
-\paragraph{All file operations supported by Abstract File System 
-to integrate with Google Drive}
+To check all file operations supported by Abstract File System 
+to integrate with Google Drive these APIs are used,
 
-
-API used:
 \begin{itemize}
 
     \item /cloudmesh/file-system/drive/listData
