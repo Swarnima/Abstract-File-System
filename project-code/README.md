@@ -36,14 +36,9 @@ To use Abstract File System, below python libraries needs to be installed
 
 Follow these steps to run Abstract File System project
 
-* Clone repository ``hid-sp18-420.git``
-* Go to folder ``/project-code``
-* Download swagger-codegen-cli jar file by command
-
+	git clone hid-sp18-420.git
+	cd project-code``
         wget http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/2.3.1/swagger-codegen-cli-2.3.1.jar
-
-* run command 	
-
         java -jar swagger-codegen-cli-2.3.1.jar generate  -i abstractFileSystem.yaml  -l python-flask  -o server/file-system/flaskConnexion  -D supportPython2=true 
 
 This will generate server stubs
@@ -103,11 +98,11 @@ to remove docker image
 
 Video to display working of this project 
 	
-<https://drive.google.com/open?id=1wBY0_yscvKAm8VPwd87DSElqNchx8b2z>
+<https://drive.google.com/file/d/11FCSg7vU61l9Mm6_M4P1JJxVi62Yn5f1/view>
 
-Docker implementation without config.yaml file 
+Docker implementation with no data in config.yaml file 
 
-<https://drive.google.com/open?id=1k9WgpiZ8oT4IYo9ts0dJ7mQbyCH8O-XX>
+<https://drive.google.com/file/d/1L0dJSE4IQ0RI2_wcI4UTIxAKEyxSPs2K/view>
 
 
 
