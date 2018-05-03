@@ -30,13 +30,14 @@
 
 
 \begin{abstract}
-Abstract File System is a web services package that implements and abstracts
-the underlying storage services and provides a uniform web services APIs for
-users to do file operations like, retrieving, storing, removing  etc. The
-services are provided to support storage engines such as Amazon Simple Storage
-Service, google drive and virtual machine. This web service package can be
-used by different big data applications client to perform file operations with
-consolidated data view. 
+  Abstract File System is a web services package that implements and
+  abstracts the underlying storage services and provides a uniform web
+  services APIs for users to do file operations like, retrieving,
+  storing, removing etc. The services are provided to support storage
+  engines such as Amazon Simple Storage Service, google drive and
+  virtual machine. This web service package can be used by different
+  big data applications client to perform file operations with
+  consolidated data view.
 
 
 \end{abstract}
@@ -52,23 +53,24 @@ machine}
 \section{Introduction}
 
 
-File system operations is an integral part of the operating system and a
-quintessential part of most of the applications that deals with storing,
-retrieving or reading the files. Now a days it is likely possible to have data
-stored at different locations with different storage systems. Managing all this
-data together is a difficult task.
+File system operations is an integral part of the operating system and
+a quintessential part of most of the applications that deals with
+storing, retrieving or reading the files. Now a days it is likely
+possible to have data stored at different locations with different
+storage systems. Managing all this data together is a difficult task.
 
-There are numerous storage providers who facilitates their customers to store,
-read, write, retrieve and other sorts of file operations, however integrating
-with each one of them is a tedious tasks since, understanding and implementing
-APIs for each service is a time consuming tasks.
+There are numerous storage providers who facilitates their customers
+to store, read, write, retrieve and other sorts of file operations,
+however integrating with each one of them is a tedious tasks since,
+understanding and implementing APIs for each service is a time
+consuming tasks.
 
-That is why abstract file system comes into picture. Abstract file system
-provides a layer of abstraction over the underlying file system so that the
-users or customers can integrate storage services as file systems like 
-Amazon S3~\cite{hid-sp18-420-amazon-S3}, 
-Google Drive~\cite{hid-sp18-420-google-drive} and other services 
-without even knowing their real implementation.
+That is why abstract file system comes into picture. Abstract file
+system provides a layer of abstraction over the underlying file system
+so that the users or customers can integrate storage services as file
+systems like Amazon S3~\cite{hid-sp18-420-amazon-S3}, Google
+Drive~\cite{hid-sp18-420-google-drive} and other services without even
+knowing their real implementation.
 
 
 
@@ -79,15 +81,15 @@ without even knowing their real implementation.
 \end{figure}
 
 
-As shown in the Figure~\ref{fig:architecture}, 
-client applications can interact with abstract file 
-system with the web service package provided. With the APis, it will be easy 
-to perform file operations such as listing, uploading, downloading and 
-deleting in a uniform way with supported storage engines. 
+As shown in the Figure~\ref{fig:architecture}, client applications can
+interact with abstract file system with the web service package
+provided. With the APis, it will be easy to perform file operations
+such as listing, uploading, downloading and deleting in a uniform way
+with supported storage engines.
 
-With an abstract layer, all file operations will be like a same process for 
-all storage engines and it will be as easy as performing operations on local 
-system. 
+With an abstract layer, all file operations will be like a same
+process for all storage engines and it will be as easy as performing
+operations on local system.
 
 
 To get the clear understanding of application, Figure~\ref{fig:client} 
@@ -124,28 +126,24 @@ Different python modules are used to support the implemented functionality.
 Some of the important modules are 
 
 \begin{description}
-\item[Boto3:] Boto3 is a software development kit (SDK) that provides AWS 
-interface for 
-Python applications. Abstract File System is using Boto3 which is the latest 
-version of the SDK provided. Boto 3 supports Python versions 2.6.5, 2.7 and 
-3.3 version~\cite{hid-sp18-420-boto}. 
-It is used to support Amazon S3 interface with Abstract File System.
 
-\item[ftplib:] The ftplib module in Python is used to perform different file 
-opearations on 
-virtual machine by connecting to FTP server installed on that 
-machine~\cite{hid-sp18-420-FTP}.
+\item[Boto3:] Boto3 is a software development kit (SDK) that provides
+  AWS interface for Python applications. Abstract File System is using
+  Boto3 which is the latest version of the SDK provided. Boto 3
+  supports Python versions 2.6.5, 2.7 and 3.3
+  version~\cite{hid-sp18-420-boto}.  It is used to support Amazon S3
+  interface with Abstract File System.
 
-\item[yaml:] This library is used to read the confog.yaml file used in Abstract 
-File System 
-project to store the configurations required by different storage engines.
+\item[ftplib:] The ftplib module in Python is used to perform
+  different file opearations on virtual machine by connecting to FTP
+  server installed on that machine~\cite{hid-sp18-420-FTP}.
 
+\item[yaml:] This library is used to read the confog.yaml file used in
+  Abstract File System project to store the configurations required by
+  different storage engines.
 
-
-\item[google-api-python-client:]
-
-This is a python specific client library provided by google to handle the 
-Google drive APIs.
+\item[google-api-python-client:] This is a python specific client
+  library provided by google to handle the Google drive APIs.
 
 \end{description}
 
@@ -214,23 +212,29 @@ segregation of files)
 In order to use Amazon S3 as a storage system, first user needs to have an
 account with AWS system.
 
+\TODO{YOU USE LATEX PARAGRAPHS WRONG}
 
 \paragraph{Steps to create new root account with AWS}
 
+\TODO{TEXT MISING}
+\TODO{NO URLS IN TEXT THEY MUST BE CITATIONS}
+
 \begin{enumerate}
-    \item Open https://aws.amazon.com/ and click Create New Account.
-    \item Give details such as email address, password and user name.
-    \item Contact details: Give all specified contact details.
-    \item Payment Information: Give credit card or debit card details for user
-verification by AWS side.
-    \item       Phone verification: AWS will make a call on the given number
-and give a 4 digit code to verify your phone number.
+\item Open https://aws.amazon.com/ and click Create New Account.
+\item Give details such as email address, password and user name.
+\item Contact details: Give all specified contact details.
+\item Payment Information: Give credit card or debit card details for
+  user verification by AWS side.
+\item Phone verification: AWS will make a call on the given number and
+  give a 4 digit code to verify your phone number.
     \item Select a support plan and Continue.
 \end{enumerate}
 
 
-\paragraph{Steps to create new user in AWS account and give programmatic access}
+\paragraph{Steps to create new user in AWS account and give
+  programmatic access}
 
+\TODO{TEXT MISING}
 
 \begin{enumerate}
     \item Login to AWS account.
@@ -248,22 +252,19 @@ Key file can be downloaded here in \.csv format.
 \end{enumerate}
 
 
-
-\paragraph{To use Amazon S3 as a storage engine within Abstract File System}, 
-access key and secret key credentials must be provided 
-in the config.yaml file. Abstract File System requires user to 
-provide four parameters to configure and start using Amazon S3 service.
-(1) Access Key, 
-(2) Secret Key,
-(3) AWS region, and
-(4) Bucket name.
+\TODO{INCONSITANT USE OF PARAGRAPHS}
+\paragraph{To use Amazon S3 as a storage engine within Abstract File
+  System}, access key and secret key credentials must be provided in
+the config.yaml file. Abstract File System requires user to provide
+four parameters to configure and start using Amazon S3 service.  (1)
+Access Key, (2) Secret Key, (3) AWS region, and (4) Bucket name.
 
 
-Access key and secret key are required for the programmatic authentication of 
-using S3 services. These keys are provided at the time of 
-user account creation with a role to access Amazon S3.
-This can be completed by following steps to create new user 
-in AWS account and give programmatic access section of this document.
+Access key and secret key are required for the programmatic
+authentication of using S3 services. These keys are provided at the
+time of user account creation with a role to access Amazon S3.  This
+can be completed by following steps to create new user in AWS account
+and give programmatic access section of this document.
 
 Amazon S3 stores data within resources called bucket. Buckets are logical
 segregation of files. Bucket name is configurable from the config.yaml file
@@ -289,7 +290,7 @@ use their existing account or new one to store files seamlessly.
 Abstract file system provides integration with Google drive by the means of 
 API keys. 
 
-\paragraph{File Operations Supported by Abstract File System }
+\paragraph{File Operations Supported by Abstract File System}
 
 \begin{itemize}
     \item  Listing of files inside a drive
@@ -298,18 +299,20 @@ API keys.
     \item  Removing the file from drive
 \end{itemize}
 
-\paragraph{How to enable Google Drive as a storage in Abstract File System}
+\paragraph{How to enable Google Drive as a storage in Abstract File
+  System} 
 
-Abstract file system requires user to login to their Google account only for 
-the first time of using this application and all later requests will not 
-require to authenticate again. 
+Abstract file system requires user to login to their Google
+account only for the first time of using this application and all
+later requests will not require to authenticate again.
 
-For the first request to Google drive API via Abstract file system, it will 
-open a browser for authentication. An existing account or new account with 
-Google is required for authentication. 
+For the first request to Google drive API via Abstract file system, it
+will open a browser for authentication. An existing account or new
+account with Google is required for authentication.
 
-User needs to perform authentication first and then Google drive will ask user 
-to allow or deny Abstract File system to access the Google drive. 
+User needs to perform authentication first and then Google drive will
+ask user to allow or deny Abstract File system to access the Google
+drive.
 
 Figure~\ref{fig:auth} shows the screenshot of how authentication is 
 required by application to access the Google drive data. 
@@ -324,36 +327,41 @@ to allow or cancel file access to file-system application.
 \end{figure}
 
 
-Once user allows access to Abstract File system, user specific API keys will 
-be generated and stored inside google-drive-credentials.json file. 
-For all later accesses of Abstract file system drive API, these keys will be 
-referred and there will be no need to login again. 
+Once user allows access to Abstract File system, user specific API
+keys will be generated and stored inside google-drive-credentials.json
+file.  For all later accesses of Abstract file system drive API, these
+keys will be referred and there will be no need to login again.
 
 
 \subsection{Virtual Machine}
 
-The virtual machine on any cloud service provider can be used as a storage. In 
-certain scenarios, user needs to store the files on their specific servers for 
-variety of reasons. Abstract file system facilitates storing the files on the 
-server of their choice.
+The virtual machine on any cloud service provider can be used as a
+storage. In certain scenarios, user needs to store the files on their
+specific servers for variety of reasons. Abstract file system
+facilitates storing the files on the server of their choice.
 
-There can be multiple ways to access the storage provided by virtual machines. 
+There can be multiple ways to access the storage provided by virtual
+machines.
 
-One way is to write an http service accept and transfer file and storage on 
-local file system and host this service on the virtual machine. Second way 
-could be to do SSH or SCP by writing a sub-process for making a connection to 
-machine using machines IP, port and authentication through username, 
-password or \verb|.pem| files. Third way is to do FTP installation on virtual 
-machine and using the newly created FTP user in the program to access files on 
-the virtual machine.
+One way is to write an http service accept and transfer file and
+storage on local file system and host this service on the virtual
+machine. Second way could be to do SSH or SCP by writing a sub-process
+for making a connection to machine using machines IP, port and
+authentication through username, password or \verb|.pem| files. Third
+way is to do FTP installation on virtual machine and using the newly
+created FTP user in the program to access files on the virtual
+machine.
 
 
-Abstract File System facilitates integration with any virtual machine by the 
-means of ftp installation. FTP is a file transfer protocol and is a standard 
-mechanism to deal with remote file operations.
+Abstract File System facilitates integration with any virtual machine
+by the means of ftp installation. FTP is a file transfer protocol and
+is a standard mechanism to deal with remote file operations.
 
 
 \paragraph{File Operations Supported by Abstract File System }
+
+\TODO{TEXT MISSING}
+
 \begin{itemize}
     \item  Listing of files inside a specified folder allowed by ftp
     \item  Retrieving a specific file 
@@ -668,42 +676,44 @@ provides huge amount of data to be stored and retrieved on demand, scalability
 is the biggest benefit of abstract file system
 	project
 	
-    \item Abstract File system is currently dealing with only 3 types of storage engines 
-which are Amazon S3, Google Drive and Virtual machines. 
-It is flexible to add other storage systems that can be configurable from config.yaml 
-file and API specification provided in abstractFileSystem.yaml file.
+\item Abstract File system is currently dealing with only 3 types of
+  storage engines which are Amazon S3, Google Drive and Virtual
+  machines.  It is flexible to add other storage systems that can be
+  configurable from config.yaml file and API specification provided in
+  abstractFileSystem.yaml file.
     
 \end{enumerate}
 
 
 \section{Benchmarks}
 
-Abstract File system project uses Amazon S3, google drive and Virtual machine 
-as its underlying storage engines. There are total 4 APIs provided for each of 
-the storage engine. The APis include listing of files, file upload, download 
-and deletion respectively. 
+Abstract File system project uses Amazon S3, google drive and Virtual
+machine as its underlying storage engines. There are total 4 APIs
+provided for each of the storage engine. The APis include listing of
+files, file upload, download and deletion respectively.
 
-In order to make use of this project, it is required to have access to all 
-these storage systems. To use Amazon S3, it is required to have an account in 
-AWS with a bucket created in S3 where file operations can be performed. To use 
-google drive as a storage system in this project, user needs to have an account 
-in google and it is required to login to it when any of the Google drive API is 
-called from the project for first time. To use Virtual machine as a storage 
-system, it is required to complete FTP installation on the virtual machine and 
-then the credentials can be provided in the config.yaml file present in the 
-project to perform file operations on virtual machine.
-In case if any of the configuration is not available, abstract file system APIs 
-call to the respective storage engine will provide a response message saying 
-that this storage system is not configured. 
+In order to make use of this project, it is required to have access to
+all these storage systems. To use Amazon S3, it is required to have an
+account in AWS with a bucket created in S3 where file operations can
+be performed. To use google drive as a storage system in this project,
+user needs to have an account in google and it is required to login to
+it when any of the Google drive API is called from the project for
+first time. To use Virtual machine as a storage system, it is required
+to complete FTP installation on the virtual machine and then the
+credentials can be provided in the config.yaml file present in the
+project to perform file operations on virtual machine.  In case if any
+of the configuration is not available, abstract file system APIs call
+to the respective storage engine will provide a response message
+saying that this storage system is not configured.
 
-The performance of all APIs is dependent upon the size of the file and the 
-speed of internet. System performance was tested with internet speed of 4.29 
-mbps for upload and 6.1 mbps for download
-To test the performance of list API to list files from each of the storage 
-engines, Amazon S3 took 0.01 seconds, Google drive took 0.02 seconds and 
-Virtual machine took 0.01 seconds.
-To check the upload and download APIs for each of the storage engines, a file 
-with 87,856 kilobyte is used.
+The performance of all APIs is dependent upon the size of the file and
+the speed of internet. System performance was tested with internet
+speed of 4.29 mbps for upload and 6.1 mbps for download To test the
+performance of list API to list files from each of the storage
+engines, Amazon S3 took 0.01 seconds, Google drive took 0.02 seconds
+and Virtual machine took 0.01 seconds.  To check the upload and
+download APIs for each of the storage engines, a file with 87,856
+kilobyte is used.
 
 Figure~\ref{fig:upload-test} shows records of time taken 
 by file upload operation on different storage systems
