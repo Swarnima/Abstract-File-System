@@ -37,7 +37,7 @@ To use Abstract File System, below python libraries needs to be installed
 Follow these steps to run Abstract File System project
 
 	git clone hid-sp18-420.git
-	cd project-code``
+	cd project-code
         wget http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/2.3.1/swagger-codegen-cli-2.3.1.jar
         java -jar swagger-codegen-cli-2.3.1.jar generate  -i abstractFileSystem.yaml  -l python-flask  -o server/file-system/flaskConnexion  -D supportPython2=true 
 
@@ -63,9 +63,9 @@ These calls will list all data in Amazon S3, Google drive and Virtual machine re
 
 ### 2. Using make file
 
-Clone repository ``hid-sp18-420.git``
+git clone hid-sp18-420.git
 
-Go to folder ``/project-code``
+cd project-code
 
 Use command ``make`` to generate code 
 
@@ -75,9 +75,9 @@ Use command ``make clean`` to clean the code
 
 ### 3. Using Docker
 
-Clone repository ``hid-sp18-420.git``
+git clone hid-sp18-420.git
 
-Go to folder ``/project-code``
+cd project-code
 
 Use command ``make container``
 
