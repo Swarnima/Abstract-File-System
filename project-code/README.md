@@ -47,7 +47,7 @@ To test the service follow these steps
 
 ### 1. Using Docker
 
-git clone hid-sp18-420.git
+git clone https://github.com/cloudmesh-community/hid-sp18-999.git
 
 cd project-code
 
@@ -69,7 +69,7 @@ to remove docker image
 
 ### 2. Using make file
 
-git clone hid-sp18-420.git
+git clone https://github.com/cloudmesh-community/hid-sp18-999.git
 
 cd project-code
 
@@ -91,7 +91,7 @@ To use Abstract File System, below python libraries needs to be installed
 
 Follow these steps to run Abstract File System project
 
-git clone hid-sp18-420.git
+git clone https://github.com/cloudmesh-community/hid-sp18-999.git
 
 cd project-code
 
