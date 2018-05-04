@@ -301,12 +301,12 @@ terabytes, 10 terabytes, 20 terabytes and 30 terabytes through optional paid
 plans. Files uploaded in Google drive can be up to 5 terabytes in size. Google 
 drive provides 99.9\% up-time guarantee~\cite{hid-sp18-420-google-drive-wiki}. 
 
-Thw REST Abstract file system service provides integration with Google
+The REST Abstract file system service provides integration with Google
 drive so that they can use their existing account or new one to store
 files seamlessly.
 
-Abstract file system provides integration with Google drive by the means of 
-API keys. 
+REST Abstract file system service provides integration with 
+Google drive by the means of API keys. 
 
 File Operations Supported by the REST Abstract File System Service includes,
 \begin{itemize}
@@ -316,15 +316,17 @@ File Operations Supported by the REST Abstract File System Service includes,
     \item  Removing the file from drive
 \end{itemize}
 
-Abstract file system requires user to login to their Google
-account only for the first time of using this application and all
-later requests will not require to authenticate again.
-For the first request to Google drive API via Abstract file system, it
-will open a browser for authentication. An existing account or new
-account with Google is required for authentication.
+REST Abstract file system service requires user to login to 
+their Google account only for the first time of using 
+this application and all later requests will not require to 
+authenticate again.
+For the first request to Google drive API via REST Abstract file 
+system service, it will open a browser for authentication. 
+An existing account or new account with Google is required 
+for authentication.
 User needs to perform authentication first and then Google drive will
-ask user to allow or deny Abstract File system to access the Google
-drive.
+ask user to allow or deny Abstract File system project to access 
+the Google drive.
 
 Figure~\ref{fig:auth} shows the screenshot of how authentication is 
 required by application to access the Google drive data. 
@@ -350,8 +352,8 @@ keys will be referred and there will be no need to login again.
 
 The virtual machine on any cloud service provider can be used as a
 storage. In certain scenarios, user needs to store the files on their
-specific servers for variety of reasons. Abstract file system
-facilitates storing the files on the server of their choice.
+specific servers for variety of reasons. REST Abstract file system 
+Service facilitates storing the files on the server of their choice.
 
 There can be multiple ways to access the storage provided by virtual
 machines.
@@ -420,8 +422,8 @@ $ sudo adduser your_user_name
 
 This will ask for password and other details and will create a local
 user on the virtual machine which can access the ftp installations.
-Now everything is ready and abstract file system can make connection
-with the file system of virtual machine.
+Now everything is ready and REST Abstract file system Service can 
+make connection with the file system of virtual machine.
 
 
 Use \verb|config.yaml| file in for REST Abstract File System Service
@@ -1056,9 +1058,9 @@ internet connection.  Performance of the system is dependent on the
 speed of internet.
 
 The file name is passed as a URL parameter for APIs such as file upload,
-file download. Abstract file system is not supporting multiple file 
-upload and download at a time. Only one file can be uploaded or 
-downloaded or deleted with one API call. 
+file download. REST Abstract file system Service is not supporting 
+multiple file upload and download at a time. Only one file can be 
+uploaded or downloaded or deleted with one API call. 
 
 No special security considerations are implemented other than those provided
 by the underlying subsystems.
