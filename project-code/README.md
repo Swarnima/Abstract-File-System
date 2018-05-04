@@ -1,4 +1,4 @@
-# RESR Abstract File System SERVICE
+# REST Abstract File System SERVICE
 
 
 The REST Abstract File System Service which is a web services that
@@ -95,11 +95,16 @@ git clone hid-sp18-420.git
 
 cd project-code
 
-wget http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/2.3.1/swagger-codegen-cli-2.3.1.jar
+wget 
+http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/2.3.1/swagger-cod
+egen-cli-2.3.1.jar
 
-java -jar swagger-codegen-cli-2.3.1.jar generate  -i abstractFileSystem.yaml  -l python-flask  -o server/file-system/flaskConnexion  -D supportPython2=true 
+java -jar swagger-codegen-cli-2.3.1.jar generate  -i abstractFileSystem.yaml  
+-l python-flask  -o server/file-system/flaskConnexion  -D supportPython2=true 
 
-This will generate server stubs. copy all_drive_operations_controller.py, all_s3_operations_controller.py and all_vm_operations_controller.py files to ``/server/file-system/flaskConnexion/swagger_server/controllers``
+This will generate server stubs. copy all_drive_operations_controller.py, 
+all_s3_operations_controller.py and all_vm_operations_controller.py files to 
+``/server/file-system/flaskConnexion/swagger_server/controllers``
 
 cd server/file-system/flaskConnexion
 
@@ -119,7 +124,8 @@ Test on broswer or make curl calls to test
      curl http://localhost:8080/cloudmesh/file-system/drive/listData
      curl http://localhost:8080/cloudmesh/file-system/VM/listData
 
-These calls will list all data in Amazon S3, Google drive and Virtual machine respectively
+These calls will list all data in Amazon S3, Google drive and Virtual machine 
+respectively
 #### Output
 
 Video to display working of this project 
