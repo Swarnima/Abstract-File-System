@@ -634,9 +634,11 @@ engines.
 \begin{footnotesize}
 \begin{verbatim}
 
-root@ip-172-31-18-49:/project-code# curl http://localhost:8080/cloudmesh/file-system/S3/uploadFile/file.txt
+root@ip-172-31-18-49:/project-code# curl 
+http://localhost:8080/cloudmesh/file-system/S3/uploadFile/file.txt
 "File uploaded"
-root@ip-172-31-18-49:/project-code# curl http://localhost:8080/cloudmesh/file-system/S3/listData
+root@ip-172-31-18-49:/project-code# curl 
+http://localhost:8080/cloudmesh/file-system/S3/listData
 [
   "file.txt",
   "image1.JPG",
@@ -644,11 +646,14 @@ root@ip-172-31-18-49:/project-code# curl http://localhost:8080/cloudmesh/file-sy
   "swarnima1.JPG",
   "welcome.txt"
 ]
-root@ip-172-31-18-49:/project-code# curl http://localhost:8080/cloudmesh/file-system/S3/downloadFile/file.txt
+root@ip-172-31-18-49:/project-code# curl 
+http://localhost:8080/cloudmesh/file-system/S3/downloadFile/file.txt
 "file downloaded"
-root@ip-172-31-18-49:/project-code# curl http://localhost:8080/cloudmesh/file-system/S3/deleteFile/file.txt
+root@ip-172-31-18-49:/project-code# curl 
+http://localhost:8080/cloudmesh/file-system/S3/deleteFile/file.txt
 "File deleted"
-root@ip-172-31-18-49:/project-code# curl http://localhost:8080/cloudmesh/file-system/S3/listData
+root@ip-172-31-18-49:/project-code# curl 
+http://localhost:8080/cloudmesh/file-system/S3/listData
 [
   "image1.JPG",
   "swarnima-paper.tex",
@@ -680,7 +685,8 @@ File System with Virtual Machine as an underlying storage engines.
 \begin{footnotesize}
 \begin{verbatim}
 
-root@ip-172-31-18-49:/project-code# curl http://localhost:8080/cloudmesh/file-system/VM/listData
+root@ip-172-31-18-49:/project-code# curl 
+http://localhost:8080/cloudmesh/file-system/VM/listData
 [
   [
     "file.txt",
@@ -691,9 +697,13 @@ root@ip-172-31-18-49:/project-code# curl http://localhost:8080/cloudmesh/file-sy
   ]
 ]
 
-root@ip-172-31-18-49:/project-code# curl http://localhost:8080/cloudmesh/file-system/VM/uploadFile/vonLaszewskibigdata.pdf
+root@ip-172-31-18-49:/project-code# curl 
+http://localhost:8080/cloudmesh/file-system/VM/uploadFile/
+vonLaszewskibigdata.pdf
 "File uploaded"
-root@ip-172-31-18-49:/project-code# curl http://localhost:8080/cloudmesh/file-system/VM/listData                    [
+root@ip-172-31-18-49:/project-code# curl 
+http://localhost:8080/cloudmesh/file-system/VM/listData                    
+[
   [
     "file.txt",
     "hello_swarnima.txt",
@@ -703,13 +713,17 @@ root@ip-172-31-18-49:/project-code# curl http://localhost:8080/cloudmesh/file-sy
     "welcome.txt"
   ]
 ]
-root@ip-172-31-18-49:/project-code# curl http://localhost:8080/cloudmesh/file-system/VM/downloadFile/vsetup.py
+root@ip-172-31-18-49:/project-code# curl 
+http://localhost:8080/cloudmesh/file-system/VM/downloadFile/vsetup.py
 "Unable to download file"
-root@ip-172-31-18-49:/project-code# curl http://localhost:8080/cloudmesh/file-system/VM/downloadFile/setup.py
+root@ip-172-31-18-49:/project-code# curl 
+http://localhost:8080/cloudmesh/file-system/VM/downloadFile/setup.py
 "File downloaded"
-root@ip-172-31-18-49:/project-code# curl http://localhost:8080/cloudmesh/file-system/VM/deleteFile/setup.py
+root@ip-172-31-18-49:/project-code# curl 
+http://localhost:8080/cloudmesh/file-system/VM/deleteFile/setup.py
 "File deleted"
-root@ip-172-31-18-49:/project-code# curl http://localhost:8080/cloudmesh/file-system/VM/listData
+root@ip-172-31-18-49:/project-code# curl 
+http://localhost:8080/cloudmesh/file-system/VM/listData
 [
   [
     "file.txt",
@@ -746,7 +760,8 @@ as an underlying storage engines.
 \begin{figure*}[!ht]
 \begin{footnotesize}
 \begin{verbatim}
-root@ip-172-31-18-49:/project-code# curl http://localhost:8080/cloudmesh/file-system/drive/listData
+root@ip-172-31-18-49:/project-code# curl 
+http://localhost:8080/cloudmesh/file-system/drive/listData
 [
   "welcome.txt",
   "vonLaszewskibigdata.pdf",
@@ -769,9 +784,11 @@ root@ip-172-31-18-49:/project-code# curl http://localhost:8080/cloudmesh/file-sy
   "Cloud_7Mar18.rar",
   "Documents.rar"
 ]
-root@ip-172-31-18-49:/project-code# curl http://localhost:8080/cloudmesh/file-system/drive/uploadFile/welcome2.txt
+root@ip-172-31-18-49:/project-code# curl 
+http://localhost:8080/cloudmesh/file-system/drive/uploadFile/welcome2.txt
 "File uploaded"
-root@ip-172-31-18-49:/project-code# curl http://localhost:8080/cloudmesh/file-system/drive/listData
+root@ip-172-31-18-49:/project-code# curl 
+http://localhost:8080/cloudmesh/file-system/drive/listData
 [
   "welcome2.txt",
   "welcome.txt",
@@ -811,7 +828,8 @@ displays modified list of files.
 \begin{footnotesize}
 \begin{verbatim}
 
-root@ip-172-31-18-49:/project-code# curl http://localhost:8080/cloudmesh/file-system/drive/listData
+root@ip-172-31-18-49:/project-code# curl 
+http://localhost:8080/cloudmesh/file-system/drive/listData
 [
   "welcome2.txt",
   "welcome.txt",
@@ -835,9 +853,11 @@ root@ip-172-31-18-49:/project-code# curl http://localhost:8080/cloudmesh/file-sy
   "Cloud_7Mar18.rar",
   "Documents.rar"
 ]
-root@ip-172-31-18-49:/project-code# curl http://localhost:8080/cloudmesh/file-system/drive/deleteFile/welcome2.txt
+root@ip-172-31-18-49:/project-code# curl 
+http://localhost:8080/cloudmesh/file-system/drive/deleteFile/welcome2.txt
 "File deleted"
-root@ip-172-31-18-49:/project-code# curl http://localhost:8080/cloudmesh/file-system/drive/listData
+root@ip-172-31-18-49:/project-code# curl 
+http://localhost:8080/cloudmesh/file-system/drive/listData
 [
   "welcome.txt",
   "vonLaszewskibigdata.pdf",
@@ -876,7 +896,8 @@ Google Drive as an underlying storage engines.
 \begin{footnotesize}
 \begin{verbatim}
 
-root@ip-172-31-18-49:/project-code# curl http://localhost:8080/cloudmesh/file-system/S3/downloadFile/file.txt
+root@ip-172-31-18-49:/project-code# curl 
+http://localhost:8080/cloudmesh/file-system/S3/downloadFile/file.txt
 "file downloaded"
 
 \end{verbatim}
@@ -964,7 +985,9 @@ Time required: 0.11 seconds
 
 root@ip-172-31-18-49:/project-code# date
 Wed May  2 14:59:49 UTC 2018
-root@ip-172-31-18-49:/project-code# curl http://localhost:8080/cloudmesh/file-system/S3/uploadFile/vonLaszewskibigdata.pdf
+root@ip-172-31-18-49:/project-code# curl 
+http://localhost:8080/cloudmesh/file-system/S3/uploadFile/von
+Laszewskibigdata.pdf
 "File uploaded"
 root@ip-172-31-18-49:/project-code# date
 Wed May  2 15:00:00 UTC 2018
@@ -977,7 +1000,9 @@ Time required: 0.05 seconds
 
 root@ip-172-31-18-49:/project-code# date
 Wed May  2 14:48:26 UTC 2018
-root@ip-172-31-18-49:/project-code# curl http://localhost:8080/cloudmesh/file-system/VM/uploadFile/vonLaszewskibigdata.pdf
+root@ip-172-31-18-49:/project-code# curl 
+http://localhost:8080/cloudmesh/file-system/VM/uploadFile/von
+Laszewskibigdata.pdf
 "File uploaded"
 root@ip-172-31-18-49:/project-code# date
 Wed May  2 14:48:31 UTC 2018
@@ -989,7 +1014,9 @@ Time required: 0.24 seconds
 
 root@ip-172-31-18-49:/project-code# date
 Wed May  2 15:05:12 UTC 2018
-root@ip-172-31-18-49:/project-code# curl http://localhost:8080/cloudmesh/file-system/drive/uploadFile/vonLaszewskibigdata.pdf
+root@ip-172-31-18-49:/project-code# curl 
+http://localhost:8080/cloudmesh/file-system/drive/uploadFile/von
+Laszewskibigdata.pdf
 "File uploaded"
 root@ip-172-31-18-49:/project-code# date
 Wed May  2 15:05:36 UTC 2018
@@ -1005,22 +1032,20 @@ with number of seconds taken to execute all four APIs by different
 storage engines respectively.
 
 \begin{table}[htb]
-	\centering
+\centering
   \caption{Processing time of all APIs for different storage 
   engines}\label{tab:timing}
-
-	\begin{tabular}{*{4}{c}}
-		\toprule
-		APIs & Amazon S3 & Google Drive & Virtual Machine \\
-		\midrule
-		Listing & 0.01  & 0.02 & 0.01 \\
-		Upload & 0.14 & 0.24 & 0.05 \\
+    \begin{tabular}{*{4}{c}}
+    \toprule
+    APIs & Amazon S3 & Google Drive & Virtual Machine \\
+    \midrule
+    Listing & 0.01  & 0.02 & 0.01 \\
+    Upload & 0.14 & 0.24 & 0.05 \\
     Download & 0.13 & 0.18 & 0.06 \\
     Delete & 0.04 & 0.06 & 0.02 \\
-		\bottomrule
-	\end{tabular}
+    \bottomrule
+    \end{tabular}
 \end{table}
-
 
 
 
